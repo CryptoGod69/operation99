@@ -2,7 +2,6 @@
 Classic Style of grocery store.
 # Preview
 
-![Jeweler admin dashboard template preview](https://colorlib.com/wp/wp-content/uploads/sites/2/jaweler-free-classic-admin-panel-template-1.jpg)
 
 # Included technology
 
