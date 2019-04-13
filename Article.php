@@ -1,10 +1,11 @@
+
 <!doctype html>
 <html class="no-js" lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Data Table | jeweler - Material Admin Template</title>
+    <title>E-DEBBOU</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -50,16 +51,6 @@
 		============================================ -->
     <link rel="stylesheet" href="css/calendar/fullcalendar.min.css">
     <link rel="stylesheet" href="css/calendar/fullcalendar.print.min.css">
-    <!-- x-editor CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/editor/select2.css">
-    <link rel="stylesheet" href="css/editor/datetimepicker.css">
-    <link rel="stylesheet" href="css/editor/bootstrap-editable.css">
-    <link rel="stylesheet" href="css/editor/x-editor-style.css">
-    <!-- normalize CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/data-table/bootstrap-table.css">
-    <link rel="stylesheet" href="css/data-table/bootstrap-editable.css">
     <!-- style CSS
 		============================================ -->
     <link rel="stylesheet" href="style.css">
@@ -85,16 +76,13 @@
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
                 <nav class="sidebar-nav left-sidebar-menu-pro">
                     <ul class="metismenu" id="menu1">
-                        <li>
-                            <a class="has-arrow" href="index.html">
-								   <i class="fa big-icon fa-home icon-wrap"></i>
-								   <span class="mini-click-non">Ecommerce</span>
-								</a>
-                            </li>
                         <li class="active">
-                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap"></i> <span class="mini-click-non">Data Tables</span></a>
+                           
+                           
+                
+                            <a class="has-arrow" href="Article.php" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap"></i> <span class="mini-click-non">Contenu des Commandes</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Peity Charts" href="commande1.php"><i class="fa fa-table sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Table Des Commandes</span></a></li>
+                                <li><a title="Peity Charts" href="listCommande.php"><i class="fa fa-table sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro"></span></a></li>
                                 <li><a title="Data Table" href="data-table.html"><i class="fa fa-th sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Data Table</span></a></li>
                             </ul>
                         </li>
@@ -759,7 +747,7 @@
                                         </li>
                                         <li><a data-toggle="collapse" data-target="#Tablesmob" href="#">Tables <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
                                             <ul id="Tablesmob" class="collapse dropdown-header-top">
-                                                <li><a href="static-table.html">Table Des Commandes</a>
+                                                <li><a href="static-table.html">Static Table</a>
                                                 </li>
                                                 <li><a href="data-table.html">Data Table</a>
                                                 </li>
@@ -835,7 +823,7 @@
                                         <ul class="breadcome-menu">
                                             <li><a href="#">Home</a> <span class="bread-slash">/</span>
                                             </li>
-                                            <li><span class="bread-blod">Data Table</span>
+                                            <li><span class="bread-blod">Product Cart</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -846,310 +834,111 @@
                 </div>
             </div>
         </div>
-        <!-- Static Table Start -->
-        <div class="data-table-area mg-tb-15">
+        <div class="product-cart-area mg-tb-15">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="sparkline13-list">
-                            <div class="sparkline13-hd">
-                                <div class="main-sparkline13-hd">
-                                    <h1>Products <span class="table-project-n">Data</span> Table</h1>
-                                </div>
-                            </div>
-                            <div class="sparkline13-graph">
-                                <div class="datatable-dashv1-list custom-datatable-overright">
-                                    <div id="toolbar">
-                                        <select class="form-control">
-												<option value="">Export Basic</option>
-												<option value="all">Export All</option>
-												<option value="selected">Export Selected</option>
-											</select>
+                        <div class="product-cart-inner">
+                            <div id="example-basic">
+                                
+                                <section>
+                                    <h3 class="product-cart-dn">Shopping</h3>
+                                    <div class="product-list-cart">
+                                        <div class="product-status-wrap border-pdt-ct">
+
+                                        <label for="id-commande" class="form-label">Please , Insert th Order's ID Here</label>
+
+                                        <div class="form-group">
+                                            <input id="promotional-code" class="form-control" type="text" name="id">
+                                        </div>
+                                                                                          
+
+                                        <button type="submit" name="search" value="Find" class="btn btn-primary btn-block">Submit</button>
+                                                </form>
+                                        
+<?PHP
+
+include_once "../CPanel/core/articleC.php";
+$article1C=new ArticleC();
+$listeArticles=$article1C->afficherArticles();
+//var_dump($listeEmployes->fetchAll());
+?>
+                                            <table>
+                                                <form action="Article.php" method="POST">
+                                                <tr>
+                                                    
+                                                    <th>ID Commande</th>
+                                                    <th>ID Produit</th>
+                                                    <th>Nom Produit</th>
+                                                    <th>Quantité </th>
+                                                    <th>Prix Produit</th>
+                                                    <th>Supprimer Article</th>
+                                                    <th>Supprimer Article</th>
+                                                </tr>
+                                             
+                                                <?PHP
+foreach($listeArticles as $row){
+	?>
+	<tr>
+
+	<td><?PHP echo $row['IDCommande']; ?></td>
+	<td><?PHP echo $row['IDProduit']; ?></td>
+	<td><?PHP echo $row['NomProduit']; ?></td>
+	<td><?PHP echo $row['QtProduit']; ?></td>
+	<td><?PHP echo $row['PrixProduit']; ?></td>
+	
+  
+
+    <td><form method="POST" action="../CPanel/views/supprimerArticle.php">
+	<input type="submit" name="supprimer" value="supprimer">
+    <input type="hidden" value="<?PHP echo $row['IDCommande']; ?>" name="idc">
+     <input type="hidden" value="<?PHP echo $row['IDProduit']; ?>" name="idp">
+	</form>
+    </td>
+    <td><a href="../CPanel/mo.php?idc=<?PHP echo $row['IDCommande']; ?>">
+    <input type="hidden" value="<?PHP echo $row['IDProduit']; ?>" name="idp">
+    Modifier</a></td>
+    
+	</tr>
+<?PHP
+}
+?>
+        </table>
+
+                                        </div>
                                     </div>
-                                    <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
-                                        data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
-                                        <thead>
-                                            <tr>
-                                                <th data-field="state" data-checkbox="true"></th>
-                                                <th data-field="id">ID</th>
-                                                <th data-field="name" data-editable="true">Product Title</th>
-                                                <th data-field="company" data-editable="true">Stock</th>
-                                                <th data-field="price" data-editable="true">Price</th>
-												<th data-field="date" data-editable="true">Date</th>
-												<th data-field="task" data-editable="true">Status</th>
-												<th data-field="email" data-editable="true">Total Sales</th>
-                                                <th data-field="action">Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td></td>
-                                                <td>1</td>
-                                                <td>Product Title</td>
-                                                <td>Out Of Stock</td>
-												<td>$54</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>2</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>3</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>4</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>5</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>6</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>7</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>8</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>9</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>10</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>11</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>12</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>13</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>14</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>15</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>16</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>17</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>18</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>19</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>21</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                </section>
+                               
+                                <section>
+                                    <h3 class="product-cart-dn">Shopping</h3>
+                                    
+                                       
+                                            <div class="col-md-5 offset-md-1">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                   
+
+                                    </div>
+                                    </div>
+                                </section>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Static Table End -->
         <div class="footer-copyright-area">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="footer-copy-right">
-                            <p>Copyright © 2018 <a href="https://colorlib.com/wp/templates/">Colorlib</a> All rights reserved.</p>
+                            <p>Copyright &copy; 2018 <a href="https://colorlib.com/wp/templates/">Colorlib</a> All rights reserved.</p>
                         </div>
                     </div>
                 </div>
@@ -1189,32 +978,22 @@
 		============================================ -->
     <script src="js/metisMenu/metisMenu.min.js"></script>
     <script src="js/metisMenu/metisMenu-active.js"></script>
-    <!-- data table JS
+    <!-- morrisjs JS
 		============================================ -->
-    <script src="js/data-table/bootstrap-table.js"></script>
-    <script src="js/data-table/tableExport.js"></script>
-    <script src="js/data-table/data-table-active.js"></script>
-    <script src="js/data-table/bootstrap-table-editable.js"></script>
-    <script src="js/data-table/bootstrap-editable.js"></script>
-    <script src="js/data-table/bootstrap-table-resizable.js"></script>
-    <script src="js/data-table/colResizable-1.5.source.js"></script>
-    <script src="js/data-table/bootstrap-table-export.js"></script>
-    <!--  editable JS
+    <script src="js/sparkline/jquery.sparkline.min.js"></script>
+    <script src="js/sparkline/jquery.charts-sparkline.js"></script>
+    <!-- calendar JS
 		============================================ -->
-    <script src="js/editable/jquery.mockjax.js"></script>
-    <script src="js/editable/mock-active.js"></script>
-    <script src="js/editable/select2.js"></script>
-    <script src="js/editable/moment.min.js"></script>
-    <script src="js/editable/bootstrap-datetimepicker.js"></script>
-    <script src="js/editable/bootstrap-editable.js"></script>
-    <script src="js/editable/xediable-active.js"></script>
-    <!-- Chart JS
-		============================================ -->
-    <script src="js/chart/jquery.peity.min.js"></script>
-    <script src="js/peity/peity-active.js"></script>
+    <script src="js/calendar/moment.min.js"></script>
+    <script src="js/calendar/fullcalendar.min.js"></script>
+    <script src="js/calendar/fullcalendar-active.js"></script>
     <!-- tab JS
 		============================================ -->
     <script src="js/tab.js"></script>
+    <!-- wizard JS
+		============================================ -->
+    <script src="js/wizard/jquery.steps.js"></script>
+    <script src="js/wizard/steps-active.js"></script>
     <!-- plugins JS
 		============================================ -->
     <script src="js/plugins.js"></script>

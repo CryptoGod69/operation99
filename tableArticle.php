@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Data Table | jeweler - Material Admin Template</title>
+    <title>CPanel E-DEBBOU</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -310,32 +310,6 @@
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="img/contact/4.jpg" alt="" />
-                                                                                        </div>
-                                                                                        <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="notes-list-flow">
-                                                                                        <div class="notes-img">
-                                                                                            <img src="img/contact/1.jpg" alt="" />
-                                                                                        </div>
-                                                                                        <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="notes-list-flow">
-                                                                                        <div class="notes-img">
                                                                                             <img src="img/contact/2.jpg" alt="" />
                                                                                         </div>
                                                                                         <div class="notes-content">
@@ -345,97 +319,8 @@
                                                                                     </div>
                                                                                 </a>
                                                                             </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="notes-list-flow">
-                                                                                        <div class="notes-img">
-                                                                                            <img src="img/contact/3.jpg" alt="" />
-                                                                                        </div>
-                                                                                        <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="notes-list-flow">
-                                                                                        <div class="notes-img">
-                                                                                            <img src="img/contact/4.jpg" alt="" />
-                                                                                        </div>
-                                                                                        <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="notes-list-flow">
-                                                                                        <div class="notes-img">
-                                                                                            <img src="img/contact/1.jpg" alt="" />
-                                                                                        </div>
-                                                                                        <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="notes-list-flow">
-                                                                                        <div class="notes-img">
-                                                                                            <img src="img/contact/2.jpg" alt="" />
-                                                                                        </div>
-                                                                                        <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="notes-list-flow">
-                                                                                        <div class="notes-img">
-                                                                                            <img src="img/contact/1.jpg" alt="" />
-                                                                                        </div>
-                                                                                        <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="notes-list-flow">
-                                                                                        <div class="notes-img">
-                                                                                            <img src="img/contact/2.jpg" alt="" />
-                                                                                        </div>
-                                                                                        <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="notes-list-flow">
-                                                                                        <div class="notes-img">
-                                                                                            <img src="img/contact/3.jpg" alt="" />
-                                                                                        </div>
-                                                                                        <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
+                                                                            
+                                                                            
                                                                         </ul>
                                                                     </div>
                                                                 </div>
@@ -459,83 +344,7 @@
                                                                                     </div>
                                                                                 </a>
                                                                             </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="project-list-flow">
-                                                                                        <div class="projects-st-heading">
-                                                                                            <h2>New Order Received</h2>
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
-                                                                                            <span class="project-st-time">2 hours ago</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="project-list-flow">
-                                                                                        <div class="projects-st-heading">
-                                                                                            <h2>New Order Received</h2>
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
-                                                                                            <span class="project-st-time">3 hours ago</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="project-list-flow">
-                                                                                        <div class="projects-st-heading">
-                                                                                            <h2>New Order Received</h2>
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
-                                                                                            <span class="project-st-time">4 hours ago</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="project-list-flow">
-                                                                                        <div class="projects-st-heading">
-                                                                                            <h2>New User Registered</h2>
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
-                                                                                            <span class="project-st-time">5 hours ago</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="project-list-flow">
-                                                                                        <div class="projects-st-heading">
-                                                                                            <h2>New Order</h2>
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
-                                                                                            <span class="project-st-time">6 hours ago</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="project-list-flow">
-                                                                                        <div class="projects-st-heading">
-                                                                                            <h2>New User</h2>
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
-                                                                                            <span class="project-st-time">7 hours ago</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="project-list-flow">
-                                                                                        <div class="projects-st-heading">
-                                                                                            <h2>New Order</h2>
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
-                                                                                            <span class="project-st-time">9 hours ago</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
+
                                                                         </ul>
                                                                     </div>
                                                                 </div>
@@ -847,6 +656,13 @@
             </div>
         </div>
         <!-- Static Table Start -->
+        <?PHP
+include "C:/xampp/htdocs/CPanel/core/articleC.php";
+$article1C=new ArticleC();
+$listeArticles=$article1C->afficherArticles();
+
+//var_dump($listeEmployes->fetchAll());
+?>
         <div class="data-table-area mg-tb-15">
             <div class="container-fluid">
                 <div class="row">
@@ -859,282 +675,46 @@
                             </div>
                             <div class="sparkline13-graph">
                                 <div class="datatable-dashv1-list custom-datatable-overright">
-                                    <div id="toolbar">
-                                        <select class="form-control">
-												<option value="">Export Basic</option>
-												<option value="all">Export All</option>
-												<option value="selected">Export Selected</option>
-											</select>
-                                    </div>
+                                   
                                     <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
                                         data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
                                         <thead>
                                             <tr>
-                                                <th data-field="state" data-checkbox="true"></th>
-                                                <th data-field="id">ID</th>
-                                                <th data-field="name" data-editable="true">Product Title</th>
-                                                <th data-field="company" data-editable="true">Stock</th>
-                                                <th data-field="price" data-editable="true">Price</th>
-												<th data-field="date" data-editable="true">Date</th>
-												<th data-field="task" data-editable="true">Status</th>
-												<th data-field="email" data-editable="true">Total Sales</th>
+                                                
+                                                <th data-field="IDCommande">ID Commande</th>
+                                                <th data-field="IDProduit" data-editable="true">ID Produit</th>
+                                                <th data-field="NomProduit" data-editable="true">Nom Produit</th>
+                                                <th data-field="QtProduit" data-editable="true">Qt PRoduit</th>
+												<th data-field="PrixProduit" data-editable="true">Prix Produit</th>
+												
                                                 <th data-field="action">Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td></td>
-                                                <td>1</td>
-                                                <td>Product Title</td>
-                                                <td>Out Of Stock</td>
-												<td>$54</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>2</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>3</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>4</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>5</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>6</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>7</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>8</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>9</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>10</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>11</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>12</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>13</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>14</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>15</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>16</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>17</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>18</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>19</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>20</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>21</td>
-                                                <td>Product Title</td>
-                                                <td>In Of Stock</td>
-												<td>$5</td>
-												<td>Jul 14, 2017</td>
-                                                <td>Active</td>
-												<td>$700</td>
-                                                <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                </td>
-                                            </tr>
-                                        </tbody>
+
+                                        <?PHP
+foreach($listeArticles as $row){
+	?>
+	<tr>
+	<td><?PHP echo $row['IDCommande']; ?></td>
+	<td><?PHP echo $row['IDProduit']; ?></td>
+	<td><?PHP echo $row['NomProduit']; ?></td>
+	<td><?PHP echo $row['QtProduit']; ?></td>
+	<td><?PHP echo $row['PrixProduit']; ?></td>
+	<td><form method="POST" action="/CPanel/views/supprimerArticle.php">
+	<input type="submit" name="supprimer" value="supprimer">
+	<input type="hidden" value="<?PHP echo $row['IDCommande']; ?>" name="idc">
+	</form>
+	</td>
+    <td><a href="../CPanel/mo.php?idc=<?PHP echo $row['IDCommande']; ?>">
+	Modifier</a></td>
+    </tr>
+
+<?PHP
+}
+?>
+
+                                     </tbody>
                                     </table>
                                 </div>
                             </div>
