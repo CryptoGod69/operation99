@@ -881,24 +881,22 @@ foreach($listeArticles as $row){
 	?>
 	<tr>
 
-	<td><?PHP echo $row['IDCommande']; ?></td>
+	<td><?PHP echo $row['IDCom']; ?></td>
 	<td><?PHP echo $row['IDProduit']; ?></td>
 	<td><?PHP echo $row['NomProduit']; ?></td>
 	<td><?PHP echo $row['QtProduit']; ?></td>
-	<td><?PHP echo $row['PrixProduit']; ?></td>
-	
-  
-
+    <td><?PHP echo $row['PrixProduit']; ?></td>
+    
     <td><form method="POST" action="../CPanel/views/supprimerArticle.php">
 	<input type="submit" name="supprimer" value="supprimer">
-    <input type="hidden" value="<?PHP echo $row['IDCommande']; ?>" name="idc">
+    <input type="hidden" value="<?PHP echo $row['IDCom']; ?>" name="idc">
      <input type="hidden" value="<?PHP echo $row['IDProduit']; ?>" name="idp">
 	</form>
     </td>
-    <td><a href="../CPanel/mo.php?idc=<?PHP echo $row['IDCommande']; ?>">
+    
+    <td><a href="../CPanel/mo.php?idc=<?PHP echo $row['IDCom']; ?>">
     <input type="hidden" value="<?PHP echo $row['IDProduit']; ?>" name="idp">
     Modifier</a></td>
-    
 	</tr>
 <?PHP
 }
@@ -908,7 +906,7 @@ foreach($listeArticles as $row){
                                         </div>
                                     </div>
                                 </section>
-                               
+                                
                                 <section>
                                     <h3 class="product-cart-dn">Shopping</h3>
                                     

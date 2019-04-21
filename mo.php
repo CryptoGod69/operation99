@@ -821,7 +821,7 @@ if (isset($_GET['idc'])){
 	$articleC=new ArticleC();
     $result=$articleC->recupererArticle($_GET['idc']);
 	foreach($result as $row){
-		$idc=$row['IDCommande'];
+		$idc=$row['IDCom'];
 		$idp=$row['IDProduit'];
 		$nomp=$row['NomProduit'];
 		$qtp=$row['QtProduit'];

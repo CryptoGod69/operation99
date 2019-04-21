@@ -9,7 +9,7 @@ if (isset($_GET['idc'])){
 	$articleC=new ArticleC();
     $result=$articleC->recupererArticle($_GET['idc']);
 	foreach($result as $row){
-		$idc=$row['IDCommande'];
+		$idc=$row['IDCom'];
 		$idp=$row['IDProduit'];
 		$nomp=$row['NomProduit'];
 		$qtp=$row['QtProduit'];
@@ -57,7 +57,7 @@ if (isset($_POST['modifier'])){
 	$article=new article($_POST['idc'],$_POST['idp'],$_POST['nomp'],$_POST['qtp'],$_POST['prixp']);
 	$articleC->modifierArticle($article,$_POST['idc_ini']);
 	echo $_POST['idc_ini'];
-	header('Location: ../CPanel/Article.php');
+	header('Location: ../CPanel/tableArticle.php');
 }
 ?>
 </body>

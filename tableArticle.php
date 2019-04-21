@@ -660,7 +660,6 @@
 include "C:/xampp/htdocs/CPanel/core/articleC.php";
 $article1C=new ArticleC();
 $listeArticles=$article1C->afficherArticles();
-
 //var_dump($listeEmployes->fetchAll());
 ?>
         <div class="data-table-area mg-tb-15">
@@ -681,13 +680,14 @@ $listeArticles=$article1C->afficherArticles();
                                         <thead>
                                             <tr>
                                                 
-                                                <th data-field="IDCommande">ID Commande</th>
-                                                <th data-field="IDProduit" data-editable="true">ID Produit</th>
-                                                <th data-field="NomProduit" data-editable="true">Nom Produit</th>
-                                                <th data-field="QtProduit" data-editable="true">Qt PRoduit</th>
-												<th data-field="PrixProduit" data-editable="true">Prix Produit</th>
+                                                <th data-field="IDCom">ID Commande</th>
+                                                <th data-field="IDProduit" data-editable="false">ID Produit</th>
+                                                <th data-field="NomProduit" data-editable="false">Nom Produit</th>
+                                                <th data-field="QtProduit" data-editable="false">Qt PRoduit</th>
+												<th data-field="PrixProduit" data-editable="false">Prix Produit</th>
 												
-                                                <th data-field="action">Action</th>
+                                                <th data-field="action">Supprimer</th>
+                                                <th data-field="action2">Modifier</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -696,18 +696,24 @@ $listeArticles=$article1C->afficherArticles();
 foreach($listeArticles as $row){
 	?>
 	<tr>
-	<td><?PHP echo $row['IDCommande']; ?></td>
+	<td><?PHP echo $row['IDCom']; ?></td>
 	<td><?PHP echo $row['IDProduit']; ?></td>
 	<td><?PHP echo $row['NomProduit']; ?></td>
 	<td><?PHP echo $row['QtProduit']; ?></td>
-	<td><?PHP echo $row['PrixProduit']; ?></td>
-	<td><form method="POST" action="/CPanel/views/supprimerArticle.php">
-	<input type="submit" name="supprimer" value="supprimer">
-	<input type="hidden" value="<?PHP echo $row['IDCommande']; ?>" name="idc">
+    <td><?PHP echo $row['PrixProduit']; ?></td>
+
+    <td>
+     <form method="POST" action="../CPanel/views/supprimerArticle.php">
+	 <input type="submit" name="supprimer" value="supprimer">
+     <input type="hidden" value="<?PHP echo $row['IDCom']; ?>" name="idc">
+     <input type="hidden" value="<?PHP echo $row['IDProduit']; ?>" name="idp">
 	</form>
-	</td>
-    <td><a href="../CPanel/mo.php?idc=<?PHP echo $row['IDCommande']; ?>">
-	Modifier</a></td>
+    </td>
+    
+
+    <td><a href="../CPanel/mo.php?idc=<?PHP echo $row['IDCom']; ?>">
+    <input type="hidden" value="<?PHP echo $row['IDProduit']; ?>" name="idp">
+    Modifier</a></td>
     </tr>
 
 <?PHP

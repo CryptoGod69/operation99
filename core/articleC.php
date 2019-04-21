@@ -2,7 +2,7 @@
 include "C:/xampp/htdocs/CPanel/config.php";
 class ArticleC {
 function afficherArticle ($article){
-		echo "idc: ".$article->getIDCommande()."<br>";
+		echo "idc: ".$article->getIDCom()."<br>";
 		echo "idp: ".$article->getIDProduit()."<br>";
 		echo "nomp: ".$article->getNomProduit()."<br>";
 		echo "qtp: ".$article->getQtProduit()."<br>";
@@ -10,12 +10,12 @@ function afficherArticle ($article){
 	}
 	
 	function ajouterArticle($article){
-		$sql="insert into articles_commande (IDCommande,IDProduit,NomProduit,QtProduit,PrixProduit) values (:idc, :idp,:nomp,:qtp,:prixp)";
+		$sql="insert into articles_commande (IDCom,IDProduit,NomProduit,QtProduit,PrixProduit) values (:idc, :idp,:nomp,:qtp,:prixp)";
 		$db = config::getConnexion();
 		try{
         $req=$db->prepare($sql);
 		
-        $idc=$article->getIDCommande();
+        $idc=$article->getIDCom();
         $idp=$article->getIDProduit();
         $nomp=$article->getNomProduit();
         $qtp=$article->getQtProduit();
@@ -37,7 +37,7 @@ function afficherArticle ($article){
 	
 	function afficherArticles(){
 		//$sql="SElECT * From employe e inner join formationphp.employe a on e.cin= a.cin";
-		$sql="SElECT * From articles_commande ORDER BY IDCommande ASC ";
+		$sql="SElECT * From articles_commande ORDER BY IDCom ASC ";
 		$db = config::getConnexion();
 		try{
 		$liste=$db->query($sql);
@@ -48,7 +48,7 @@ function afficherArticle ($article){
         }	
 	}
 	function supprimerArticle($idc,$idp){
-		$sql="DELETE FROM articles_commande where IDCommande= :idc AND IDProduit=:idp";
+		$sql="DELETE FROM articles_commande where IDCom= :idc AND IDProduit=:idp";
 		$db = config::getConnexion();
         $req=$db->prepare($sql);
 		$req->bindValue(':idc',$idc);
@@ -62,13 +62,13 @@ function afficherArticle ($article){
         }
 	}
 	function modifierArticle($article,$idc){
-		$sql="UPDATE articles_commande SET IDCommande=:idc, IDProduit=:idp,NomProduit=:nomp,QtProduit=:qtp,PrixProduit=:prixp WHERE IDCommande=:idc";
+		$sql="UPDATE articles_commande SET IDCom=:idc, IDProduit=:idp,NomProduit=:nomp,QtProduit=:qtp,PrixProduit=:prixp WHERE IDCom=:idc";
 		
 		$db = config::getConnexion();
 		//$db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
 try{		
         $req=$db->prepare($sql);
-		$idc=$article->getIDCommande();
+		$idc=$article->getIDCom();
 		$idp=$article->getIDProduit();
 		$nomp=$article->getNomProduit();
         $qtp=$article->getQtProduit();
@@ -95,7 +95,7 @@ try{
 		
 	}
 	function recupererArticle($idc){
-		$sql="SELECT * from articles_commande where IDCommande=$idc";
+		$sql="SELECT * from articles_commande where IDCom=$idc";
 		$db = config::getConnexion();
 		try{
 		$liste=$db->query($sql);
@@ -107,7 +107,7 @@ try{
 	}
 	
 	function rechercherListeArticles($tarif){
-		$sql="SELECT * from articles_commande where IDCommande=$idc";
+		$sql="SELECT * from articles_commande where IDCom=$idc";
 		$db = config::getConnexion();
 		try{
 		$liste=$db->query($sql);

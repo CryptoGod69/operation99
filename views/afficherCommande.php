@@ -30,6 +30,8 @@ foreach($listeCommandes as $row){
 	</td>
 	<td><a href="modifierCommande.php?idcom=<?PHP echo $row['IDCom']; ?>">
 	Modifier</a></td>
+	
+
 	</tr>
 	<?PHP
 }

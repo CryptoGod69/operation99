@@ -14,7 +14,7 @@ class Article{
 		$this->prixp=$prixp;
 	}
 	
-	function getIDCommande(){
+	function getIDCom(){
 		return $this->idc;
 	}
 	function getIDProduit(){

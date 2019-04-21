@@ -20,7 +20,7 @@ $listeArticles=$article1C->afficherArticles();
 foreach($listeArticles as $row){
 	?>
 	<tr>
-	<td><?PHP echo $row['IDCommande']; ?></td>
+	<td><?PHP echo $row['IDCom']; ?></td>
 	<td><?PHP echo $row['IDProduit']; ?></td>
 	<td><?PHP echo $row['NomProduit']; ?></td>
 	<td><?PHP echo $row['QtProduit']; ?></td>
@@ -31,7 +31,7 @@ foreach($listeArticles as $row){
 	<input type="hidden" value="<?PHP echo $row['NomProduit']; ?>" name="nomp">
 	</form>
 	</td>
-	<td><a href="modifierArticle.php?idc=<?PHP echo $row['IDCommande']; ?>">
+	<td><a href="modifierArticle.php?idc=<?PHP echo $row['IDCom']; ?>">
 	Modifier</a></td>
 	</tr>
 	<?PHP

@@ -695,11 +695,18 @@ $listeCommandes=$Commande1C->afficherCommandes();
                                     <td> <?PHP echo $row['IDCom']; ?></td>
                                     <td><?PHP echo $row['IDUser']; ?>  </td>
                                     <td><?PHP echo $row['TotalCom']; ?></td>
-                                    <td><form method="POST" action="views/supprimerCommande.php">
+                                    <td>
+                                        <form method="POST" action="tableArticle.php">
+                                            
+                                        <input href="tableArticle.php?idcom=<?PHP echo $row['IDCom']; ?>" class="bin btn-primary waves-effect waves-light m-r-10" type="submit" name="details" value="Voir Details">
+            
+                                        </form>
 
+                                        <form method="POST" action="views/supprimerCommande.php">
                                         <input class="bin btn-primary waves-effect waves-light m-r-10" type="submit" name="trash" value="trash">
                                         <input type="hidden" value="<?PHP echo $row['IDCom']; ?>" name="idcom">
                                  </form>
+                                 
 
                                        
                                  
