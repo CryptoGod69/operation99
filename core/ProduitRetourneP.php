@@ -4,8 +4,10 @@ class ProduitRetourneP {
 function afficherProduit($ProduitRetourne){
 		echo "ID_client: ".$ProduitRetourne->getID_client()."<br>";
 		echo "ID_produit: ".$ProduitRetourne->getID_produit()."<br>";
+		echo "nom: ".$ProduitRetourne->getNom()."<br>";
 		echo "Ref_Commande: ".$ProduitRetourne->getRef_Commande()."<br>";
 		echo "Ref_Reclam: ".$ProduitRetourne->getRef_Reclam()."<br>";
+
 		
 	}
 	

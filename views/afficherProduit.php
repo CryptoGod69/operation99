@@ -8,6 +8,7 @@ $listeProduit=$ProduitRetounre1P->afficherProduits();
 <tr>
 <td>ID_client</td>
 <td>ID_produit</td>
+<td>Nom</td>
 <td>Ref_Commande</td>
 <td>Ref_Reclam</td>
 <td>supprimer</td>
@@ -20,6 +21,7 @@ foreach($listeProduit as $row){
   <tr>
   <td><?PHP echo $row['ID_client']; ?></td>
   <td><?PHP echo $row['ID_produit']; ?></td>
+  <td><?PHP echo $row['Nom']; ?></td>
   <td><?PHP echo $row['Ref_Commande']; ?></td>
   <td><?PHP echo $row['Ref_Reclam']; ?></td>
   <td><form method="POST" action="supprimerProduit.php">

@@ -1,5 +1,5 @@
 <?PHP
-include "../core/ReclamR.php";
+include_once "../core/ReclamR.php";
 $Reclam1R=new ReclamR();
 $listeReclam=$Reclam1R->afficherReclams();
 
@@ -90,7 +90,6 @@ $listeReclam=$Reclam1R->afficherReclams();
                                 <li><a title="Product List" href="product-list.php"><i class="fa fa-female sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des produits retournés</span></a></li>
                                     <li><a title="Product Edit" href="product-ret-edit.html"><i class="fa fa-bolt sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Ajouter produit retourné </span></a></li>
                                     <li><a title="Product Detail" href="reclam-list.php"><i class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des Réclamations</span></a></li>
-                                    <li><a title="Analytics" href="analytics-da.html"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Supprimer Réclamation</span></a></li>
                                     <li><a title="Analytics" href="analytics-da.html"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Statistiques</span></a></li>
                             
                             </ul>
@@ -762,10 +761,10 @@ $listeReclam=$Reclam1R->afficherReclams();
                                  <td><?PHP echo $row['date_reclam']; ?></td>
                                  <td><?PHP echo $row['etat']; ?></td>
                                  <td><form method="POST" action="supprimerReclam.php">
-                                        <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                                         <input class="bin btn-primary waves-effect waves-light m-r-10" type="submit" name="trash" value="trash">
                                         <input type="hidden" value="<?PHP echo $row['ID_client']; ?>" name="ID_client">
                                  </form>
+                                 <td><a href="reclam-update.php?ID_client=<?PHP echo $row['ID_client']; ?>">Modifier</a></td>
                                     </td>
                                 </tr>
                                  <?PHP
@@ -775,10 +774,6 @@ $listeReclam=$Reclam1R->afficherReclams();
                                 foreach($listeReclam as $row){
                                  ?>
                                  <tr>
-                                 <td><?PHP echo $row['ID_client']; ?></td>
-                                 <td><?PHP echo $row['sujet']; ?></td>
-                                 <td><?PHP echo $row['texte']; ?></td>
-                                 <td><?PHP echo $row['date_reclam']; ?></td>
                                  <td><?PHP echo $row['etat']; ?></td>
                                  <td><form method="POST" action="modiferReclam.php">
                                         <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>

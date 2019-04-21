@@ -4,9 +4,11 @@ class ProduitRetourne{
 	private $ID_produit;
 	private $Ref_Commande;
 	private $Ref_Reclam;
-	function __construct($ID_client,$ID_produit,$Ref_Commande,$Ref_Reclam){
+	private $Nom;
+	function __construct($ID_client,$ID_produit,$Ref_Commande,$Ref_Reclam,$Nom){
 		$this->ID_client=$ID_client;
 		$this->ID_produit=$ID_produit;
+		$this->Nom=$Nom;
 		$this->Ref_Commande=$Ref_Commande;
 		$this->Ref_Reclam=$Ref_Reclam;
 	}
@@ -24,6 +26,9 @@ class ProduitRetourne{
 	function getRef_Reclam(){
 		return $this->Ref_Reclam;
 	}
+	function getNom(){
+		return $this->Ref_Reclam;
+	}
 	
     
 	function setid($ID_produit){
@@ -34,6 +39,9 @@ class ProduitRetourne{
 	}
 	function setRef_Reclam($Ref_Reclam){
 		$this->Ref_Reclam=$Ref_Reclam;
+	}
+	function setNom($Nom){
+		$this->Nom=$Nom;
 	}
 	
 	

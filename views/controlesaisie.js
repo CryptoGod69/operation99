@@ -1,4 +1,4 @@
-alert("feriel");
+
 function verifa()
 {  
     ID_client=document.getElementById('ID_client').value;

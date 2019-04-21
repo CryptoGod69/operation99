@@ -1,5 +1,5 @@
 <?PHP
-include "../config.php";
+include_once "../config.php";
 class ReclamR
  {
     function afficherReclam($Reclam){
@@ -68,10 +68,14 @@ class ReclamR
         }
 	}
 	function modifierReclam($Reclam,$ID_client){
-		$sql="UPDATE reclamation SET etat='traitée' WHERE ID_client=:ID_client;";
+		$sql="UPDATE reclamation SET etat=:etat WHERE ID_client=:ID_client;";
 		
 		$db = config::getConnexion();
 		$req = $db->prepare($sql);
+		$req->bindValue(':ID_client',$ID_client);
+		$req->bindValue(':sujet');
+		$req->bindValue(':texte');
+		$req->bindValue(':date_reclam');
 		$req->bindValue(':etat',$etat);
 		$req->execute();
 		
