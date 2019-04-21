@@ -756,12 +756,12 @@ $listeutilisateurs=$utilisateurs1C->afficherutilisateurs();
                                                
 												
 												
-												
+                                            <th data-field="NomPrenom" >Nom et Prénom</th>
 												<th data-field="Date">___Date</th>
-												<th data-field="NomPrenom" >Nom et Prénom</th>
+												
                                                 <th data-field="Email" >Email</th>
                                                 <th data-field="Type">Type</th>
-                                                <th data-field="ID" >ID</th>
+                                                
                                                 <th data-field="DDN" >Date de Naissance</th>
                                             </tr>
                                         </thead>
@@ -772,19 +772,19 @@ $listeutilisateurs=$utilisateurs1C->afficherutilisateurs();
 	<tr>
 	
 
-
+    <td><?PHP echo $row['NomPrenom']; ?></td>
 	<td><?PHP echo $row['Date']; ?></td>
-	<td><?PHP echo $row['NomPrenom']; ?></td>
+	
 	<td><?PHP echo $row['Email']; ?></td>
     <td><?PHP echo $row['Type']; ?></td>
-    <td><?PHP echo $row['ID']; ?></td>
+   
     <td><?PHP echo $row['DDN']; ?></td>
 	<td><form method="POST" action="supprimerutilisateurs.php">
 	<input type="submit" name="supprimer" value="supprimer">
 	<input type="hidden" value="<?PHP echo $row['ID']; ?>" name="ID">
 	</form>
 	</td>
-	<td><a href="modifierutilisateurs.php?ID=<?PHP echo $row['ID']; ?>">
+	<td><a href="modifierusers.php?ID=<?PHP echo $row['ID']; ?>">
 	Modifier</a></td>
 	</tr>
 	<?PHP

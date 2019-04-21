@@ -2,18 +2,7 @@
 include "../config.php";
 class utilisateursC {
 	
-/*
-	function afficherutilisateur ($utilisateurs){
-		echo "Cin: ".$utilisateurs->getCin()."<br>";
-		echo "Nom: ".$utilisateurs->getNom()."<br>";
-		echo "Prénom: ".$utilisateurs->getPrenom()."<br>";
-		echo "tarif heure: ".$utilisateurs->getTarifHoraire()."<br>";
-		echo "nb heures: ".$utilisateurs->getNbHeures()."<br>";
-	}
-	function calculerSalaire($utilisateurs){
-		echo $utilisateurs->getNbHeures() * $utilisateurs->getTarifHoraire();
-	}
-*/	
+	
 	function ajouterutilisateurs($utilisateurs){
 		$sql="insert into utilisateurs (NomPrenom,Email,DDN,Tel,PWD1,Type) values (:NomPrenom, :Email, :DDN, :Tel, :PWD1 ,:Type)";
 		$db = config::getConnexion();
@@ -71,8 +60,8 @@ class utilisateursC {
         }
 	}
 	
-	function modifierutilisateurs($utilisateurs,$ID){
-		$sql="UPDATE 'utilisateurs' SET 'NomPrenom'=:NomPrenom, 'Email'=:Email, 'DDN'=:DDN, 'Tel'=:Tel, 'PWD1'=:PWD1,'Type'=:Type WHERE 'ID'=:ID";
+	function modifierutilisateurs($utilisateurs,$IDc){
+		$sql="update 'utilisateurs' set NomPrenom=:'nomprenom, Email=:email, DDN=:ddn, Tel=:tek, PWD1=:pwd1 where ID=:ID_ini";
 		
 		$db = config::getConnexion();
 		//$db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
@@ -80,20 +69,22 @@ try{
 
 	
 	$req=$db->prepare($sql);
+	
 	$NomPrenom=$utilisateurs->getNomPrenom();
 	$Email=$utilisateurs->getEmail();
 	$DDN=$utilisateurs->getDDN();
 	$Tel=$utilisateurs->getTel();
 	$PWD1=$utilisateurs->getPWD();
-	$Type=$utilisateurs->gettype();
 
-	$datas = array(':NomPrenom'=>$NomPrenom,':Email'=>$Email, ':DDN'=>$DDN,':Tel'=>$Tel,':PWD1'=>$PWD1,':Type'=>$Type );
-	$req->bindValue(':NomPrenom',$NomPrenom);
-	$req->bindValue(':Email',$Email);
-	$req->bindValue(':DDN',$DDN);
-	$req->bindValue(':Tel',$Tel);
-	$req->bindValue(':PWD1',$PWD1);
-	$req->bindValue(':Type',$Type);
+
+	$datas = array(':nomprenom'=>$NomPrenom,':email'=>$Email, ':ddn'=>$DDN,':tel'=>$Tel,':pwd1'=>$PWD1);
+	
+	$req->bindValue(':nomprenom',$NomPrenom);
+	$req->bindValue(':email',$Email);
+	$req->bindValue(':ddn',$DDN);
+	$req->bindValue(':tel',$Tel);
+	$req->bindValue(':pwd1',$PWD1);
+
 
 		
             $s=$req->execute();
@@ -145,7 +136,8 @@ try{
         }
 	}
 		
-	
+
+
 }
 
 ?>

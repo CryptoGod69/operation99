@@ -27,6 +27,7 @@
  		<!-- Custom stlylesheet -->
  		<link type="text/css" rel="stylesheet" href="css/style.css"/>
 
+		 
  		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
  		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
  		<!--[if lt IE 9]>
@@ -60,15 +61,15 @@
 				<div class="container">
 					<!-- row -->
 					<div class="row">
-						<!-- LOGO -->
-						<div class="col-md-3">
-							<div class="header-logo">
-								<a href="G:/WorkSpace/edebbou.me/operation99-dali0/Desktop/Page/Nouveau dossier/me/index.html" class="logo">
-									<img src="./img/logo.png" alt="logo lena">
-								</a>
-							</div>
+					<!-- LOGO -->
+					<div class="col-md-3">
+						<div class="header-logo">
+							<a href="G:/WorkSpace/edebbou.me/operation99-dali0/Desktop/Page/Nouveau dossier/me/index.html" class="logo">
+								<img src="./img/logo.png" alt="logo lena">
+							</a>
 						</div>
-						<!-- /LOGO -->
+					</div>
+					<!-- /LOGO -->
 						
 						<!-- ACCOUNT -->
 						<div class="col-md-3 clearfix">
@@ -126,7 +127,6 @@
 				</div>
 				<!-- /row -->
 			</div>
-
 			<!-- /container -->
 		</div>
 		<!-- /BREADCRUMB -->
@@ -146,58 +146,111 @@
 <div>
 
 
-<!--/SIGNIN-SIGNUP-->
-
-		<div class="container">
-				<div class="row">
-			  
-				  <div class="main">
-						
-
-			  
-					<h3>Please Log In, or <a href="registernormal.html">Sign Up</a></h3>
-					<div class="row">
-					  <div class="col-xs-6 col-sm-6 col-md-6">
-						<a href="#" class="btn btn-lg btn-primary btn-block">Facebook</a>
-					  </div>
-					  <div class="col-xs-6 col-sm-6 col-md-6">
-						<a href="#" class="btn btn-lg btn-info btn-block">Google</a>
-					  </div>
-					</div>
-					<div class="login-or">
-					  <hr class="hr-or">
-					  <span class="span-or">or</span>
-					</div>
-			  
-					<form role="form">
-					  <div class="form-group">
-						<label for="inputUsernameEmail">Username or email :</label>
-						<input type="text" class="form-control" id="inputUsernameEmail">
-					  </div>
-					  <div class="form-group">
-						<a class="pull-right" href="#">Forgot password?</a>
-						<label for="inputPassword">Password</label>
-						<input type="password" class="form-control" id="inputPassword">
-					  </div>
-					  <div class="checkbox pull-right">
-						<label>
-						  <input type="checkbox">
-						  Remember me </label>
-					  </div>
-					  <button type="submit" class="btn btn btn-primary">
-						Log In
-					  </button>
-					</form>
-				  
-				  </div>
-				  
-				</div>
-			  </div>
 
 
-</div>
-<!--/SIGNIN-SIGNUP-->
+	<!--REGISTER-->
+	
+	<div align="center" class="container">
+		<div class="card bg-light"></div>
+		<div class="card-body " style="max-width: 300px;">
+			<h4 class="card-title mt-3 text-center">Créer un compte client normal</h4>
+			<p class="text-center">Bienvenue sur E-debbou</p>
+			
+		
+			<form id="insc" method="POST" action="ajoututilisateurs.php" >
+			
+				
+			</div><!--/col-sm-6--> 
+            <div class="panel panel-default credit-card-box">
+                <div class="panel-heading display-table" >
+                    <div class="row display-tr" >
+                        <h3 class="panel-title display-td" >Payment Details</h3>
+                        <div class="display-td" >                            
+                            <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+                        </div>
+                    </div>                    
+                </div>
+                <div class="panel-body">
+                    <form role="form" id="payment-form" method="POST" action="ajouterpremium.php">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label for="cardNumber">CARD NUMBER</label>
+                                    <div class="input-group">
+                                        <input 
+                                            type="tel"
+                                            class="form-control"
+                                            name="cardNumber"
+                                            placeholder="Valid Card Number"
+                                            autocomplete="cc-number"
+                                            required autofocus 
+                                        />
+                                        <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                                    </div>
+                                </div>                            
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-7 col-md-7">
+                                <div class="form-group">
+                                    <label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
+                                    <input 
+                                        type="date" 
+                                        class="form-control" 
+                                        name="cardExpiry"
+                                        placeholder="MM / YY"
+                                        autocomplete="cc-exp"
+                                        required 
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-xs-5 col-md-5 pull-right">
+                                <div class="form-group">
+                                    <label for="cardCVC">CV CODE</label>
+                                    <input 
+                                        type="tel" 
+                                        class="form-control"
+                                        name="cardCVC"
+                                        placeholder="CVC"
+                                        autocomplete="cc-csc"
+                                        required
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <input onclick="verif();" type="submit" class="btn btn-primary btn-block" value="Créer compte" ><a href="login.html"></a></button>
+                            </div>
+                        </div>
+                        <div class="row" style="display:none;">
+                            <div class="col-xs-12">
+                                <p class="payment-errors"></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>            
+			                
+			
+				
+			</div> <!-- form-group// -->      
+			<p class="text-center">J'ai déja un compte <a href="login.html">Se connecter</a> </p>                                                                 
+		</form>
+	</div>
+		</div> <!-- card.// -->
+		
+		</div> 
+		<!--container end.//-->
+		</article>
 
+
+
+		<!--REGISTER-->
+
+
+		
 		<!-- NEWSLETTER -->
 		<div id="newsletter" class="section" >
 			<!-- container -->
@@ -340,6 +393,7 @@
 		<script src="js/nouislider.min.js"></script>
 		<script src="js/jquery.zoom.min.js"></script>
 		<script src="js/main.js"></script>
+		<script src="js/Formulaire.js"></script>
 
 	</body>
 </html>

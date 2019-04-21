@@ -59,6 +59,8 @@
     <!-- modernizr JS
 		============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -747,7 +749,11 @@ $listeutilisateurs=$utilisateurs1C->afficherutilisateurs();
                                     <div id="toolbar">
                                        
                                     </div>
-                                    <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
+                                    <div class="container">
+                                    <p>Type something in the input field to search the table for first names, last names or emails:</p>  
+  <input class="form-control" id="myInput" type="text" placeholder="Search..">
+  <br>
+                                    <table class="table table-bordered table-striped" id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
                                         data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar" align="center">
                                         
                                         <thead>
@@ -764,7 +770,7 @@ $listeutilisateurs=$utilisateurs1C->afficherutilisateurs();
                                                 <th data-field="DDN" >Date de Naissance</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody  id="myTable">
                                         <?PHP
                                          foreach($listeutilisateurs as $row){
 	                                    ?>
@@ -797,6 +803,16 @@ $listeutilisateurs=$utilisateurs1C->afficherutilisateurs();
                 </div>
             </div>
         </div>
+        <script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
         <form action="triclient.php">
         <div align="center">
         <input  type="submit" class="btn btn-primary btn-block" value="Triez par ordre alphabétique" style="max-width: 300px;"  ></a></button>

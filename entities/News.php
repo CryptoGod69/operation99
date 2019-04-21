@@ -1,4 +1,5 @@
 <?PHP
+
 class News{
 
 	private $ID_News;

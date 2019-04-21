@@ -1,7 +1,7 @@
 <?PHP
 include "../config.php";
 
-class NewsC {
+class premiumC {
 	
 /*
 	function afficherutilisateur ($News){
@@ -15,17 +15,21 @@ class NewsC {
 		echo $News->getNbHeures() * $News->getTarifHoraire();
 	}
 */	
-	function ajouterNews($News){
-		$sql="insert into NewsLetter (Email_News) values (:Email_News)";
+	function ajouterpremium($premium){
+		$sql="insert into premium (CVCode,CodeNum,DDE) values (:CVCode,CodeNum,DDE)";
 		//$sql = 'INSERT INTO NewsLetter VALUES Email SELECT Email FROM News WHERE Email=Email_News';
 		$db = config::getConnexion();
 		try{
         $req=$db->prepare($sql);
 		
         
-        $Email_News=$News->getEmail_News();
+        $CVCode=$premium->getCVCode();
+        $CodeNum=$premium->getCodeNum();
+        $DDE=$premium->getDDE();
         
-		$req->bindValue(':Email_News',$Email_News);
+        $req->bindValue(':CVCode',$CVCode);
+        $req->bindValue(':CodeNum',$CodeNum);
+        $req->bindValue(':DDE',$DDE);
 		
             $req->execute();
            

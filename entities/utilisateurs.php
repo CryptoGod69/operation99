@@ -1,4 +1,5 @@
 <?PHP
+
 class utilisateurs{
 
 	private $NomPrenom;
@@ -15,6 +16,8 @@ class utilisateurs{
 		$this->PWD1=$PWD1;
     $this->Tel=$Tel;
 	$this->Type=$Type;
+
+
 		
 	}
 
@@ -79,6 +82,7 @@ class utilisateurs{
 	{
 	$this->Type=$Type;
 	}
+
 
 
 	
