@@ -95,7 +95,7 @@ $listeEmployes=$ProduitC->afficherProduit();
                                     <li><a title="Product Cart" href="categorie-list.php"><i class="fa fa-level-down sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Categories Liste</span></a></li>                             
                                     <li><a title="Product Detail" href="promocoup.php"><i class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Promo et coupon</span></a></li>
                                     <li><a title="Product Detail" href="promo-list.php"><i class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des Coupon</span></a></li>
-                                    <li><a title="Analytics" href="analytics-da.html"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Statistique</span></a></li>
+                                    <li><a title="Analytics" href="analytics-da.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Statistique</span></a></li>
                             
                             </ul>
                         </li>

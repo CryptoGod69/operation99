@@ -45,7 +45,7 @@
         type: 'discrete',
         lineColor: '#03a9f4'});
 
-    $("#sparkline7").sparkline([52, 12, 44], {
+    $("#sparkline7").sparkline([30, 14, 44], {
         type: 'pie',
         height: '150px',
         sliceColors: ['#03a9f4', '#303030', '#e4f0fb']});
@@ -105,25 +105,25 @@
 			 fillColor: "#ebebeb"
 		 });
 
-		 $("#sparkline51").sparkline([1, 4], {
+		 $("#sparkline51").sparkline([2, 6], {
 			 type: 'pie',
 			 height: '140',
 			 sliceColors: ['#1ab394', '#ebebeb']
 		 });
 
-		 $("#sparkline52").sparkline([5, 3], {
+		 $("#sparkline52").sparkline([6, 3], {
 			 type: 'pie',
 			 height: '140',
 			 sliceColors: ['#1ab394', '#ebebeb']
 		 });
 
-		 $("#sparkline53").sparkline([2, 2], {
+		 $("#sparkline53").sparkline([6, 2], {
 			 type: 'pie',
 			 height: '140',
 			 sliceColors: ['#ed5565', '#ebebeb']
 		 });
 
-		 $("#sparkline54").sparkline([2, 3], {
+		 $("#sparkline54").sparkline([6, 3], {
 			 type: 'pie',
 			 height: '140',
 			 sliceColors: ['#ed5565', '#ebebeb']

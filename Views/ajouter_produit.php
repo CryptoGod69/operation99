@@ -1,11 +1,11 @@
-<?php
+    <?php
 session_start();
 include "../Core/ProduitC.php";
 include "../Entites/Produit.php";
 if (isset($_FILES['image']['name']) && isset($_POST['Descr']) && isset($_POST['Categorie']) && isset($_POST['statut']) && isset($_POST['Nom']))
 {
    
-    $target = "../images/" . basename($_FILES['image']['name']);
+    $target = "images/" . basename($_FILES['image']['name']);
     $id=$_POST['id'];
     $image=$_FILES['image']['name'];
     $Descr=$_POST['Descr'];

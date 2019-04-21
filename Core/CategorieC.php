@@ -83,5 +83,16 @@ function maxid_categorie(){
             die('Erreur: '.$e->getMessage());
         }	
 }
+function  affichernbrCateg (){
+    $sql="SElECT COUNT(id_cat) From categorie";
+        $db = config::getConnexion();
+        try{
+        $vmax=$db->query($sql);
+        return $vmax;
+        }
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }	
+}
 }
 ?>

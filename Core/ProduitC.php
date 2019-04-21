@@ -99,5 +99,61 @@ try{
                 die('Erreur: '.$e->getMessage());
             }	
     }
+    function  affichernbrproduit(){
+        $sql="SElECT COUNT(id) From produit";
+            $db = config::getConnexion();
+            try{
+            $vmax=$db->query($sql);
+            return $vmax;
+            }
+            catch (Exception $e){
+                die('Erreur: '.$e->getMessage());
+            }	
+    }
+    function  affichernbdispo(){
+        $sql="SElECT COUNT(id) From produit where statut='Disponible'";
+            $db = config::getConnexion();
+            try{
+            $vmax=$db->query($sql);
+            return $vmax;
+            }
+            catch (Exception $e){
+                die('Erreur: '.$e->getMessage());
+            }	
+    }
+    function  affichernbnndispo(){
+        $sql="SElECT COUNT(id) From produit where NOT statut='Disponible'";
+            $db = config::getConnexion();
+            try{
+            $vmax=$db->query($sql);
+            return $vmax;
+            }
+            catch (Exception $e){
+                die('Erreur: '.$e->getMessage());
+            }	
+    }
+
+    function  categdom(){
+        $sql="SElECT MAX(Categorie) From produit";
+            $db = config::getConnexion();
+            try{
+            $vmax=$db->query($sql);
+            return $vmax;
+            }
+            catch (Exception $e){
+                die('Erreur: '.$e->getMessage());
+            }	
+    }
+    function  graph(){
+        $sql="SElECT statut, COUNT(*) as number From produit GROUP BY statut";
+            $db = config::getConnexion();
+            try{
+            $vmax=$db->query($sql);
+            return $vmax;
+            }
+            catch (Exception $e){
+                die('Erreur: '.$e->getMessage());
+            }	
+    }
 }
 ?>

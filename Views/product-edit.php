@@ -899,13 +899,13 @@ $vmax=$ProduitC1->maxid_produit();
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="fa fa-tag" aria-hidden="true"></i></span>
                                                         
-                                                        <SELECT name="Categorie" size="1" id="Categorie"  onChange="idprod.value=this.value;"  class="form-control">
+                                                        <SELECT name="Categorie" size="1" id="Categorie"    class="form-control">
                                                     
                                                          <option value="Selectionner" disabled selected>Selectionner une categorie</option>
                                                          <?php
                                                       foreach($listeEmployes as $row){
                                                           ?>
-                                                          <OPTION value="<?PHP echo $row['id_cat']; ?>"><?PHP echo $row['Categ']; ?></option>
+                                                          <OPTION value="<?PHP echo $row['Categ']; ?>"><?PHP echo $row['Categ']; ?></option>
                                                           <?PHP
 }
 ?>

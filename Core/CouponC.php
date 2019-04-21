@@ -1,5 +1,5 @@
 <?php
-include "C:/wamp64/www/operation99-cpanel/config.php";
+require_once "C:/wamp64/www/operation99-cpanel/config.php";
 class CouponC
 {
 function ajouter($coupon)
@@ -97,6 +97,39 @@ function afficherCouponC(){
         catch (Exception $e){
             echo " Erreur ! ".$e->getMessage();
         }
+    }
+    function  affichernbrCoupon (){
+        $sql="SElECT COUNT(id_coupon) From coupon";
+            $db = config::getConnexion();
+            try{
+            $vmax=$db->query($sql);
+            return $vmax;
+            }
+            catch (Exception $e){
+                die('Erreur: '.$e->getMessage());
+            }	
+    }
+    function  affichernbrCouponP (){
+        $sql="SElECT COUNT(id_coupon) From coupon where Type_reduction='Pourcentage'";
+            $db = config::getConnexion();
+            try{
+            $vmaxp=$db->query($sql);
+            return $vmaxp;
+            }
+            catch (Exception $e){
+                die('Erreur: '.$e->getMessage());
+            }	
+    }
+    function  sommedescoupon (){
+        $sql="SElECT SUM(Valeur) From coupon where Type_reduction='Pourcentage'";
+            $db = config::getConnexion();
+            try{
+            $vmaxp=$db->query($sql);
+            return $vmaxp;
+            }
+            catch (Exception $e){
+                die('Erreur: '.$e->getMessage());
+            }	
     }
 }
 ?>

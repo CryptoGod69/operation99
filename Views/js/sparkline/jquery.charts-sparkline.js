@@ -245,12 +245,12 @@ $(document).ready(function() {
         sparklineLogin();
 		
 		
-		$("#sparkline51").sparkline([1, 4], {
+		$("#sparkline51").sparkline([2, 6], {
 			 type: 'pie',
 			 height: '116',
 			 sliceColors: ['#1ab394', '#ebebeb']
 		 });
-		 $("#sparkline52").sparkline([5, 3], {
+		 $("#sparkline52").sparkline([2, 6], {
 			 type: 'pie',
 			 height: '116',
 			 sliceColors: ['#1ab394', '#ebebeb']
