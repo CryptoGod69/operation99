@@ -1,5 +1,5 @@
 <?php
-require_once "C:/wamp64/www/operation99-cpanel/config.php";
+require_once "C:/wamp64/www/integration/config.php";
 class categorieC
 {
 function ajouter($categorie)

@@ -72,7 +72,8 @@ $vmaxid=$couponC->maxid_coupon();
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-    <div class="left-sidebar-pro">
+   
+        <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
             <div class="sidebar-header">
                 <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
@@ -83,18 +84,27 @@ $vmaxid=$couponC->maxid_coupon();
                     <ul class="metismenu" id="menu1">
                         <li class="active">
                             <a class="has-arrow" href="index.html">
-                                <span class="mini-click-non">Produit</span>
-                            </a>
-                            <ul class="submenu-angle" aria-expanded="true">
-                            <li><a title="Product List" href="product-list.php"><i class="fa fa-female sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des produits</span></a></li>
+								
+								   <span class="mini-click-non">Tableau de bord</span>
+								</a>
+                                <ul class="submenu-angle" aria-expanded="true">
+                                    <li><a title="Product List" href="product-list-ret.php"><i class="fa fa-female sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des produits</span></a></li>
                                     <li><a title="Product Edit" href="product-edit.php"><i class="fa fa-bolt sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Ajout produit </span></a></li>
                                     <li><a title="Product Cart" href="categorie-edit.php"><i class="fa fa-level-down sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Categories</span></a></li>
                                     <li><a title="Product Cart" href="categorie-list.php"><i class="fa fa-level-down sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Categories Liste</span></a></li>                             
                                     <li><a title="Product Detail" href="promocoup.php"><i class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Promo et coupon</span></a></li>
                                     <li><a title="Product Detail" href="promo-list.php"><i class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des Coupon</span></a></li>
                                     <li><a title="Analytics" href="analytics-da.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Statistique</span></a></li>
-                            
-                            </ul>
+                                    <li><a title="Peity Charts" href="listCommande.php"><i class="fa fa-table sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste Des Commandes</span></a></li>
+                                    <li><a title="Data Table" href="tableArticle.php"><i class="fa fa-th sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Contenu des Commandes</span></a></li>
+                                    <li><a title="Product List" href="product-list-ret.php"><i class="fa fa-female sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des produits retournés</span></a></li>
+                                    <li><a title="Product Edit" href="product-ret-edit.html"><i class="fa fa-bolt sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Ajouter produit retourné </span></a></li>
+                                    <li><a title="Product Detail" href="reclam-list.php"><i class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des Réclamations</span></a></li>
+                                    <li><a title="List des client" href="List.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des Clients</span></a></li>
+                                <li><a title="Diagrammes" href="Diagrammes.html"><i class="fa fa-area-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Diagrammes</span></a></li>
+                                <li><a title="Modifier Supprimer" href="modifierutilisateurs.php"><i class="fa fa-pie-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Modifier/Supprimer</span></a></li>
+                                <li><a title="List News" href="ListNews.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des emails du Newsr</span></a></li>
+                                </ul>
                         </li>
                     </ul>
                 </nav>
