@@ -15,8 +15,8 @@ class utilisateurs{
 		$this->DDN=$DDN;
 		$this->PWD1=$PWD1;
     $this->Tel=$Tel;
-	$this->Type=$Type;
 
+		$this->Type=$Type;
 
 		
 	}
@@ -50,8 +50,8 @@ class utilisateurs{
 		
   function getType()
   {
-	  return $this->Type;
-}
+		return $this->Type;
+	}
 
 
 	function setNomPrenom($NomPrenom)

@@ -69,3 +69,31 @@ function verif()
 
 
 }
+function verif1()
+{
+	CodeNum=document.getElementById('CodeNum').value;
+	CVCode=document.getElementById('CVCode').value;
+	
+
+	if( (CodeNum.toString().length!=23 )|| (CVCode.toString().length!=3 ) )
+	
+
+
+	{
+		alert("Le code num doit contenir 23 chiifre et le CVCode 3");
+		return false;
+	}
+
+	var compare_dates = function(date1,date2){
+		date1=DDE;
+		date2=getdate;
+	
+  if (date1<date2) false;
+  else return true; 
+ }
+
+
+   
+	}
+
+	

@@ -47,8 +47,7 @@
 						<li><a href="#"><i class="fa fa-map-marker"></i> 1734 m3a gharnou9 3alimin</a></li>
 					</ul>
 					<ul class="header-links pull-right">
-						<li><a href="#"><i class="fa fa-dollar"></i> TND</a></li>
-						<li><a href="#"><i class="fa fa-user-o"></i> Mon Compte</a></li>
+					<li><a href="register.php"><i class="fa fa-user-o"></i> Créer ou se Connecter</a></li>
 					</ul>
 				</div>
 			</div>
@@ -63,7 +62,7 @@
 						<!-- LOGO -->
 						<div class="col-md-3">
 							<div class="header-logo">
-								<a href="G:/WorkSpace/edebbou.me/operation99-dali0/Desktop/Page/Nouveau dossier/me/index.html" class="logo">
+								<a href="index1.html" class="logo">
 									<img src="./img/logo.png" alt="logo lena">
 								</a>
 							</div>
@@ -119,7 +118,7 @@
 					<div class="col-md-12">
 						<h3 class="breadcrumb-header">Nouveau Ici?</h3>
 						<ul class="breadcrumb-tree">
-							<li><a href="G:/WorkSpace/edebbou.me/operation99-dali0/Desktop/Page/Nouveau dossier/me/index.html">Home</a></li>
+							<li><a href="index.html">Home</a></li>
 							<li class="active">Connexion Ou S'inscrire</li>
 						</ul>
 					</div>
@@ -231,10 +230,6 @@
 						</div>
 					</div>
 				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
 		<!-- /NEWSLETTER -->
 
 		<!-- FOOTER -->

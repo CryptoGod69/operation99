@@ -13,7 +13,7 @@ var_dump($News1);
 //Partie3
 $News1C=new NewsC();
 $News1C->ajouterNews($News1);
-header('Location: index.html');
+header('Location: login.php');
 	
 }else{
 	echo "vérifier les champs";

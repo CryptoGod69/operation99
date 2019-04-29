@@ -5,8 +5,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-		<title>E-Debbou</title>
+ 
+		<title>Electro - HTML Ecommerce Template</title>
 
  		<!-- Google font -->
  		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
@@ -27,7 +27,6 @@
  		<!-- Custom stlylesheet -->
  		<link type="text/css" rel="stylesheet" href="css/style.css"/>
 
-		 
  		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
  		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
  		<!--[if lt IE 9]>
@@ -43,15 +42,34 @@
 			<div id="top-header">
 				<div class="container">
 					<ul class="header-links pull-left">
-						<li><a href="#"><i class="fa fa-phone"></i> +216 25 159 269</a></li>
-						<li><a href="#"><i class="fa fa-envelope-o"></i> edeboo@edeboo.com</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i> 1734 m3a gharnou9 3alimin</a></li>
+						<li><a href="#"><i class="fa fa-phone"></i> +216 - 50 779 353</a></li>
+						<li><a href="#"><i class="fa fa-envelope-o"></i> E_Debbou@Eeddebou.tn</a></li>
+						<li><a href="#"><i class="fa fa-map-marker"></i> 20 , Rue Jasmin Nouvelle Ariana </a></li>
 					</ul>
 					<ul class="header-links pull-right">
-						<li><a href="#"><i class="fa fa-dollar"></i> TND</a></li>
-						<li><a href="#"><i class="fa fa-user-o"></i> Mon Compte</a></li>
-					</ul>
-				</div>
+						
+						<li><a href="register.html"><i class="fa fa-user-o"></i><?php session_start ();  if (isset($_SESSION['l']) && isset($_SESSION['p'])) 
+{ 
+
+	echo '<a href="./profilfront.php">'.$_SESSION['r']     ;
+     
+    
+
+}
+
+else { 
+      echo 'Veuillez vous connecter </br>';  
+	  echo '<a href="./login.php">Cliquer pour se connecter</a>';
+
+}  
+
+?></a></li>
+<li><a href="register.html"><i class="fa fa-user-o"></i><a href="./logout.php">  déconnecter</a>;
+                    </ul>
+                    
+                </div>
+
+                
 			</div>
 			<!-- /TOP HEADER -->
 
@@ -61,21 +79,87 @@
 				<div class="container">
 					<!-- row -->
 					<div class="row">
-					<!-- LOGO -->
-					<div class="col-md-3">
-						<div class="header-logo">
-							<a href="G:/WorkSpace/edebbou.me/operation99-dali0/Desktop/Page/Nouveau dossier/me/index.html" class="logo">
-								<img src="./img/logo.png" alt="logo lena">
-							</a>
+						<!-- LOGO -->
+						<div class="col-md-3">
+							<div class="header-logo">
+								<a href="#" class="logo">
+									<img src="./img/logo.png" alt="">
+								</a>
+							</div>
 						</div>
-					</div>
-					<!-- /LOGO -->
-						
+						<!-- /LOGO -->
+
+						<!-- SEARCH BAR -->
+						<div class="col-md-6">
+							<div class="header-search">
+								<form>
+									<select class="input-select">
+										<option value="0">All Categories</option>
+										<option value="1">Category 01</option>
+										<option value="1">Category 02</option>
+									</select>
+									<input class="input" placeholder="Search here">
+									<button class="search-btn">Search</button>
+								</form>
+							</div>
+						</div>
+						<!-- /SEARCH BAR -->
+
 						<!-- ACCOUNT -->
 						<div class="col-md-3 clearfix">
 							<div class="header-ctn">
-								
-								
+								<!-- Wishlist -->
+								<div>
+									<a href="#">
+										<i class="fa fa-heart-o"></i>
+										<span>Your Wishlist</span>
+										<div class="qty">2</div>
+									</a>
+								</div>
+								<!-- /Wishlist -->
+
+								<!-- Cart -->
+								<div class="dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+										<i class="fa fa-shopping-cart"></i>
+										<span>Your Cart</span>
+										<div class="qty">3</div>
+									</a>
+									<div class="cart-dropdown">
+										<div class="cart-list">
+											<div class="product-widget">
+												<div class="product-img">
+													<img src="./img/product01.png" alt="">
+												</div>
+												<div class="product-body">
+													<h3 class="product-name"><a href="#">product name goes here</a></h3>
+													<h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
+												</div>
+												<button class="delete"><i class="fa fa-close"></i></button>
+											</div>
+
+											<div class="product-widget">
+												<div class="product-img">
+													<img src="./img/product02.png" alt="">
+												</div>
+												<div class="product-body">
+													<h3 class="product-name"><a href="#">product name goes here</a></h3>
+													<h4 class="product-price"><span class="qty">3x</span>$980.00</h4>
+												</div>
+												<button class="delete"><i class="fa fa-close"></i></button>
+											</div>
+										</div>
+										<div class="cart-summary">
+											<small>3 Item(s) selected</small>
+											<h5>SUBTOTAL: $2940.00</h5>
+										</div>
+										<div class="cart-btns">
+											<a href="#">View Cart</a>
+											<a href="#">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
+										</div>
+									</div>
+								</div>
+								<!-- /Cart -->
 
 								<!-- Menu Toogle -->
 								<div class="menu-toggle">
@@ -97,86 +181,62 @@
 		</header>
 		<!-- /HEADER -->
 
-		<!-- NAVIGATION -->
-		<nav id="navigation">
-			<!-- container -->
-			<div class="container">
-				<!-- responsive-nav -->
-				<div id="responsive-nav">
-					
-				</div>
-				<!-- /responsive-nav -->
-			</div>
-			<!-- /container -->
-		</nav>
-		<!-- /NAVIGATION -->
+	
 
-		<!-- BREADCRUMB -->
-		<div id="breadcrumb" class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-12">
-						<h3 class="breadcrumb-header">Nouveau Ici?</h3>
-						<ul class="breadcrumb-tree">
-							<li><a href="G:/WorkSpace/edebbou.me/operation99-dali0/Desktop/Page/Nouveau dossier/me/index.html">Home</a></li>
-							<li class="active">Connexion Ou S'inscrire</li>
-						</ul>
-					</div>
-				</div>
-				<!-- /row -->
+	
+<?php
+	
+
+	if (!isset($_SESSION['access_token'])) {
+		header('Location: login.php');
+		exit();
+	}
+?>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Profile</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container" style="margin-top: 100px">
+		<div class="row justify-content-center">
+			<div class="col-md-3">
+				<img src="<?php echo $_SESSION['userData']['picture']['url'] ?>">
 			</div>
-			<!-- /container -->
+
+			<div class="col-md-9">
+				<table class="table table-hover table-bordered">
+					<tbody>
+						<tr>
+							<td>ID</td>
+							<td><?php echo $_SESSION['userData']['id'] ?></td>
+						</tr>
+						<tr>
+							<td>First Name</td>
+							<td><?php echo $_SESSION['userData']['first_name'] ?></td>
+						</tr>
+						<tr>
+							<td>Last Name</td>
+							<td><?php echo $_SESSION['userData']['last_name'] ?></td>
+						</tr>
+						<tr>
+							<td>Email</td>
+							<td><?php echo $_SESSION['userData']['email'] ?></td>
+							<li><a href="register.html"><i class="fa fa-user-o"></i><a href="./logout.php">  déconnecter</a>;
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
-		<!-- /BREADCRUMB -->
-
-		<!-- SECTION -->
-		<div class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /SECTION -->
-<div>
-
-
-
-    <div class="container">
-        <div class="row">
-         <h2>S'inscrire en tant que </h2>
-        <ul class="ds-btn" style="max-width: 300px;">
-            <li>
-                <a class="btn btn-lg btn-primary" href="registerfournisseur.html">
-                <i class="fa fa-user pull-left"></i><span>Fournisseur<br><small></small></span></a> 
-            </li>
-            <li>
-                 <a class="btn btn-lg btn-success " href="registernormal.html">
-             <i class="fa fa-hospital-o pull-left"></i><span>Client<br><small></small></span></a> 
-                
-            </li>
-            <li>
-				
-                <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
-            </li>
-            <li>
-                    <a class="btn btn-lg btn-block " href="login.html">
-                <i class="fa fa-hospital-o pull-left"></i><span>Se Connecter<br><small></small></span></a> 
-                   
-               </li>
-        </ul>
-       
-        </div>
-    </div>
-    
-
-		<!-- FOOTER -->
-		<footer id="footer">
+	</div>
+</body>
+<!-- FOOTER -->
+<footer id="footer">
 			<!-- top footer -->
 			<div class="section">
 				<!-- container -->
@@ -280,7 +340,6 @@
 		<script src="js/nouislider.min.js"></script>
 		<script src="js/jquery.zoom.min.js"></script>
 		<script src="js/main.js"></script>
-		
 
 	</body>
 </html>

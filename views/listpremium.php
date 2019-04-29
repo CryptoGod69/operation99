@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Dashboard V.1 | jeweler - Material Admin Template</title>
+    <title>Area Charts | jeweler - Material Admin Template</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -75,19 +75,22 @@
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
                 <nav class="sidebar-nav left-sidebar-menu-pro">
                     <ul class="metismenu" id="menu1">
-                        <li class="active">
-                            <a class="has-arrow" href="index.html">
-								
-								   <span class="mini-click-non">Service Après Vente</span>
-								</a>
-                                <ul class="submenu-angle" aria-expanded="true">
-                                    <li><a title="Product List" href="product-list.php"><i class="fa fa-female sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des produits retournés</span></a></li>
-                                    <li><a title="Product Edit" href="product-ret-edit.html"><i class="fa fa-bolt sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Ajouter produit retourné </span></a></li>
-                                    <li><a title="Product Detail" href="reclam-list.php"><i class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des Réclamations</span></a></li>
-                                    <li><a title="Analytics" href="analytics-da.html"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Statistiques</span></a></li>
-                                </ul>
+                       
+                       
+                              
+                    <li class="active">
+                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="fa big-icon fa-bar-chart-o icon-wrap"></i> <span class="mini-click-non">Clients</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="List des client" href="List.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des Clients</span></a></li>
+                                <li><a title="Diagrammes" href="Diagrammes.html"><i class="fa fa-area-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Diagrammes</span></a></li>
+                                <li><a title="Modifier Supprimer" href="modifierutilisateurs.php"><i class="fa fa-pie-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Modifier/Supprimer</span></a></li>
+                                <li><a title="List News" href="ListNews.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des emails du Newsr</span></a></li>
+                                   
+                            </ul> <li><a title="List CDF" href="listCDF.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des abonnée carte de fédilité</span></a></li>
+                            <li><a title="List premium" href="listpremium.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des Clients Premium</span></a></li>
+                                   
                         </li>
-                    </ul>
+                        </ul>
                 </nav>
             </div>
         </nav>
@@ -278,7 +281,7 @@
 
                                                     <div role="menu" class="admintab-wrap menu-setting-wrap menu-setting-wrap-bg dropdown-menu animated zoomIn">
                                                         <ul class="nav nav-tabs custon-set-tab">
-                                                            <li class="active"><a data-toggle="tab" href="#Notes">News</a>
+                                                            <li class="active"><a data-toggle="tab" href="#Notes">premium</a>
                                                             </li>
                                                             <li><a data-toggle="tab" href="#Projects">Activity</a>
                                                             </li>
@@ -290,8 +293,8 @@
                                                             <div id="Notes" class="tab-pane fade in active">
                                                                 <div class="notes-area-wrap">
                                                                     <div class="note-heading-indicate">
-                                                                        <h2><i class="fa fa-comments-o"></i> Latest News</h2>
-                                                                        <p>You have 10 New News.</p>
+                                                                        <h2><i class="fa fa-comments-o"></i> Latest premium</h2>
+                                                                        <p>You have 10 New premium.</p>
                                                                     </div>
                                                                     <div class="notes-list-area notes-menu-scrollbar">
                                                                         <ul class="notes-menu-list">
@@ -672,132 +675,22 @@
                             <div class="mobile-menu">
                                 <nav id="dropdown">
                                     <ul class="mobile-menu-nav">
-                                        <li><a data-toggle="collapse" data-target="#Charts" href="#">Home <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
-                                            <ul class="collapse dropdown-header-top">
-                                                <li><a href="index.html">Dashboard v.1</a></li>
-                                                <li><a href="index-1.html">Dashboard v.2</a></li>
-                                                <li><a href="index-3.html">Dashboard v.3</a></li>
-                                                <li><a href="afficherProduit.php">Product List</a></li>
-                                                <li><a href="product-ret-edit.html">Product Edit</a></li>
-                                                <li><a href="product-detail.html">Product Detail</a></li>
-                                                <li><a href="product-cart.html">Product Cart</a></li>
-                                                <li><a href="product-payment.html">Product Payment</a></li>
-                                                <li><a href="analytics.html">Analytics</a></li>
-                                                <li><a href="widgets.html">Widgets</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a data-toggle="collapse" data-target="#demo" href="#">Mailbox <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
-                                            <ul id="demo" class="collapse dropdown-header-top">
-                                                <li><a href="mailbox.html">Inbox</a>
-                                                </li>
-                                                <li><a href="mailbox-view.html">View Mail</a>
-                                                </li>
-                                                <li><a href="mailbox-compose.html">Compose Mail</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a data-toggle="collapse" data-target="#others" href="#">Miscellaneous <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
-                                            <ul id="others" class="collapse dropdown-header-top">
-                                                <li><a href="file-manager.html">File Manager</a></li>
-                                                <li><a href="contacts.html">Contacts Client</a></li>
-                                                <li><a href="projects.html">Project</a></li>
-                                                <li><a href="project-details.html">Project Details</a></li>
-                                                <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
-                                                <li><a href="404.html">404 Page</a></li>
-                                                <li><a href="500.html">500 Page</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a data-toggle="collapse" data-target="#Miscellaneousmob" href="#">Interface <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
-                                            <ul id="Miscellaneousmob" class="collapse dropdown-header-top">
-                                                <li><a href="google-map.html">Google Map</a>
-                                                </li>
-                                                <li><a href="data-maps.html">Data Maps</a>
-                                                </li>
-                                                <li><a href="pdf-viewer.html">Pdf Viewer</a>
-                                                </li>
-                                                <li><a href="x-editable.html">X-Editable</a>
-                                                </li>
-                                                <li><a href="code-editor.html">Code Editor</a>
-                                                </li>
-                                                <li><a href="tree-view.html">Tree View</a>
-                                                </li>
-                                                <li><a href="preloader.html">Preloader</a>
-                                                </li>
-                                                <li><a href="images-cropper.html">Images Cropper</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a data-toggle="collapse" data-target="#Chartsmob" href="#">Charts <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        
+                                        <li><a data-toggle="collapse" data-target="#Chartsmob" href="#">Clients <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
                                             <ul id="Chartsmob" class="collapse dropdown-header-top">
-                                                <li><a href="bar-charts.html">Bar Charts</a>
+                                                <li><a href="List.html">List Client</a>
                                                 </li>
-                                                <li><a href="line-charts.html">Line Charts</a>
+                                                <li><a href="Diagramme.html">Diagramme</a>
                                                 </li>
-                                                <li><a href="area-charts.html">Area Charts</a>
+                                                <li><a href="ModifierSupprimer.html">Mofier/Supprimer</a>
                                                 </li>
-                                                <li><a href="rounded-chart.html">Rounded Charts</a>
                                                 </li>
-                                                <li><a href="c3.html">C3 Charts</a>
+                                                <li><a href="Listpremium.html">List Email des premium</a>
                                                 </li>
-                                                <li><a href="sparkline.html">Sparkline Charts</a>
-                                                </li>
-                                                <li><a href="peity.html">Peity Charts</a>
-                                                </li>
+                                                
                                             </ul>
                                         </li>
-                                        <li><a data-toggle="collapse" data-target="#Tablesmob" href="#">Tables <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
-                                            <ul id="Tablesmob" class="collapse dropdown-header-top">
-                                                <li><a href="static-table.html">Static Table</a>
-                                                </li>
-                                                <li><a href="data-table.html">Data Table</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a data-toggle="collapse" data-target="#formsmob" href="#">Forms <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
-                                            <ul id="formsmob" class="collapse dropdown-header-top">
-                                                <li><a href="basic-form-element.html">Basic Form Elements</a>
-                                                </li>
-                                                <li><a href="advance-form-element.html">Advanced Form Elements</a>
-                                                </li>
-                                                <li><a href="password-meter.html">Password Meter</a>
-                                                </li>
-                                                <li><a href="multi-upload.html">Multi Upload</a>
-                                                </li>
-                                                <li><a href="tinymc.html">Text Editor</a>
-                                                </li>
-                                                <li><a href="dual-list-box.html">Dual List Box</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a data-toggle="collapse" data-target="#Appviewsmob" href="#">App views <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
-                                            <ul id="Appviewsmob" class="collapse dropdown-header-top">
-                                                <li><a href="basic-form-element.html">Basic Form Elements</a>
-                                                </li>
-                                                <li><a href="advance-form-element.html">Advanced Form Elements</a>
-                                                </li>
-                                                <li><a href="password-meter.html">Password Meter</a>
-                                                </li>
-                                                <li><a href="multi-upload.html">Multi Upload</a>
-                                                </li>
-                                                <li><a href="tinymc.html">Text Editor</a>
-                                                </li>
-                                                <li><a href="dual-list-box.html">Dual List Box</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a data-toggle="collapse" data-target="#Pagemob" href="#">Pages <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
-                                            <ul id="Pagemob" class="collapse dropdown-header-top">
-                                                <li><a href="login.html">Login</a>
-                                                </li>
-                                                <li><a href="register.html">Register</a>
-                                                </li>
-                                                <li><a href="lock.html">Lock</a>
-                                                </li>
-                                                <li><a href="password-recovery.html">Password Recovery</a>
-                                                </li>
-                                            </ul>
-                                        </li>
+                                       
                                     </ul>
                                 </nav>
                             </div>
@@ -810,7 +703,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="breadcome-list">
+                            <div class="breadcome-list single-page-breadcome">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="breadcome-heading">
@@ -824,7 +717,7 @@
                                         <ul class="breadcome-menu">
                                             <li><a href="#">Home</a> <span class="bread-slash">/</span>
                                             </li>
-                                            <li><span class="bread-blod">Dashboard V.1</span>
+                                            <li><span class="bread-blod">Area Charts</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -835,337 +728,62 @@
                 </div>
             </div>
         </div>
-        <div class="section-admin container-fluid">
-            <div class="row admin text-center">
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                            <div class="admin-content analysis-progrebar-ctn res-mg-t-15">
-                                <h4 class="text-left text-uppercase"><b>Orders</b></h4>
-                                <div class="row vertical-center-box vertical-center-box-tablet">
-                                    <div class="col-xs-3 mar-bot-15 text-left">
-                                        <label class="label bg-green">30% <i class="fa fa-level-up" aria-hidden="true"></i></label>
-                                    </div>
-                                    <div class="col-xs-9 cus-gh-hd-pro">
-                                        <h2 class="text-right no-margin">10,000</h2>
-                                    </div>
-                                </div>
-                                <div class="progress progress-mini">
-                                    <div style="width: 78%;" class="progress-bar bg-green"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" style="margin-bottom:1px;">
-                            <div class="admin-content analysis-progrebar-ctn res-mg-t-30">
-                                <h4 class="text-left text-uppercase"><b>Tax Deduction</b></h4>
-                                <div class="row vertical-center-box vertical-center-box-tablet">
-                                    <div class="text-left col-xs-3 mar-bot-15">
-                                        <label class="label bg-red">15% <i class="fa fa-level-down" aria-hidden="true"></i></label>
-                                    </div>
-                                    <div class="col-xs-9 cus-gh-hd-pro">
-                                        <h2 class="text-right no-margin">5,000</h2>
-                                    </div>
-                                </div>
-                                <div class="progress progress-mini">
-                                    <div style="width: 38%;" class="progress-bar progress-bar-danger bg-red"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                            <div class="admin-content analysis-progrebar-ctn res-mg-t-30">
-                                <h4 class="text-left text-uppercase"><b>Revenue</b></h4>
-                                <div class="row vertical-center-box vertical-center-box-tablet">
-                                    <div class="text-left col-xs-3 mar-bot-15">
-                                        <label class="label bg-blue">50% <i class="fa fa-level-up" aria-hidden="true"></i></label>
-                                    </div>
-                                    <div class="col-xs-9 cus-gh-hd-pro">
-                                        <h2 class="text-right no-margin">$70,000</h2>
-                                    </div>
-                                </div>
-                                <div class="progress progress-mini">
-                                    <div style="width: 60%;" class="progress-bar bg-blue"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                            <div class="admin-content analysis-progrebar-ctn res-mg-t-30">
-                                <h4 class="text-left text-uppercase"><b>Yearly Sales</b></h4>
-                                <div class="row vertical-center-box vertical-center-box-tablet">
-                                    <div class="text-left col-xs-3 mar-bot-15">
-                                        <label class="label bg-purple">80% <i class="fa fa-level-up" aria-hidden="true"></i></label>
-                                    </div>
-                                    <div class="col-xs-9 cus-gh-hd-pro">
-                                        <h2 class="text-right no-margin">$100,000</h2>
-                                    </div>
-                                </div>
-                                <div class="progress progress-mini">
-                                    <div style="width: 60%;" class="progress-bar bg-purple"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="product-sales-area mg-tb-30">
+        <!-- Charts Start-->
+        <?PHP
+include "../core/premiumC.php";
+$premium1C=new premiumC();
+$listepremium=$premium1C->afficherpremium();
+
+//var_dump($listepremiums->fetchAll());
+?>
+        <div class="data-table-area mg-tb-15">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                        <div class="product-sales-chart">
-                            <div class="portlet-title">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <div class="caption pro-sl-hd">
-                                            <span class="caption-subject text-uppercase"><b>Product Sales</b></span>
-                                        </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="sparkline13-list">
+                            <div class="sparkline13-hd">
+                                <div class="main-sparkline13-hd" align="center">
+                                    <h1>List <span class="table-project-n">Des</span> Clients Premium</h1>
+                                </div>
+                            </div>
+                            <div class="sparkline13-graph">
+                                <div class="datatable-dashv1-list custom-datatable-overright">
+                                    <div id="toolbar">
+                                       
                                     </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <div class="actions graph-rp">
-                                            <div class="btn-group" data-toggle="buttons">
-                                                <label class="btn btn-grey active">
-													<input type="radio" name="options" class="toggle" id="option1" checked="">Today</label>
-                                                <label class="btn btn-grey">
-													<input type="radio" name="options" class="toggle" id="option2">Week</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <ul class="list-inline cus-product-sl-rp">
-                                <li>
-                                    <h5><i class="fa fa-circle" style="color: #24caa1;"></i>Liquide</h5>
-                                </li>
-                                <li>
-                                    <h5><i class="fa fa-circle" style="color: #00b5c2;"></i>Cake</h5>
-                                </li>
-                                <li>
-                                    <h5><i class="fa fa-circle" style="color: #ff7f5a;"></i>Shampoo</h5>
-                                </li>
-                            </ul>
-                            <div id="morris-area-chart" style="height: 356px;"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                        <div class="white-box analytics-info-cs mg-b-10 res-mg-t-30">
-                            <h3 class="box-title">Total Visit</h3>
-                            <ul class="list-inline two-part-sp">
-                                <li>
-                                    <div id="sparklinedash"></div>
-                                </li>
-                                <li class="text-right sp-cn-r"><i class="fa fa-level-up" aria-hidden="true"></i> <span class="counter text-success">8659</span></li>
-                            </ul>
-                        </div>
-                        <div class="white-box analytics-info-cs mg-b-10">
-                            <h3 class="box-title">Total Page Views</h3>
-                            <ul class="list-inline two-part-sp">
-                                <li>
-                                    <div id="sparklinedash2"></div>
-                                </li>
-                                <li class="text-right"><i class="fa fa-level-up" aria-hidden="true"></i> <span class="counter text-purple">7469</span></li>
-                            </ul>
-                        </div>
-                        <div class="white-box analytics-info-cs mg-b-10">
-                            <h3 class="box-title">Unique Visitor</h3>
-                            <ul class="list-inline two-part-sp">
-                                <li>
-                                    <div id="sparklinedash3"></div>
-                                </li>
-                                <li class="text-right"><i class="fa fa-level-up" aria-hidden="true"></i> <span class="counter text-info">6011</span></li>
-                            </ul>
-                        </div>
-                        <div class="white-box analytics-info-cs">
-                            <h3 class="box-title">Bounce Rate</h3>
-                            <ul class="list-inline two-part-sp">
-                                <li>
-                                    <div id="sparklinedash4"></div>
-                                </li>
-                                <li class="text-right"><i class="fa fa-level-down" aria-hidden="true"></i> <span class="text-danger">18%</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="traffic-analysis-area">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <div class="white-box tranffic-als-inner">
-                            <h3 class="box-title"><small class="pull-right m-t-10 text-success"><i class="fa fa-sort-asc"></i> 18% last month</small> Site Traffic</h3>
-                            <div class="stats-row">
-                                <div class="stat-item">
-                                    <h6>Overall Growth</h6>
-                                    <b>80.40%</b></div>
-                                <div class="stat-item">
-                                    <h6>Montly</h6>
-                                    <b>15.40%</b></div>
-                                <div class="stat-item">
-                                    <h6>Day</h6>
-                                    <b>5.50%</b></div>
-                            </div>
-                            <div id="sparkline8"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <div class="white-box tranffic-als-inner res-mg-t-30">
-                            <h3 class="box-title"><small class="pull-right m-t-10 text-danger"><i class="fa fa-sort-desc"></i> 18% last month</small>Site Traffic</h3>
-                            <div class="stats-row">
-                                <div class="stat-item">
-                                    <h6>Overall Growth</h6>
-                                    <b>80.40%</b></div>
-                                <div class="stat-item">
-                                    <h6>Montly</h6>
-                                    <b>15.40%</b></div>
-                                <div class="stat-item">
-                                    <h6>Day</h6>
-                                    <b>5.50%</b></div>
-                            </div>
-                            <div id="sparkline9"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <div class="white-box tranffic-als-inner res-mg-t-30">
-                            <h3 class="box-title"><small class="pull-right m-t-10 text-success"><i class="fa fa-sort-asc"></i> 18% last month</small>Site Traffic</h3>
-                            <div class="stats-row">
-                                <div class="stat-item">
-                                    <h6>Overall Growth</h6>
-                                    <b>80.40%</b></div>
-                                <div class="stat-item">
-                                    <h6>Montly</h6>
-                                    <b>15.40%</b></div>
-                                <div class="stat-item">
-                                    <h6>Day</h6>
-                                    <b>5.50%</b></div>
-                            </div>
-                            <div id="sparkline10"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="product-new-list-area">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                        <div class="single-new-trend mg-t-30">
-                            <a href="#"><img src="img/new-product/5.jpg" alt=""></a>
-                            <div class="overlay-content">
-                                <a href="#">
-                                    <h2>0,450 TND</h2>
-                                </a>
-                                <a href="#" class="btn-small">Now</a>
-                                <div class="product-action">
-                                    <ul>
-                                        <li>
-                                            <a data-toggle="tooltip" title="Shopping" href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>
-                                        </li>
-                                        <li>
-                                            <a data-toggle="tooltip" title="Quick view" href="#"><i class="fa fa-heart" aria-hidden="true"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a href="#">
-                                    <h4>Baked Donut's Moulin D'or </h4>
-                                </a>
-                                <div class="pro-rating">
-                                    <i class="fa fa-star color"></i>
-                                    <i class="fa fa-star color"></i>
-                                    <i class="fa fa-star color"></i>
-                                    <i class="fa fa-star color"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                        <div class="single-new-trend mg-t-30">
-                            <a href="#"><img src="img/new-product/6.jpg" alt=""></a>
-                            <div class="overlay-content">
-                                <a href="#">
-                                    <h2>0,430 TND</h2>
-                                </a>
-                                <a href="#" class="btn-small">Now</a>
-                                <div class="product-action">
-                                    <ul>
-                                        <li>
-                                            <a data-toggle="tooltip" title="Shopping" href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>
-                                        </li>
-                                        <li>
-                                            <a data-toggle="tooltip" title="Quick view" href="#"><i class="fa fa-heart" aria-hidden="true"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a href="#">
-                                    <h4> </h4>
-                                </a>
-                                <div class="pro-rating">
-                                    <i class="fa fa-star color"></i>
-                                    <i class="fa fa-star color"></i>
-                                    <i class="fa fa-star color"></i>
-                                    <i class="fa fa-star color"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                        <div class="single-new-trend mg-t-30">
-                            <a href="#"><img src="img/new-product/7.png" alt=""></a>
-                            <div class="overlay-content">
-                                <a href="#">
-                                    <h2>0,370 TND</h2>
-                                </a>
-                                <a href="#" class="btn-small">Now</a>
-                                <div class="product-action">
-                                    <ul>
-                                        <li>
-                                            <a data-toggle="tooltip" title="Shopping" href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>
-                                        </li>
-                                        <li>
-                                            <a data-toggle="tooltip" title="Quick view" href="#"><i class="fa fa-heart" aria-hidden="true"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a href="#">
-                                    <h4>Muffin's Choc n'Chips</h4>
-                                </a>
-                                <div class="pro-rating">
-                                    <i class="fa fa-star color"></i>
-                                    <i class="fa fa-star color"></i>
-                                    <i class="fa fa-star color"></i>
-                                    <i class="fa fa-star color"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                        <div class="single-new-trend mg-t-30">
-                            <a href="#"><img src="img/new-product/5.jpg" alt=""></a>
-                            <div class="overlay-content">
-                                <a href="#">
-                                    <h2>$280</h2>
-                                </a>
-                                <a href="#" class="btn-small">Now</a>
-                                <div class="product-action">
-                                    <ul>
-                                        <li>
-                                            <a data-toggle="tooltip" title="Shopping" href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>
-                                        </li>
-                                        <li>
-                                            <a data-toggle="tooltip" title="Quick view" href="#"><i class="fa fa-heart" aria-hidden="true"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a href="#">
-                                    <h4>Princes Diamond</h4>
-                                </a>
-                                <div class="pro-rating">
-                                    <i class="fa fa-star color"></i>
-                                    <i class="fa fa-star color"></i>
-                                    <i class="fa fa-star color"></i>
-                                    <i class="fa fa-star color"></i>
-                                    <i class="fa fa-star"></i>
+                                    <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
+                                        data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar" align="center">
+                                        
+                                        <thead>
+                                            <tr>
+                                          
+                                                <th data-field="IDP" >ID_premium</th>
+                                                <th data-field="CVCode" >CV Code</th>
+                                                <th data-field="CodeNum" >Code Num</th>
+                                                <th data-field="DDE" >date d'expiration</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        <?PHP
+                                         foreach($listepremium as $row){
+	                                    ?>
+	<tr>
+	
+	<td><?PHP echo $row['IDP']; ?></td>
+	<td><?PHP echo $row['CVCode']; ?></td>
+    <td><?PHP echo $row['CodeNum']; ?></td>
+    <td><?PHP echo $row['DDE']; ?></td>
+	<td><form method="POST" action="supprimerpremium.php">
+	<input type="submit" name="supprimer" value="supprimer">
+	<input type="hidden" value="<?PHP echo $row['IDP']; ?>" name="IDP">
+	</form>
+	</td>
+	</tr>
+	<?PHP
+}
+?>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
@@ -1173,167 +791,13 @@
                 </div>
             </div>
         </div>
-        <div class="product-sales-area mg-tb-30">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                        <div class="product-sales-chart">
-                            <div class="portlet-title">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <div class="caption pro-sl-hd">
-                                            <span class="caption-subject text-uppercase"><b>Order Statistic</b></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <div class="actions graph-rp">
-                                            <a href="#" class="btn btn-dark-blue btn-circle active tip-top" data-toggle="tooltip" title="Upload">
-													<i class="fa fa-cloud-download" aria-hidden="true"></i>
-												</a>
-                                            <a href="#" class="btn btn-dark btn-circle active tip-top" data-toggle="tooltip" title="Refresh">
-													<i class="fa fa-reply" aria-hidden="true"></i>
-												</a>
-                                            <a href="#" class="btn btn-blue-grey btn-circle active tip-top" data-toggle="tooltip" title="Delete">
-													<i class="fa fa-trash-o" aria-hidden="true"></i>
-												</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <ul class="list-inline cus-product-sl-rp">
-                                <li>
-                                    <h5><i class="fa fa-circle" style="color: #24caa1;"></i>Liquide</h5>
-                                </li>
-                                <li>
-                                    <h5><i class="fa fa-circle" style="color: #888;"></i>Cake</h5>
-                                </li>
-                                <li>
-                                    <h5><i class="fa fa-circle" style="color: #ff7f5a;"></i>Shampoo</h5>
-                                </li>
-                            </ul>
-                            <div id="extra-area-chart"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                        <div class="analytics-rounded mg-b-10 res-mg-t-30">
-                            <div class="analytics-rounded-content">
-                                <h5>Percentage distribution</h5>
-                                <h2><span class="counter">60</span>/20</h2>
-                                <div class="text-center">
-                                    <div id="sparkline51"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="analytics-rounded">
-                            <div class="analytics-rounded-content">
-                                <h5>Percentage division</h5>
-                                <h2><span class="counter">150</span>/<span class="counter">54</span></h2>
-                                <div class="text-center">
-                                    <div id="sparkline52"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="author-area-pro">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <div class="personal-info-wrap">
-                            <div class="widget-head-info-box">
-                                <div class="persoanl-widget-hd">
-                                    <h2>Jon Royita</h2>
-                                    <p>Founder of Uttara It Park</p>
-                                </div>
-                                <img src="img/notification/5.jpg" class="img-circle circle-border m-b-md" alt="profile">
-                                <div class="social-widget-result">
-                                    <span>100 Tweets</span> |
-                                    <span>350 Following</span> |
-                                    <span>610 Followers</span>
-                                </div>
-                            </div>
-                            <div class="widget-text-box">
-                                <h4>Jhon Royita</h4>
-                                <p>To all the athaists attacking me right now, I can't make you believe in God, you have to have faith.</p>
-                                <div class="text-right like-love-list">
-                                    <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
-                                    <a class="btn btn-xs btn-primary"><i class="fa fa-heart"></i> Love</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <div class="author-widgets-single res-mg-t-30">
-                            <div class="author-wiget-inner">
-                                <div class="perso-img">
-                                    <img src="img/notification/6.jpg" class="img-circle circle-border m-b-md" alt="profile">
-                                </div>
-                                <div class="persoanl-widget-hd persoanl1-widget-hd">
-                                    <h2>Fire Foxy</h2>
-                                    <p>Founder of Uttara It House</p>
-                                </div>
-                                <div class="social-widget-result social-widget1-result">
-                                    <span>100 Tweets</span> |
-                                    <span>350 Following</span> |
-                                    <span>610 Followers</span>
-                                </div>
-                            </div>
-                            <div class="widget-text-box">
-                                <h4>Fire Foxy</h4>
-                                <p>To all the athaists attacking me right now, I can't make you believe in God, you have to have faith.</p>
-                                <div class="text-right like-love-list">
-                                    <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
-                                    <a class="btn btn-xs btn-primary"><i class="fa fa-heart"></i> Love</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <div class="personal-info-wrap personal-info-ano res-mg-t-30">
-                            <div class="widget-head-info-box">
-                                <div class="persoanl-widget-hd">
-                                    <h2>Jon Royita</h2>
-                                    <p>Founder of Uttara It Park</p>
-                                </div>
-                                <img src="img/contact/2.jpg" class="img-circle circle-border m-b-md" alt="profile">
-                                <div class="social-widget-result">
-                                    <span>100 Tweets</span> |
-                                    <span>350 Following</span> |
-                                    <span>610 Followers</span>
-                                </div>
-                            </div>
-                            <div class="widget-text-box">
-                                <h4>Jhon Royita</h4>
-                                <p>To all the athaists attacking me right now, I can't make you believe in God, you have to have faith.</p>
-                                <div class="text-right like-love-list">
-                                    <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
-                                    <a class="btn btn-xs btn-primary"><i class="fa fa-heart"></i> Love</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="calender-area mg-tb-30">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="calender-inner">
-                            <div id='calendar'></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- Charts End-->
         <div class="footer-copyright-area">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="footer-copy-right">
-                            <p>Copyright &copy; 2018 <a href="https://colorlib.com/wp/templates/">Colorlib</a> All rights reserved.</p>
+                            <p>Copyright © 2018 <a href="https://colorlib.com/wp/templates/">Colorlib</a> All rights reserved.</p>
                         </div>
                     </div>
                 </div>
@@ -1373,20 +837,13 @@
 		============================================ -->
     <script src="js/metisMenu/metisMenu.min.js"></script>
     <script src="js/metisMenu/metisMenu-active.js"></script>
-    <!-- morrisjs JS
+    <!-- Charts JS
 		============================================ -->
-    <script src="js/morrisjs/raphael-min.js"></script>
-    <script src="js/morrisjs/morris.js"></script>
-    <script src="js/morrisjs/morris-active.js"></script>
-    <!-- morrisjs JS
+    <script src="js/charts/Chart.js"></script>
+    <script src="js/charts/area-chart.js"></script>
+    <!-- tab JS
 		============================================ -->
-    <script src="js/sparkline/jquery.sparkline.min.js"></script>
-    <script src="js/sparkline/jquery.charts-sparkline.js"></script>
-    <!-- calendar JS
-		============================================ -->
-    <script src="js/calendar/moment.min.js"></script>
-    <script src="js/calendar/fullcalendar.min.js"></script>
-    <script src="js/calendar/fullcalendar-active.js"></script>
+    <script src="js/tab.js"></script>
     <!-- plugins JS
 		============================================ -->
     <script src="js/plugins.js"></script>

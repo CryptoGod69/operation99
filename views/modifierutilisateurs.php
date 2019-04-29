@@ -78,7 +78,7 @@
                        
                        
                           
-					<li class="active">
+                    <li class="active">
                             <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="fa big-icon fa-bar-chart-o icon-wrap"></i> <span class="mini-click-non">Clients</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="List des client" href="List.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des Clients</span></a></li>
@@ -86,7 +86,9 @@
                                 <li><a title="Modifier Supprimer" href="modifierutilisateurs.php"><i class="fa fa-pie-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Modifier/Supprimer</span></a></li>
                                 <li><a title="List News" href="ListNews.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des emails du Newsr</span></a></li>
                                    
-                            </ul>
+                            </ul> <li><a title="List CDF" href="listCDF.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des abonnée carte de fédilité</span></a></li>
+                            <li><a title="List premium" href="listpremium.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des Clients Premium</span></a></li>
+                                   
                         </li>
                         
                         </ul>
@@ -763,6 +765,7 @@ $listeutilisateurs=$utilisateurs1C->afficherutilisateurs();
                                                 <th data-field="Type">Type</th>
                                                 
                                                 <th data-field="DDN" >Date de Naissance</th>
+                                                <th data-field="   Tel">Tel</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -779,6 +782,7 @@ $listeutilisateurs=$utilisateurs1C->afficherutilisateurs();
     <td><?PHP echo $row['Type']; ?></td>
    
     <td><?PHP echo $row['DDN']; ?></td>
+    <td><?PHP echo $row['Tel']; ?></td>
 	<td><form method="POST" action="supprimerutilisateurs.php">
 	<input type="submit" name="supprimer" value="supprimer">
 	<input type="hidden" value="<?PHP echo $row['ID']; ?>" name="ID">

@@ -4,7 +4,7 @@ class utilisateursC {
 	
 	
 	function ajouterutilisateurs($utilisateurs){
-		$sql="insert into utilisateurs (NomPrenom,Email,DDN,Tel,PWD1,Type) values (:NomPrenom, :Email, :DDN, :Tel, :PWD1 ,:Type)";
+		$sql="insert into utilisateurs (NomPrenom,Email,DDN,Tel,PWD1,Type) values (:NomPrenom,:Email,:DDN,:Tel,:PWD1,:Type)";
 		$db = config::getConnexion();
 		try{
         $req=$db->prepare($sql);
@@ -16,6 +16,7 @@ class utilisateursC {
 		$Tel=$utilisateurs->getTel();
 		$PWD1=$utilisateurs->getPWD();
 		$Type=$utilisateurs->getType();
+
 
 		$req->bindValue(':NomPrenom',$NomPrenom);
 		$req->bindValue(':Email',$Email);
@@ -36,10 +37,12 @@ class utilisateursC {
 	function afficherutilisateurs(){
 		//$sql="SElECT * From utilisateurs e inner join formationphp.utilisateurs a on e.cin= a.cin";
 		$sql="SElECT * From utilisateurs";
+		
 		$db = config::getConnexion();
 		try{
 		$liste=$db->query($sql);
 		return $liste;
+		asort($liste);
 		}
         catch (Exception $e){
             die('Erreur: '.$e->getMessage());
@@ -59,32 +62,33 @@ class utilisateursC {
             die('Erreur: '.$e->getMessage());
         }
 	}
-	
-	function modifierutilisateurs($utilisateurs,$IDc){
-		$sql="update 'utilisateurs' set NomPrenom=:'nomprenom, Email=:email, DDN=:ddn, Tel=:tek, PWD1=:pwd1 where ID=:ID_ini";
-		
+	/*
+	function modifierutilisateurs($utilisateurs,$ID){
+		//$sql="UPDATE utilisateurs SET NomPrenom=nomprenom, Email=email, DDN=ddn, Tel=tel, PWD1=pwd1, Region=region, Type=:type WHERE ID=ID";
+		$sql="UPDATE `utilisateurs` SET `NomPrenom`=[nomprenom],`Email`=[email],`DDN`=[ddn],`Tel`=[tel],`PWD1`=[pwd1],`Type`=[type],`Region`=[region] WHERE ID=ID";
 		$db = config::getConnexion();
-		//$db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
+		
 try{		
 
 	
 	$req=$db->prepare($sql);
-	
+
 	$NomPrenom=$utilisateurs->getNomPrenom();
 	$Email=$utilisateurs->getEmail();
 	$DDN=$utilisateurs->getDDN();
 	$Tel=$utilisateurs->getTel();
 	$PWD1=$utilisateurs->getPWD();
+	$Region=$utilisateurs->getRegion();
+	$Type=$utilisateurs->getType();
+	$datas = array('nomprenom'=>$NomPrenom,'email'=>$Email, 'ddn'=>$DDN,'tel'=>$Tel,'pwd1'=>$PWD1,'region'=>$Region,'type'=>$Type);
 
-
-	$datas = array(':nomprenom'=>$NomPrenom,':email'=>$Email, ':ddn'=>$DDN,':tel'=>$Tel,':pwd1'=>$PWD1);
-	
-	$req->bindValue(':nomprenom',$NomPrenom);
-	$req->bindValue(':email',$Email);
-	$req->bindValue(':ddn',$DDN);
-	$req->bindValue(':tel',$Tel);
-	$req->bindValue(':pwd1',$PWD1);
-
+	$req->bindValue('nomprenom',$NomPrenom);
+	$req->bindValue('email',$Email);
+	$req->bindValue('ddn',$DDN);
+	$req->bindValue('tel',$Tel);
+	$req->bindValue('pwd1',$PWD1);
+	$req->bindValue('region',$Region);
+	$req->bindValue('type',$Type);
 
 		
             $s=$req->execute();
@@ -122,19 +126,7 @@ try{
         }
 	}
 	*/
-	function triclient($utilisateurs)
-	{$sql=("SELECT 'NomPrenom' FROM utilisateurs ordre by asc");
-		$db = config::getConnexion();
-        $req=$db->prepare($sql);
-		$req->bindValue(':ID',$ID);
-		try{
-            $req->execute();
-           // header('Location: index.php');
-        }
-        catch (Exception $e){
-            die('Erreur: '.$e->getMessage());
-        }
-	}
+
 		
 
 

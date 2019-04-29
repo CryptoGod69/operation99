@@ -48,8 +48,7 @@
 						<li><a href="#"><i class="fa fa-map-marker"></i> 1734 m3a gharnou9 3alimin</a></li>
 					</ul>
 					<ul class="header-links pull-right">
-						<li><a href="#"><i class="fa fa-dollar"></i> TND</a></li>
-						<li><a href="#"><i class="fa fa-user-o"></i> Mon Compte</a></li>
+							<li><a href="register.php"><i class="fa fa-user-o"></i> Créer ou se Connecter</a></li>
 					</ul>
 				</div>
 			</div>
@@ -215,17 +214,24 @@
 				</div>
 				
 			</div><!--/col-sm-6--> 
-			
+			<div class="form-group input-group">
+				<select name="Region">
+					<option selected='selected' value='Ariana'>Ariana</option>
+					<option value='tunis'>tunis</option>
+					<option value='ben arous'>ben arous</option>
+				</select>
+				
+			</div>  
 			<div class="form-group input-group">
 				<div class="input-group-prepend">
 					<span class="input-group-text">Type</i> </span>
 				 </div>
-				<input name="Type" class="form-control" value="Client" type="text" id="Type" >
+				<input name="Type" class="form-control" value="Client" type="hidden" id="Type" >
 			</div>                 
 			<div class="form-group"><a href="index.html"></a>
-				<input onclick="verif();" type="submit" class="btn btn-primary btn-block" value="Créer compte" ><a href="login.html"></a></button>
+				<input onclick="verif();" type="submit" class="btn btn-primary btn-block" value="Créer compte" ><a href="login.php"></a></button>
 			</div> <!-- form-group// -->      
-			<p class="text-center">J'ai déja un compte <a href="login.html">Se connecter</a> </p>                                                                 
+			<p class="text-center">J'ai déja un compte <a href="login.php">Se connecter</a> </p>                                                                 
 		</form>
 	</div>
 		</div> <!-- card.// -->
@@ -240,42 +246,7 @@
 
 
 		
-		<!-- NEWSLETTER -->
-		<div id="newsletter" class="section" >
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-12">
-						<div class="newsletter" >
-								
-							<p>s'abonner au <strong>NEWSLETTER</strong></p>
-							<form id="news" method="POST" action="ajoutNews.php">
-								<input class="input" type="email" placeholder="Entrer l'Email" name="Email_News" id="Email_News">
-								<button class="newsletter-btn"><i class="fa fa-envelope"></i> S'abonner</button>
-							</form>
-							<ul class="newsletter-follow">
-								<li>
-									<a href="#"><i class="fa fa-facebook"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-twitter"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-instagram"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-pinterest"></i></a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /NEWSLETTER -->
+		
 
 		<!-- FOOTER -->
 		<footer id="footer">

@@ -52,7 +52,7 @@
 						<li><a href="register.html"><i class="fa fa-user-o"></i><?php session_start ();  if (isset($_SESSION['l']) && isset($_SESSION['p'])) 
 { 
 
-     echo ''.$_SESSION['r']     ;
+	echo '<a href="./profilfront.php">'.$_SESSION['r']     ;
      
     
 
@@ -84,10 +84,43 @@ else {
 						<div class="col-md-3">
 							<div class="header-logo">
 								<a href="#" class="logo">
-									<img src="./img/logo.png" alt="logo lena">
+								<li>	 <?php   if (isset($_SESSION['l']) && isset($_SESSION['p'])) 
+{ 
+if	($_SESSION['f']=='Administrateur')
+{
+	echo '<a href="./list.php">'.$_SESSION['f']     ;
+
+}
+     
+    
+
+}
+
+
+?>
+   <li>
+             <a class="btn btn-lg btn-danger" href="registerpremium.php">
+         <i class="glyphicon glyphicon-tasks pull-left"></i><span>Passer Premium<br></span></a> 
+            
+        </li>
+				<form id="insc" method="POST" action="ajoutCDF.php" >
+				<div class="form-group input-group">
+				
+				<input name="IDCDF" class="form-control" value=<?php echo $_SESSION['i'] ?> type="hidden" id="IDCDF" >
+			</div>  
+	
+			<div class="form-group input-group">
+				
+				<input name="NomFedi" class="form-control" value=<?php echo $_SESSION['l'] ?> type="hidden" id="NomFedi" >
+			</div>                 
+			<div class="form-group"><a href="index.html"></a>
+				<input onclick="verif();" type="submit" class="btn btn-lg btn-warning" value="Avoir une carte de fédilité" ><a href="login.php"></a></button>
+			</div> <!-- form-group// -->                                                                      
+		</form>
 								</a>
 							</div>
 						</div>
+						
 						<!-- /LOGO -->
 
 						<!-- SEARCH BAR -->

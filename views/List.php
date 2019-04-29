@@ -88,7 +88,9 @@
                                 <li><a title="Modifier Supprimer" href="modifierutilisateurs.php"><i class="fa fa-pie-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Modifier/Supprimer</span></a></li>
                                 <li><a title="List News" href="ListNews.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des emails du Newsr</span></a></li>
                                    
-                            </ul>
+                            </ul> <li><a title="List CDF" href="listCDF.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des abonnée carte de fédilité</span></a></li>
+                            <li><a title="List premium" href="listpremium.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des Clients Premium</span></a></li>
+                                   
                         </li>
                         
                         </ul>
@@ -772,6 +774,8 @@ $listeutilisateurs=$utilisateurs1C->afficherutilisateurs();
                                         </thead>
                                         <tbody  id="myTable">
                                         <?PHP
+                                       
+                                       
                                          foreach($listeutilisateurs as $row){
 	                                    ?>
 	<tr>
@@ -813,11 +817,7 @@ $(document).ready(function(){
   });
 });
 </script>
-        <form action="triclient.php">
-        <div align="center">
-        <input  type="submit" class="btn btn-primary btn-block" value="Triez par ordre alphabétique" style="max-width: 300px;"  ></a></button>
-        </div>
-</form>
+     
         <!-- Charts End-->
         <div class="footer-copyright-area">
             <div class="container-fluid">

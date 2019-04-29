@@ -11,5 +11,5 @@ else{
 var prenom = mail.substring(0,mail.indexOf(pt) );
 var nom = mail.substring(mail.indexOf(pt) + 1,mail.indexOf(a));
 alert('Bienvenue ' + prenom + " " + nom ) ;
-window.location="sondage.html";}
+window.location="registernormal.html";}
 }

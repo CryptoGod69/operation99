@@ -16,17 +16,17 @@ class premiumC {
 	}
 */	
 	function ajouterpremium($premium){
-		$sql="insert into premium (CVCode,CodeNum,DDE) values (:CVCode,CodeNum,DDE)";
-		//$sql = 'INSERT INTO NewsLetter VALUES Email SELECT Email FROM News WHERE Email=Email_News';
+		$sql="insert into premium (IDP,CVCode,CodeNum,DDE) values (:IDP,:CVCode,:CodeNum,:DDE)";
+
 		$db = config::getConnexion();
 		try{
         $req=$db->prepare($sql);
 		
-        
+		$IDP=$premium->getIDP();
         $CVCode=$premium->getCVCode();
         $CodeNum=$premium->getCodeNum();
         $DDE=$premium->getDDE();
-        
+		$req->bindValue(':IDP',$IDP);
         $req->bindValue(':CVCode',$CVCode);
         $req->bindValue(':CodeNum',$CodeNum);
         $req->bindValue(':DDE',$DDE);
@@ -40,9 +40,9 @@ class premiumC {
 		
 	}
 	
-	function afficherNews(){
+	function afficherpremium(){
 		//$sql="SElECT * From News e inner join formationphp.News a on e.cin= a.cin";
-		$sql="SElECT * From NewsLetter";
+		$sql="SElECT * From premium";
 		$db = config::getConnexion();
 		try{
 		$liste=$db->query($sql);
@@ -53,11 +53,11 @@ class premiumC {
         }	
 	}
 	
-	function supprimerNews($ID_News){
-		$sql="DELETE FROM NewsLetter where ID_News= :ID_News";
+	function supprimerpremium($IDP){
+		$sql="DELETE FROM premium where IDP= :IDP";
 		$db = config::getConnexion();
         $req=$db->prepare($sql);
-		$req->bindValue(':ID_News',$ID_News);
+		$req->bindValue(':IDP',$IDP);
 		try{
             $req->execute();
            // header('Location: index.php');

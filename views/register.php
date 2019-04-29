@@ -49,7 +49,7 @@
 					</ul>
 					<ul class="header-links pull-right">
 						<li><a href="#"><i class="fa fa-dollar"></i> TND</a></li>
-						<li><a href="#"><i class="fa fa-user-o"></i> Mon Compte</a></li>
+						<li><a href="register.php"><i class="fa fa-user-o"></i> Créer ou se Connecter</a></li>
 					</ul>
 				</div>
 			</div>
@@ -147,146 +147,50 @@
 
 
 
+    <div class="container">
+        <div class="row">
+         <h2>S'inscrire en tant que </h2>
+        <ul class="ds-btn" style="max-width: 300px;">
+            <li>
+                <a class="btn btn-lg btn-primary" href="registerfournisseur.html">
+                <i class="fa fa-user pull-left"></i><span>Fournisseur<br><small></small></span></a> 
+            </li>
+            <li>
+                 <a class="btn btn-lg btn-success " href="registernormal.html">
+             <i class="fa fa-hospital-o pull-left"></i><span>Client<br><small></small></span></a> 
+                
+            </li>
+			<?php
+	require_once "configfb.php";
 
-	<!--REGISTER-->
-	
-	<div align="center" class="container">
-		<div class="card bg-light"></div>
-		<div class="card-body " style="max-width: 300px;">
-			<h4 class="card-title mt-3 text-center">Créer un compte client normal</h4>
-			<p class="text-center">Bienvenue sur E-debbou</p>
-			
-		
-			<form id="insc" method="POST" action="ajoututilisateurs.php" >
-			
+	if (isset($_SESSION['access_token'])) {
+		header('Location: index.php');
+		exit();
+	}
+
+	$redirectURL = "http://localhost/operation99-feature0/views/fb-callback.php";
+	$permissions = ['email'];
+	$loginURL = $helper->getLoginUrl($redirectURL, $permissions);
+?>
+ <li>
+ <input type="button" onclick="window.location = '<?php echo $loginURL ?>';" value="Log In With Facebook" class="btn btn-primary">
+                
+            </li>
+
 				
-			</div><!--/col-sm-6--> 
-            <div class="panel panel-default credit-card-box">
-                <div class="panel-heading display-table" >
-                    <div class="row display-tr" >
-                        <h3 class="panel-title display-td" >Payment Details</h3>
-                        <div class="display-td" >                            
-                            <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
-                        </div>
-                    </div>                    
-                </div>
-                <div class="panel-body">
-                    <form role="form" id="payment-form" method="POST" action="ajouterpremium.php">
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <div class="form-group">
-                                    <label for="cardNumber">CARD NUMBER</label>
-                                    <div class="input-group">
-                                        <input 
-                                            type="tel"
-                                            class="form-control"
-                                            name="cardNumber"
-                                            placeholder="Valid Card Number"
-                                            autocomplete="cc-number"
-                                            required autofocus 
-                                        />
-                                        <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
-                                    </div>
-                                </div>                            
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-7 col-md-7">
-                                <div class="form-group">
-                                    <label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
-                                    <input 
-                                        type="date" 
-                                        class="form-control" 
-                                        name="cardExpiry"
-                                        placeholder="MM / YY"
-                                        autocomplete="cc-exp"
-                                        required 
-                                    />
-                                </div>
-                            </div>
-                            <div class="col-xs-5 col-md-5 pull-right">
-                                <div class="form-group">
-                                    <label for="cardCVC">CV CODE</label>
-                                    <input 
-                                        type="tel" 
-                                        class="form-control"
-                                        name="cardCVC"
-                                        placeholder="CVC"
-                                        autocomplete="cc-csc"
-                                        required
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <input onclick="verif();" type="submit" class="btn btn-primary btn-block" value="Créer compte" ><a href="login.html"></a></button>
-                            </div>
-                        </div>
-                        <div class="row" style="display:none;">
-                            <div class="col-xs-12">
-                                <p class="payment-errors"></p>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>            
-			                
-			
-				
-			</div> <!-- form-group// -->      
-			<p class="text-center">J'ai déja un compte <a href="login.html">Se connecter</a> </p>                                                                 
-		</form>
-	</div>
-		</div> <!-- card.// -->
-		
-		</div> 
-		<!--container end.//-->
-		</article>
 
 
-
-		<!--REGISTER-->
-
-
-		
-		<!-- NEWSLETTER -->
-		<div id="newsletter" class="section" >
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-12">
-						<div class="newsletter" >
-								
-							<p>s'abonner au <strong>NEWSLETTER</strong></p>
-							<form id="news" method="POST" action="ajoutNews.php">
-								<input class="input" type="email" placeholder="Entrer l'Email" name="Email_News" id="Email_News">
-								<button class="newsletter-btn"><i class="fa fa-envelope"></i> S'abonner</button>
-							</form>
-							<ul class="newsletter-follow">
-								<li>
-									<a href="#"><i class="fa fa-facebook"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-twitter"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-instagram"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-pinterest"></i></a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /NEWSLETTER -->
+           
+            <li>
+                    <a class="btn btn-lg btn-block " href="login.php">
+                <i class="fa fa-hospital-o pull-left"></i><span>Se Connecter<br><small></small></span></a> 
+                   
+               </li>
+        </ul>
+       
+        </div>
+    </div>
+    
 
 		<!-- FOOTER -->
 		<footer id="footer">
@@ -393,7 +297,7 @@
 		<script src="js/nouislider.min.js"></script>
 		<script src="js/jquery.zoom.min.js"></script>
 		<script src="js/main.js"></script>
-		<script src="js/Formulaire.js"></script>
+		
 
 	</body>
 </html>

@@ -39,7 +39,8 @@ if (!empty($_POST['login']) && !empty($_POST['pwd'])){
         $_SESSION['k']=$t['DDN'];
 		$_SESSION['w']=$t['Tel'];
 		$_SESSION['i']=$t['ID'];
-		$_SESSION['t']=$t['client'];
+		$_SESSION['f']=$t['Type'];
+		$_SESSION['m']=$t['Region'];
 		header("location:index2.php");
 		
 		}

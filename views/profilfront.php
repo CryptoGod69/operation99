@@ -39,18 +39,36 @@
 		<!-- HEADER -->
 		<header>
 			<!-- TOP HEADER -->
-			<div id="top-header">
+            <div id="top-header">
 				<div class="container">
 					<ul class="header-links pull-left">
-						<li><a href="#"><i class="fa fa-phone"></i> +216 25 159 269</a></li>
-						<li><a href="#"><i class="fa fa-envelope-o"></i> edeboo@edeboo.com</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i> 1734 m3a gharnou9 3alimin</a></li>
+						<li><a href="#"><i class="fa fa-phone"></i> +216 - 50 779 353</a></li>
+						<li><a href="#"><i class="fa fa-envelope-o"></i> E_Debbou@Eeddebou.tn</a></li>
+						<li><a href="#"><i class="fa fa-map-marker"></i> 20 , Rue Jasmin Nouvelle Ariana </a></li>
 					</ul>
 					<ul class="header-links pull-right">
-						<li><a href="#"><i class="fa fa-dollar"></i> TND</a></li>
-						<li><a href="#"><i class="fa fa-user-o"></i> Mon Compte</a></li>
-					</ul>
-				</div>
+						
+						<li><a href="register.html"><i class="fa fa-user-o"></i><?php session_start ();  if (isset($_SESSION['l']) && isset($_SESSION['p'])) 
+{ 
+
+     echo '<a href="./profilfront.php">'.$_SESSION['r']     ;
+     
+
+}
+
+else { 
+      echo 'Veuillez vous connecter </br>';  
+	  echo '<a href="./login.php">Cliquer pour se connecter</a>';
+
+}  
+
+?></a></li>
+<li><a href="register.html"><i class="fa fa-user-o"></i><a href="./logout.php">  déconnecter</a>;
+                    </ul>
+                    
+                </div>
+
+                
 			</div>
 			<!-- /TOP HEADER -->
 
@@ -126,17 +144,17 @@
                 
                     <?php
 // On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
-session_start ();  
+
  
 // On récupère nos variables de session
 if (isset($_SESSION['l']) && isset($_SESSION['p'])) 
 { 
-    
-                  
-	 echo ''.$_SESSION['r'].
-     '</b> <br>email : <b>'.$_SESSION['l'].'</b> <br>Date de naissance est <b>'.$_SESSION['k'].
-     '</b> <br>et votre Telephone est <b>'.$_SESSION['w']; 
-	echo '<a href="./logout.php">Cliquer pour se déconnecter</a>';
+
+     echo 'Notre chére  : <b>'.$_SESSION['f'].
+     '<br>  '.$_SESSION['r'].
+     '</b> <br>email : <b>'.$_SESSION['l'].'</b> <br>Date de naissance : <b>'.$_SESSION['k'].
+     '</b> <br>et votre Telephone : <b>'.$_SESSION['w']; 
+							 
 
 }
 
@@ -145,6 +163,8 @@ if (isset($_SESSION['l']) && isset($_SESSION['p']))
 //1 er point c quoi une session
 // 
 ?>
+
+
                 </div>             
                
             </div>            
@@ -201,7 +221,7 @@ if (isset($_SESSION['l']) && isset($_SESSION['p']))
 							<p>s'abonner au <strong>NEWSLETTER</strong></p>
 							<form id="news" method="POST" action="ajoutNews.php">
 								<input class="input" type="email" placeholder="Entrer l'Email" name="Email_News" id="Email_News">
-								<button class="newsletter-btn"><i class="fa fa-envelope"></i> S'abonner</button>
+								<button class="newsletter-btn"><i class="fa fa-envelope" href="profilfront.php"></i> S'abonner</button>
 							</form>
 							<ul class="newsletter-follow">
 								<li>

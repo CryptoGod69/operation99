@@ -12,7 +12,7 @@ var_dump($utilisateurs1);
 //Partie3
 $utilisateurs1C=new utilisateursC();
 $utilisateurs1C->ajouterutilisateurs($utilisateurs1);
-header('Location: login.html');
+header('Location: login.php');
 	
 }else{
 	echo "vérifier les champs";
