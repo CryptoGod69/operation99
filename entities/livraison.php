@@ -6,23 +6,29 @@ class livraison{
 	private $dateLivraison;
 	private $dureeLivraison;
 	private $etatLivraison;
+	private $email;
 
-	function __construct($adresse,$cinLivreur,$dureeLivraison,$etatLivraison){
+	function __construct($adresse,$cinLivreur,$dureeLivraison,$etatLivraison,$email){
 		$this->adresse=$adresse;
 		$this->cinLivreur=$cinLivreur;
 		$this->dureeLivraison=$dureeLivraison;
 		$this->etatLivraison=$etatLivraison;
+		$this->email=$email;
+		
 	}
 	
 	function getId(){
 		return $this->id;
 	}
+	
 	function getAdresse(){
 		return $this->adresse;
 	}
+
 	function getCinLivreur(){
 		return $this->cinLivreur;
 	}
+
 	function getDateLivraison(){
 		return $this->dateLivraison;
 	}
@@ -36,7 +42,15 @@ class livraison{
 
 
 	function setAdresse($adresse){
-		$this->adresse;
+		$this->adresse=$adresse;
+	}
+
+	function getEmail(){
+		return $this->email;
+	}
+
+	function setEmail(){
+		$this->email=$email;
 	}
 
 	function setCinLivreur($cinLivreur){

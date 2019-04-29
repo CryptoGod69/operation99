@@ -12,12 +12,16 @@ var_dump($livreur1);
 */
 //Partie3
 $livreur1C=new livreurC();
-$livreur1C->ajouterLivreur($livreur1);
-header ('Location: registerLivreurSucces.html');
+$test=0;
+$livreur1C->ajouterLivreur($livreur1,$test);
 }
 else{
 	echo "Vérifier les champs";
 }
+
+	header ('Location: registerLivreurSucces.html');
+
+
 //*/
 
 ?>
