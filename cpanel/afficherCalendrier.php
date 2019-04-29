@@ -1,3 +1,10 @@
+<?php session_start(); ?>
+<?php
+if ( isset($_SESSION['l']) && isset($_SESSION['p']))
+{
+// Ici faites ce que vous voulez : récupération du login, mot de passe et rôle par exemple
+
+?>
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -318,7 +325,7 @@ $titre=$mois_fr[$mois]." : ".$annee;
                                                         </li>
                                                         <li><a href="#"><span class="fa fa-cog author-log-ic"></span>Settings</a>
                                                         </li>
-                                                        <li><a href="login.html"><span class="fa fa-lock author-log-ic"></span>Log Out</a>
+                                                        <li><a href="../logout.php"><span class="fa fa-lock author-log-ic"></span>Log Out</a>
                                                         </li>
                                                     </ul>
                                                 </li>
@@ -960,6 +967,11 @@ function go_lien(a)
 	top.document.location=a;
 }
 </script>
+<?php 
+}
+   else
+   echo "Erreur" ;
+   ?>
 </body>
 
 </html>

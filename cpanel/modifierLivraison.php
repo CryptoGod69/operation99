@@ -1,3 +1,11 @@
+<?php session_start(); ?>
+<?php
+if ( isset($_SESSION['l']) && isset($_SESSION['p']))
+{
+// Ici faites ce que vous voulez : récupération du login, mot de passe et rôle par exemple
+
+?>
+
 <?PHP 
 include "../Core/livraisonC.php";
 $livraisonC=new livraisonC();
@@ -290,7 +298,7 @@ $pmod=$livraisonC->recupererlivraison($_GET["id"]);
                                                         </li>
                                                         <li><a href="#"><span class="fa fa-cog author-log-ic"></span>Settings</a>
                                                         </li>
-                                                        <li><a href="login.html"><span class="fa fa-lock author-log-ic"></span>Log Out</a>
+                                                        <li><a href="../logout.php"><span class="fa fa-lock author-log-ic"></span>Log Out</a>
                                                         </li>
                                                     </ul>
                                                 </li>
@@ -875,6 +883,11 @@ $(document).ready(function(){
   });
 });
 </script>
+<?php 
+}
+   else
+   echo "Erreur" ;
+   ?>
 </body>
 
 </html>
