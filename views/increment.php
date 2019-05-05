@@ -1,42 +1,43 @@
 <?php
-include "index3.php";
 include "../core/CDFC.php";
+session_start();
 $var=$_SESSION['i'];
 $CDF1C=new CDFC();
-$listeCDF=$CDF1C->afficherCDF();
 
-foreach($listeCDF as $row){
-
-
-$var1=$row['points'];
-
-
-
-
-
-
-
-
-}
-
-
-
-
-$var1=$var1+50;
-return $var1;
-$sql="UPDATE `cartedefedilite` SET `points`=$var1 WHERE IDCF=$var";
 $db = config::getConnexion();
+$sql="select points from cartedefedilite where IDCDF=$var";
+
+$req=$db->query($sql);
+$r=$req->fetch();
+
+
+$var1=$r['points'];
+
+
+
+
+
+
+
+
+
+
+
+
+
+$var1=50+$var1;
+
+$sql="UPDATE cartedefedilite SET points=$var1 WHERE IDCDF=$var";
+var_dump($sql);
 		try{
-            $req=$db->prepare($sql);
-            $points=$CDF->getpoints();
-            $datas = array('points'=>$var1);
-            $req->bindValue('points',$var1);
-            $s=$req->execute();
+            $req=$db->query($sql);
+            header("location: index3.php");
 		}
         catch (Exception $e){
             die('Erreur: '.$e->getMessage());
 
         }	
+    
        
     
 ?>

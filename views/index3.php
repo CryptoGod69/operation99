@@ -252,15 +252,16 @@ $listeCDF=$CDF1C->afficherCDF();
 	</form>
 	
 	</li>
-             <a class="btn btn-lg btn-danger" href="increment.php">
-				 <i class="glyphicon glyphicon-tasks pull-left"></i><span>acheter pour essai point<br></span></a> 
-				 
+						<form action="increment.php" method="">
+             <button class="btn btn-lg btn-danger">
+						 
+				 <i class="glyphicon glyphicon-tasks pull-left"></i><span>acheter pour essai point<br></span></button> 
+				 </form>
             
         </li>
 	</tr>
 	<?PHP
-}
-		
+																				 }
 ?>
 
 

@@ -49,7 +49,7 @@
 					</ul>
 					<ul class="header-links pull-right">
 						
-						<li><a href="register.html"><i class="fa fa-user-o"></i><?php session_start ();  if (isset($_SESSION['l']) && isset($_SESSION['p'])) 
+						<li><a href="register.php"><i class="fa fa-user-o"></i><?php session_start ();  if (isset($_SESSION['l']) && isset($_SESSION['p'])) 
 { 
 
      echo '<a href="./profilfront.php">'.$_SESSION['r']     ;
@@ -252,7 +252,7 @@ else {
 						<div class="g-recaptcha" data-sitekey="6LfjuqAUAAAAAJ3t6mTCkYX5zv63nl9uXMvgcHAj" ></div><br>
                         <div class="row">
                             <div class="col-xs-12">
-                                <input onclick="verif1();" type="submit" class="btn btn-primary btn-block" value="Passer Premium" ><a href="index4.php"></a></button>
+                                <input onclick="verif1();" type="submit" class="btn btn-primary btn-block" value="Passer Premium" ><a href="ajoutCDF.php"></a></button>
                             </div>
                         </div>
                         <div class="row" style="display:none;">

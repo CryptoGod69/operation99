@@ -1,13 +1,14 @@
 <?PHP
 
 class utilisateurs{
-
+	
 	private $NomPrenom;
 	private $Email;
 	private $DDN;
 	private $PWD1;
 	private $Tel;
 	private $Type;
+	
 	function __construct($NomPrenom,$Email,$DDN,$Tel,$PWD1,$Type){
 	
 		$this->NomPrenom=$NomPrenom;
@@ -15,12 +16,10 @@ class utilisateurs{
 		$this->DDN=$DDN;
 		$this->PWD1=$PWD1;
     $this->Tel=$Tel;
-
 		$this->Type=$Type;
 
 		
 	}
-
 
 	function getNomPrenom()
 	{

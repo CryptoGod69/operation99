@@ -114,7 +114,7 @@ if	($_SESSION['f']=='Administrateur')
 				<input name="NomFedi" class="form-control" value=<?php echo $_SESSION['l'] ?> type="hidden" id="NomFedi" >
 			</div>                 
 			<div class="form-group"><a href="index.html"></a>
-				<input onclick="verif();" type="submit" class="btn btn-lg btn-warning" value="Avoir une carte de fédilité" ><a href="login.php"></a></button>
+				<input onclick="verif();" type="submit" class="btn btn-lg btn-warning" value="Avoir une carte de fédilité" ><a href="index4.php"></a></button>
 			</div> <!-- form-group// -->                                                                      
 		</form>
 								</a>

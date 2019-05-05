@@ -1,6 +1,6 @@
 <?PHP
 include "../config.php";
-
+include "../entities/News.php";
 class NewsC {
 	
 /*
