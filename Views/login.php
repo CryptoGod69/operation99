@@ -185,7 +185,7 @@
 						  Remember me </label>
 					  </div>
 					  
-						<input type="submit" name="button" id="button" value="Valider" class="btn btn btn-primary" /><a href="index2.php"></a></button>
+						<input type="submit" name="button" id="button" value="Valider" class="btn btn btn-primary" /><a href="index.php"></a></button>
 					
 					  </button>
 					</form>

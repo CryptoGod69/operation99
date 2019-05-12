@@ -3,17 +3,34 @@ include "../../../Core/ProduitsC.php";
 $ProduitsC=new produitsC();
 $listeprod=$ProduitsC->afficherProduits();
 $listecateg=$ProduitsC->afficherCategories();
+$listefourn=$ProduitsC->afficherFourn();
+$max=$ProduitsC->affichermaxprix();
+$min=$ProduitsC->affichermonprix();
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+	<style>
+.famechback
+{
+	display: inline-block;
+  
+  background-color: #FFF;
+  border: 0px solid #E4E7ED;
+  text-align: center;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+
+}
+	</style>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-		<title>Electro - HTML Ecommerce Template</title> 
+		<title>EDDEBOU</title> 
 
  		<!-- Google font -->
  		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
@@ -32,7 +49,8 @@ $listecateg=$ProduitsC->afficherCategories();
  		<link rel="stylesheet" href="css/font-awesome.min.css">
 
  		<!-- Custom stlylesheet -->
- 		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+		 <link type="text/css" rel="stylesheet" href="css/style.css"/>
+		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -43,8 +61,9 @@ $listecateg=$ProduitsC->afficherCategories();
 
     </head>
 	<body>
-		<!-- HEADER -->
-		<header>
+	<!-- HEADER -->
+	<header>
+			
 			<!-- TOP HEADER -->
 			<div id="top-header">
 				<div class="container">
@@ -54,10 +73,29 @@ $listecateg=$ProduitsC->afficherCategories();
 						<li><a href="#"><i class="fa fa-map-marker"></i> 20 , Rue Jasmin Nouvelle Ariana </a></li>
 					</ul>
 					<ul class="header-links pull-right">
-						<li><a href="#"><i class="fa fa-dollar"></i> TND</a></li>
-						<li><a href="#"><i class="fa fa-user-o"></i> Mon Compte</a></li>
-					</ul>
-				</div>
+						
+						<li><a href="register.html"><i class="fa fa-user-o"></i><?php session_start ();  if (isset($_SESSION['l']) && isset($_SESSION['p'])) 
+{ 
+
+	echo '<a href="./profilfront.php">'.$_SESSION['r']     ;
+     
+    
+
+}
+
+else { 
+      echo 'Veuillez vous connecter </br>';  
+	  echo '<a href="./login.php">Cliquer pour se connecter</a>';
+
+}  
+
+?></a></li>
+<li><a href="register.html"><i class="fa fa-user-o"></i><a href="./logout.php">  déconnecter</a>;
+                    </ul>
+                    
+                </div>
+
+                
 			</div>
 			<!-- /TOP HEADER -->
 
@@ -70,11 +108,27 @@ $listecateg=$ProduitsC->afficherCategories();
 						<!-- LOGO -->
 						<div class="col-md-3">
 							<div class="header-logo">
-								<a href="index.html" class="logo">
-									<img src="./img/logo.png" alt="">
+								<a href="#" class="logo">
+								<li>	 <?php   if (isset($_SESSION['l']) && isset($_SESSION['p'])) 
+{ 
+if	($_SESSION['f']=='Administrateur')
+{
+	echo '<a href="../../index.html">'.$_SESSION['f']     ;
+
+}
+     
+    
+
+}
+
+
+?>
+   
+				
 								</a>
 							</div>
 						</div>
+						
 						<!-- /LOGO -->
 
 						<!-- SEARCH BAR -->
@@ -90,8 +144,9 @@ $listecateg=$ProduitsC->afficherCategories();
 										<option value="5">Ménage</option>
 										<option value="6">Beauté</option>
 										<option value="7">Charcuterie</option>
+										
 									</select>
-									<input class="input" placeholder="Entrer une recherche ">
+									<input class="input" placeholder="Entrer une recherche">
 									<button class="search-btn">Rechercher</button>
 								</form>
 							</div>
@@ -106,52 +161,78 @@ $listecateg=$ProduitsC->afficherCategories();
 									<a href="#">
 										<i class="fa fa-heart-o"></i>
 										<span>Wishlist</span>
-										<div class="qty">2</div>
+										<div class="qty">420</div>
 									</a>
 								</div>
 								<!-- /Wishlist -->
 
 								<!-- Cart -->
-								<div class="dropdown">
-									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+							<div class="dropdown">
+									<a href="#carta" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
 										<i class="fa fa-shopping-cart"></i>
-										<span>Your Cart</span>
-										<div class="qty">3</div>
+										<span> Panier</span>
+										<div class="qty"><?php echo 0 ?></div>
 									</a>
 									<div class="cart-dropdown">
 										<div class="cart-list">
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/product01.png" alt="">
-												</div>
-												<div class="product-body">
-													<h3 class="product-name"><a href="#">product name goes here</a></h3>
-													<h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
-												</div>
-												<button class="delete"><i class="fa fa-close"></i></button>
-											</div>
 
+
+
+<?php				
+if(isset($_COOKIE["shopping_cart"]))
+{
+$cookie_data = stripslashes($_COOKIE['shopping_cart']);
+$cart_data = json_decode($cookie_data, true);
+$total = 0;
+
+foreach($cart_data as $keys => $values)
+{
+?>
 											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/product02.png" alt="">
-												</div>
+										
 												<div class="product-body">
-													<h3 class="product-name"><a href="#">product name goes here</a></h3>
-													<h4 class="product-price"><span class="qty">3x</span>$980.00</h4>
+													<h3 class="product-name"><a href="#"><?php echo $values["item_name"]; ?></a></h3>
+													<h4 class="product-price"><span class="qty"> x<?php echo $values["item_quantity"]; ?></span><?php echo $values["item_price"]; ?></h4>
 												</div>
-												<button class="delete"><i class="fa fa-close"></i></button>
+												<td><a href="index.php?action=deletep&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">X</span></a></td>
 											</div>
+<?php
+global $count;
+$total = $total + ($values["item_quantity"] * $values["item_price"]);
+}}
+$isTouch = isset($total);
+if (!$isTouch){
+echo 'You have no orders yet ! ';
+}
+?>
+
 										</div>
+
 										<div class="cart-summary">
-											<small>3 Item(s) selected</small>
-											<h5>SUBTOTAL: $2940.00</h5>
-										</div>
+										<small>Item(s) selected</small>
+											<h5>SUBTOTAL:
+<?php 
+$isTouch = isset($total);
+if (!$isTouch){
+echo '0';
+}else{
+	echo $total;
+}
+?> 
+                       TND </h5>
+											
+                    </div>
 										<div class="cart-btns">
-											<a href="#">View Cart</a>
-											<a href="#">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
+											<a href="store.php?action=clear">Clear Cart</a>
+											<a  href="facture.php?action=checkout">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
+										
 										</div>
 									</div>
+		
 								</div>
+
+
+
 								<!-- /Cart -->
 
 								<!-- Menu Toogle -->
@@ -182,13 +263,13 @@ $listecateg=$ProduitsC->afficherCategories();
 				<div id="responsive-nav">
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="#">Accueil</a></li>
-						<li><a href="#">Nouveauté </a></li>
-						<li><a href="#">Categories</a></li>
-						<li><a href="#">Promos</a></li>
-						<li><a href="#">Article</a></li>
-						<li><a href="#">Fournisseur</a></li>
-					</ul>
+							<li class="active"><a href="index.php">Accueil</a></li>
+							<li><a href="storenew.php">Nouveauté </a></li>
+							<li><a href="store.php">Categories</a></li>
+							<li><a href="storepromo.php">Promos</a></li>
+							<li><a href="blank.php">Reclamation</a></li>
+							
+						</ul>
 					<!-- /NAV -->
 				</div>
 				<!-- /responsive-nav -->
@@ -230,60 +311,31 @@ $listecateg=$ProduitsC->afficherCategories();
 						<div class="aside">
 							<h3 class="aside-title">Categories</h3>
 							<div class="checkbox-filter">
+							
+							<?php foreach ($listecateg as $row1)
+										{
+											$count = $ProduitsC->countCategories($row1['Categorie']);
+											foreach ($count as $row5)
+											{
 
+												?>
 								<div class="input-checkbox">
-									<input type="checkbox" id="category-1">
-									<label for="category-1">
+									
+									<input type="checkbox" id="<?php  echo $row1['Categorie']; ?>" class="filter">
+									
+									<label for="<?php  echo $row1['Categorie']; ?>">
+										
 										<span></span>
-										Yaourt
-										<small>(120)</small>
+									
+										<?php  echo $row1['Categorie']; ?>
+										<small>( <?php echo $row5['COUNT(Categorie)']; ?>)</small>
+										
 									</label>
+									
 								</div>
-
-								<div class="input-checkbox">
-									<input type="checkbox" id="category-2">
-									<label for="category-2">
-										<span></span>
-										Laitier
-										<small>(740)</small>
-									</label>
-								</div>
-
-								<div class="input-checkbox">
-									<input type="checkbox" id="category-3">
-									<label for="category-3">
-										<span></span>
-										Cake
-										<small>(321)</small>
-									</label>
-								</div>
-
-								<div class="input-checkbox">
-									<input type="checkbox" id="category-4">
-									<label for="category-4">
-										<span></span>
-										Jus
-										<small>(578)</small>
-									</label>
-								</div>
-
-								<div class="input-checkbox">
-									<input type="checkbox" id="category-5">
-									<label for="category-5">
-										<span></span>
-										Shampoing
-										<small>(120)</small>
-									</label>
-								</div>
-
-								<div class="input-checkbox">
-									<input type="checkbox" id="category-6">
-									<label for="category-6">
-										<span></span>
-										Fromage
-										<small>(30)</small>
-									</label>
-								</div>
+<?php 
+										}}
+?>
 							</div>
 						</div>
 						<!-- /aside Widget -->
@@ -294,71 +346,27 @@ $listecateg=$ProduitsC->afficherCategories();
 							<div class="price-filter">
 								<div id="price-slider"></div>
 								<div class="input-number price-min">
-									<input id="price-min" type="number">
+								<?php 
+foreach ( $min as $row3){
+								?>
+									<input id="price-min" type="number" value="<?php echo number_format($row3['MIN(Prix)'],3) ;?>" min="<?php echo number_format($row3['MIN(Prix)'],3) ;?>" >
 									<span class="qty-up">+</span>
 									<span class="qty-down">-</span>
+									<?php 
+}
+									?>
 								</div>
 								<span>-</span>
 								<div class="input-number price-max">
-									<input id="price-max" type="number">
+								<?php 
+foreach ( $max as $row4){
+								?>
+									<input id="price-max" type="number" value="<?php echo number_format($row4['MAX(Prix)'],3) ;?>" max="<?php echo number_format($row4['MAX(Prix)'],3) ;?>" >
 									<span class="qty-up">+</span>
 									<span class="qty-down">-</span>
-								</div>
-							</div>
-						</div>
-						<!-- /aside Widget -->
-
-						<!-- aside Widget -->
-						<div class="aside">
-							<h3 class="aside-title">Marque</h3>
-							<div class="checkbox-filter">
-								<div class="input-checkbox">
-									<input type="checkbox" id="brand-1">
-									<label for="brand-1">
-										<span></span>
-										Delice
-										<small>(58)</small>
-									</label>
-								</div>
-								<div class="input-checkbox">
-									<input type="checkbox" id="brand-2">
-									<label for="brand-2">
-										<span></span>
-										Moulin D'or
-										<small>(15)</small>
-									</label>
-								</div>
-								<div class="input-checkbox">
-									<input type="checkbox" id="brand-3">
-									<label for="brand-3">
-										<span></span>
-										Land'Or
-										<small>(75)</small>
-									</label>
-								</div>
-								<div class="input-checkbox">
-									<input type="checkbox" id="brand-4">
-									<label for="brand-4">
-										<span></span>
-										Vitalait
-										<small>(57)</small>
-									</label>
-								</div>
-								<div class="input-checkbox">
-									<input type="checkbox" id="brand-5">
-									<label for="brand-5">
-										<span></span>
-										Candia
-										<small>(12)</small>
-									</label>
-								</div>
-								<div class="input-checkbox">
-									<input type="checkbox" id="brand-6">
-									<label for="brand-6">
-										<span></span>
-										Nivea
-										<small>(75)</small>
-									</label>
+								<?php 
+}
+								?>
 								</div>
 							</div>
 						</div>
@@ -368,95 +376,28 @@ $listecateg=$ProduitsC->afficherCategories();
 						<div class="aside">
 							<h3 class="aside-title">Fournisseur</h3>
 							<div class="checkbox-filter">
+							<?php 
+							foreach ($listefourn as $row2)
+							{ 
+								$countfour = $ProduitsC->countfournisseur($row2['Fournisseur']);
+								foreach (	$countfour as $row8)
+								?>
 								<div class="input-checkbox">
-									<input type="checkbox" id="brand-1">
-									<label for="brand-1">
+									<input type="checkbox" id="<?php echo $row2['Fournisseur'] ;?>" class="fournisseur">
+									<label for="<?php echo $row2['Fournisseur'] ; ?>">
 										<span></span>
-										SARLEX
-										<small>(15)</small>
+										
+										<?php echo $row2['Fournisseur'] ; ?>
+										<small>	(<?php echo $row8['COUNT(Fournisseur)'] ; ?>)</small>
 									</label>
 								</div>
-								<div class="input-checkbox">
-									<input type="checkbox" id="brand-2">
-									<label for="brand-2">
-										<span></span>
-										SOFIG
-										<small>(15)</small>
-									</label>
-								</div>
-								<div class="input-checkbox">
-									<input type="checkbox" id="brand-3">
-									<label for="brand-3">
-										<span></span>
-										TTSEXPORT
-										<small>(45)</small>
-									</label>
-								</div>
-								<div class="input-checkbox">
-									<input type="checkbox" id="brand-4">
-									<label for="brand-4">
-										<span></span>
-										ZEONAT
-										<small>(17)</small>
-									</label>
-								</div>
-								<div class="input-checkbox">
-									<input type="checkbox" id="brand-5">
-									<label for="brand-5">
-										<span></span>
-										AMRISERVICES
-										<small>(124)</small>
-									</label>
-								</div>
-								<div class="input-checkbox">
-									<input type="checkbox" id="brand-6">
-									<label for="brand-6">
-										<span></span>
-										EKLIL
-										<small>(62)</small>
-									</label>
-								</div>
+								<?php 
+							}
+								?>
 							</div>
 						</div>
 						<!-- /aside Widget -->
 
-						<!-- aside Widget -->
-						<div class="aside">
-							<h3 class="aside-title">Top selling</h3>
-							<div class="product-widget">
-								<div class="product-img">
-									<img src="./img/product01.png" alt="">
-								</div>
-								<div class="product-body">
-									<p class="product-category">Yaourt</p>
-									<h3 class="product-name"><a href="#">Le brassé</a></h3>
-									<h4 class="product-price">0.210 TND <del class="product-old-price">0.240</del></h4>
-								</div>
-							</div>
-
-							<div class="product-widget">
-								<div class="product-img">
-									<img src="./img/product02.png" alt="">
-								</div>
-								<div class="product-body">
-									<p class="product-category">SHAMPOING</p>
-									<h3 class="product-name"><a href="#">JOHNSON'S BABY SHAMPOO</a></h3>
-									<h4 class="product-price">4.680 TND</h4>
-								</div>
-							</div>
-
-							<div class="product-widget">
-								<div class="product-img">
-									<img src="./img/product03.png" alt="">
-								</div>
-								<div class="product-body">
-									<p class="product-category">Fromage</p>
-									<h3 class="product-name"><a href="#">Landor Sicilien</S></a></h3>
-									<h4 class="product-price">3.400 TND <del class="product-old-price">3.600</del></h4>
-								</div>
-							</div>
-						</div>
-						<!-- /aside Widget -->
 					</div>
 					<!-- /ASIDE -->
 
@@ -467,84 +408,29 @@ $listecateg=$ProduitsC->afficherCategories();
 							<div class="store-sort">
 								<label>
 									Sort By:
-									<select class="input-select">
-										<option value="0">Popular</option>
-										<option value="1">Position</option>
+									<select class="input-select" id="pop">
+										<option value="DESC">Popular</option>
+										<option value="ASC">UnPopular</option>
 									</select>
 								</label>
 
-								<label>
-									Show:
-									<select class="input-select">
-										<option value="0">20</option>
-										<option value="1">50</option>
-									</select>
-								</label>
 							</div>
-							<ul class="store-grid">
-								<li class="active"><i class="fa fa-th"></i></li>
-								<li><a href="#"><i class="fa fa-th-list"></i></a></li>
-							</ul>
 						</div>
 						<!-- /store top filter -->
 
 						<!-- store products -->
-						<div class="row">
-							<!-- product -->
-							<div class="col-md-4 col-xs-6">
-								<div class="product">
-									<div class="product-img">
-										<img src="./img/product01.png" alt="">
-										<div class="product-label">
-											<span class="sale">-30%</span>
-											<span class="new">NEW</span>
-										</div>
-									</div>
-									<?php 
-  foreach($listeprod as $row){
-									?>
-									<div class="product-body">
-										<p class="product-category"><?PHP echo $row['Categorie']; ?></p>
-										<h3 class="product-name"><a href="#"><?PHP echo $row['nom']; ?></a></h3>
-										<h4 class="product-price"><?PHP echo $row['prix']; ?> TND</h4>
-										<div class="product-rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-										</div>
-										<div class="product-btns">
-											<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">ajouter Whishlist</span></button>
-											<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">Comparer</span></button>
-											<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Aperçu</span></button>
-										</div>
-									</div>
-									<div class="add-to-cart">
-										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-									</div>
-								</div>
-							</div>
+						
+						<div class="form-group" id="prodFilter">
 							<!-- /product -->
 
-							<?php
-	}
-							?>
+					
 							<!-- /product -->
+						
 						</div>
+						
 						<!-- /store products -->
 
 						<!-- store bottom filter -->
-						<div class="store-filter clearfix">
-							<span class="store-qty">Showing 20-100 products</span>
-							<ul class="store-pagination">
-								<li class="active">1</li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#">4</a></li>
-								<li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-							</ul>
-						</div>
 						<!-- /store bottom filter -->
 					</div>
 					<!-- /STORE -->
@@ -692,6 +578,91 @@ $listecateg=$ProduitsC->afficherCategories();
 		<script src="js/nouislider.min.js"></script>
 		<script src="js/jquery.zoom.min.js"></script>
 		<script src="js/main.js"></script>
+		<script src="js/responsive-paginate.js"></script>
+		<script >
+document.getElementById(product-label).style.display = none;
+</script>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
 
+</script>
+<script>
+function check() {
+	var checkedValue = null; 
+var inputElements = document.getElementById('category-1');
+for(var i=0; inputElements[i]; ++i){
+      if(inputElements[i].checked){
+           checkedValue = inputElements[i].value;
+					 document.getElementById('myInput').value = checkedValue;
+           break;
+      }
+}
+	}
+
+	$(document).ready(function(){
+		filter_data();
+
+		
+		
+		function filter_data()
+		{
+		var action="fetch_data";
+		var max=$("#price-max").val();
+		var min=$("#price-min").val();
+		var prodc=get_filter("filter");
+		var fourn=get_filter("fournisseur");
+		var pop=$("#pop").children("option:selected").val();
+	
+		$.ajax({
+			url:"filter.php",
+			method:"POST",
+			data:{action:action,prodc:prodc,max:max,min:min,fourn:fourn,pop:pop},
+			success:function(data){
+				$("#prodFilter").html(data);
+			}
+		});
+		}
+
+		$(".filter").click(function(){
+			filter_data();
+		});
+		$(".fournisseur").click(function(){
+			filter_data();
+		});
+		$("#price-min").focusout(function(){
+			if($(this).attr('min')>$(this).val())
+				$(this).val($(this).attr('min'));
+			
+			filter_data();
+		
+		});
+
+		$("#pop").change(function(){
+			filter_data();
+		});
+		$("#price-max").focusout(function(){
+			if($(this).attr('max')<$(this).val())
+				$(this).val($(this).attr('max'));
+			
+				filter_data();
+		});
+	});
+	function get_filter(calss_name){
+		var filter=[];
+		$('.'+calss_name+':checked').each(function(){
+				filter.push($(this).attr('id'));
+		});
+		return filter;
+	}
+
+
+	</script>
 	</body>
 </html>

@@ -78,49 +78,100 @@ $total=$CouponC->sommedescoupon();
 </head>
 
 <body>
-    <!--[if lt IE 8]>
+      <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
-   
         <div class="left-sidebar-pro">
-        <nav id="sidebar" class="">
-            <div class="sidebar-header">
-                <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
-                <strong><img src="img/logo/logosn.png" alt="" /></strong>
-            </div>
-            <div class="left-custom-menu-adp-wrap comment-scrollbar">
-                <nav class="sidebar-nav left-sidebar-menu-pro">
-                    <ul class="metismenu" id="menu1">
+            <nav id="sidebar" class="">
+                <div class="sidebar-header">
+                    <a href="index.html"><img class="main-logo" src="../img/main/logo.png" alt="" /></a>
+                    <strong><img src="../img/logo.png" alt="" /></strong>
+                </div>
+                <div class="left-custom-menu-adp-wrap comment-scrollbar">
+                    <nav class="sidebar-nav left-sidebar-menu-pro">
+                        <ul class="metismenu" id="menu1">
                         <li class="active">
-                            <a class="has-arrow" href="index.html">
-								
-								   <span class="mini-click-non">Tableau de bord</span>
-								</a>
-                                <ul class="submenu-angle" aria-expanded="true">
-                                    <li><a title="Product List" href="product-list-ret.php"><i class="fa fa-female sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des produits</span></a></li>
-                                    <li><a title="Product Edit" href="product-edit.php"><i class="fa fa-bolt sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Ajout produit </span></a></li>
-                                    <li><a title="Product Cart" href="categorie-edit.php"><i class="fa fa-level-down sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Categories</span></a></li>
-                                    <li><a title="Product Cart" href="categorie-list.php"><i class="fa fa-level-down sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Categories Liste</span></a></li>                             
-                                    <li><a title="Product Detail" href="promocoup.php"><i class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Promo et coupon</span></a></li>
-                                    <li><a title="Product Detail" href="promo-list.php"><i class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des Coupon</span></a></li>
-                                    <li><a title="Analytics" href="analytics-da.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Statistique</span></a></li>
+                            
+                                <a class="has-arrow" href="index.html">
+                                     
+                                <span class="mini-click-non">Catalogue</span>
+                                    </a>
+                                    <ul class="submenu-angle" aria-expanded="true">
+                                        <li><a title="Product List" href="product-list.php"><i class="fa fa-female sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des produits</span></a></li>
+                                        <li><a title="Product Edit" href="product-edit.php"><i class="fa fa-bolt sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Ajout produit </span></a></li>
+                                        <li><a title="Product Cart" href="categorie-edit.php"><i class="fa fa-level-down sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Categories</span></a></li>
+                                        <li><a title="Product Cart" href="categorie-list.php"><i class="fa fa-level-down sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Categories Liste</span></a></li>                             
+                                        <li><a title="Product Detail" href="promocoup.php"><i class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Coupon</span></a></li>
+                                        <li><a title="Product Detail" href="promotion.php"><i class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Promotion</span></a></li>
+                                        <li><a title="Product Detail" href="promo-list.php"><i class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des Coupon</span></a></li>
+                                        <li><a title="Analytics" href="analytics-da.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Statistique</span></a></li>
+                                    
+                                    </ul>
+                            </li>
+                            <li>
+                                <a class="has-arrow" href="mailbox.html" aria-expanded="false"> <span class="mini-click-non">Commande</span></a>
+                                <ul class="submenu-angle" aria-expanded="false">
                                     <li><a title="Peity Charts" href="listCommande.php"><i class="fa fa-table sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste Des Commandes</span></a></li>
                                     <li><a title="Data Table" href="tableArticle.php"><i class="fa fa-th sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Contenu des Commandes</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="has-arrow" href="mailbox.html" aria-expanded="false"><span class="mini-click-non">SAV</span></a>
+                                <ul class="submenu-angle" aria-expanded="false">
                                     <li><a title="Product List" href="product-list-ret.php"><i class="fa fa-female sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des produits retournés</span></a></li>
                                     <li><a title="Product Edit" href="product-ret-edit.html"><i class="fa fa-bolt sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Ajouter produit retourné </span></a></li>
                                     <li><a title="Product Detail" href="reclam-list.php"><i class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des Réclamations</span></a></li>
-                                    <li><a title="List des client" href="List.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des Clients</span></a></li>
-                                <li><a title="Diagrammes" href="Diagrammes.html"><i class="fa fa-area-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Diagrammes</span></a></li>
-                                <li><a title="Modifier Supprimer" href="modifierutilisateurs.php"><i class="fa fa-pie-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Modifier/Supprimer</span></a></li>
-                                <li><a title="List News" href="ListNews.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des emails du Newsr</span></a></li>
                                 </ul>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </nav>
-    </div>
+                            </li>
+                            <li>
+                                <a class="has-arrow" href="mailbox.html" aria-expanded="false"> <span class="mini-click-non">Utulisateurs</span></a>
+                                <ul class="submenu-angle" aria-expanded="false">
+                                    <li><a title="List des client" href="List.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des Clients</span></a></li>
+                                    <li><a title="Diagrammes" href="Diagrammes.html"><i class="fa fa-area-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Diagrammes</span></a></li>
+                                    <li><a title="Modifier Supprimer" href="modifierutilisateurs.php"><i class="fa fa-pie-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Modifier/Supprimer</span></a></li>
+                                    <li><a title="List News" href="ListNews.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des emails du Newsr</span></a></li>
+                                    <li><a title="Liste CDF" href="listCDF.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des CDF</span></a></li>
+                                    <li><a title="List Premium" href="listpremium.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des Premium</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="has-arrow" href="mailbox.html" aria-expanded="false"><span class="mini-click-non">Fournisseur et Stock</span></a>
+                                <ul class="submenu-angle" aria-expanded="false">
+                                    <li><a title="AfficherFournisseur" href="AfficherFournisseur.php"><i class="fa fa-book" aria-hidden="true"></i> <span class="mini-sub-pro">Gerer Fournisseur</span></a></li>
+
+                                    <li><a title="AfficherProduit" href="AfficherStock.php"><i class="fa fa-book" aria-hidden="true"></i> <span class="mini-sub-pro">Gerer Stock</span></a></li>
+
+                                    <li><a title="Analytics" href="Stat.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Statistiques</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="has-arrow" href="mailbox.html" aria-expanded="false"> <span class="mini-click-non">Livraison</span></a>
+                                <ul class="submenu-angle" aria-expanded="false">
+                                    <li><a title="Show table Livraison" href="afficherLivraison.php"><i class="fa fa-male sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Gestion livraison</span></a></li>
+                                    <li><a title="Update Livraison" href="ajouterLivraison.php"><i class="fa fa-pencil" aria-hidden="true"></i> <span class="mini-sub-pro">Ajouter une livraison</span></a></li>
+                                    <li><a title="Show table Livraisonr" href="afficherCalendrier.php"><i class="fa fa-table" aria-hidden="true"></i> <span class="mini-sub-pro">Afficher calendrier</span></a></li>
+                                    <li><a title="Show table Livraison" href="confirmerLivraison.php"><i class="fa fa-check" aria-hidden="true"></i> <span class="mini-sub-pro">confirmer livraison</span></a></li>
+                                   
+                                </ul>
+                         
+                            <li>
+                                <a class="has-arrow" href="mailbox.html" aria-expanded="false"> <span class="mini-click-non">Livreur</span></a>
+                                <ul class="submenu-angle" aria-expanded="false">
+                                    <li><a title="Show table Livraison" href="afficherLivreur.php"><i class="fa fa-male sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Gestion livreur</span></a></li>
+                                    <li><a title="Update Livraison" href="ajouterLivreur.php"><i class="fa fa-pencil" aria-hidden="true"></i> <span class="mini-sub-pro">Ajouter un livreur</span></a></li>
+                                    <li><a title="Update Livraison" href="affecterLivreur.php"><i class="fa fa-pencil" aria-hidden="true"></i> <span class="mini-sub-pro">Affecter un livreur</span></a></li>
+                                    
+                                </ul>
+                            </li>
+                            
+                            
+                           
+                          
+                        </ul>
+                    </nav>
+                </div>
+            </nav>
+        </div>
     <!-- Start Welcome area -->
     <div class="all-content-wrapper">
         <div class="container-fluid">
@@ -1002,7 +1053,7 @@ $total=$CouponC->sommedescoupon();
 }
 ?>
                                         </div>
-                                        <div class="progress-bar wow fadeInLeft" data-progress="<?PHP echo $pourcenta ?>%" style="width: <?PHP echo $pourcenta ?>%;" data-wow-duration="1.5s" data-wow-delay="1.2s"> <span><?PHP echo $pourcenta ?>%</span>
+                                        <div class="progress-bar wow fadeInLeft" data-progress="<?PHP echo $pourcenta; ?>%" style="width: <?PHP echo $pourcenta; ?>%;" data-wow-duration="1.5s" data-wow-delay="1.2s"> <span><?PHP echo $pourcenta ?>%</span>
                                         </div>
                                     </div>
                                 </div>
@@ -1023,7 +1074,7 @@ $pour=$row6['COUNT(id_coupon)']*$row2['COUNT(id_coupon)']%100;
                                             
                                         ?>
                                             <h3><?php echo $pour ?>%</h3>
-                                            <p>Les coupons  pourcetage</p>
+                                            <p>Les coupons  Bon dachat</p>
                                         </div>
                                         <div class="progress-bar wow fadeInLeft" data-progress="<?php echo $pour ?>%" style="width: <?php echo $pour ?>%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span><?php echo $pour ?>%</span> </div>
                                     </div>
@@ -1047,10 +1098,13 @@ $pour=$row6['COUNT(id_coupon)']*$row2['COUNT(id_coupon)']%100;
                                         $moyennep=$rows7['SUM(Valeur)']/$row6['COUNT(id_coupon)'];
                                         
                                         ?>
-                                            <h3><?php echo $moyennep ?>%</h3>
-                                            <p>Moyenne coupons pourcentage</p>
+                                            <h3><?php echo number_format($moyennep,2) ?>%</h3>
+                                            <?php 
+$nb=number_format($moyennep,2);
+                                            ?>
+                                            <p>Moyenne coupons bon dachat </p>
                                         </div>
-                                        <div class="progress-bar wow fadeInLeft" data-progress="<?php echo $moyennep ?>%" style="width: <?php echo $moyennep ?>%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span><?php echo $moyennep ?>%</span> </div>
+                                        <div class="progress-bar wow fadeInLeft" data-progress="<?php echo $nb ?>%" style="width: <?php echo $moyennep ?>%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span><?php echo $moyennep ?>%</span> </div>
                                     </div>
                                     <?php
                                         }
@@ -1076,9 +1130,7 @@ $pour=$row6['COUNT(id_coupon)']*$row2['COUNT(id_coupon)']%100;
                                 
                                 ?>
                                 <h2><span class="counter"><?PHP echo $row4['COUNT(id)']; ?></span>/<?PHP echo $row9['COUNT(id)']; ?></h2>
-                                <div class="text-center">
-                                    <div id="sparkline51"></div>
-                                </div>
+                                
                             </div>
                             <?php 
                                 }
@@ -1086,39 +1138,7 @@ $pour=$row6['COUNT(id_coupon)']*$row2['COUNT(id_coupon)']%100;
                         </div>
                     </div>
                    
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <div class="analytics-rounded reso-mg-b-30">
-                            <div class="analytics-rounded-content">
-                                <h5>Percentage division</h5>
-                                <h2><span class="counter">140</span>/<span class="counter">54</span></h2>
-                                <div class="text-center">
-                                    <div id="sparkline52"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <div class="analytics-rounded reso-mg-b-30 res-mg-t-30">
-                            <div class="analytics-rounded-content">
-                                <h5>Percentage Counting</h5>
-                                <h2>2345/311</h2>
-                                <div class="text-center">
-                                    <div id="sparkline53"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <div class="analytics-rounded res-mg-t-30">
-                            <div class="analytics-rounded-content">
-                                <h5>Percentage Sequence</h5>
-                                <h2>780/56</h2>
-                                <div class="text-center">
-                                    <div id="sparkline54"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                
                 </div>
             </div>
         </div>

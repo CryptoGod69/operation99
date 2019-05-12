@@ -40,7 +40,7 @@ if (!empty($_POST['login']) && !empty($_POST['pwd'])){
 		$_SESSION['w']=$t['Tel'];
 		$_SESSION['i']=$t['ID'];
 		$_SESSION['t']=$t['client'];
-		header("location:index2.php");
+		header("location:index.php");
 		
 		}
 	

@@ -13,7 +13,7 @@ if (isset($_POST['code_coupon']) && isset($_POST['Type_reduction']) && isset($_P
     $Valeur=$_POST['Valeur'];
     $Date_Debutcoupon=$_POST['Date_Debutcoupon'];
     $Date_Fincoupon=$_POST['Date_Fincoupon'];
-  
+
     if (!empty($_POST['code_coupon']) && !empty($_POST['Type_reduction']) && !empty($_POST['Valeur']) && !empty($_POST['Date_Debutcoupon']) && !empty($_POST['Date_Fincoupon']))
     {
         

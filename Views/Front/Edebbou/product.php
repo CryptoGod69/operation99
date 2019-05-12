@@ -1,3 +1,12 @@
+<?php
+include "../../../Core/produit_stockC.php";
+include "../../../Core/rateC.php";
+session_start();
+
+$ProduitC=new ProduitC();
+$ProduitCC=new ProduitC();
+$rateCC = new rateC();
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -13,8 +22,7 @@
 
  		<!-- Bootstrap -->
  		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
-		 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		 
+		
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
  		<!-- Slick -->
  		<link type="text/css" rel="stylesheet" href="css/slick.css"/>
@@ -35,7 +43,8 @@
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
-
+		<div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v3.2&appId=305696353656532&autoLogAppEvents=1"></script>
     </head>
 	<body>
 		<!-- HEADER -->
@@ -50,7 +59,19 @@
 					</ul>
 					<ul class="header-links pull-right">
 						<li><a href="#"><i class="fa fa-dollar"></i> TND</a></li>
-						<li><a href="#"><i class="fa fa-user-o"></i> Mon compte</a></li>
+						<?php 
+if (isset($_SESSION['r']))
+{
+						?>
+						<li><a href="logout.php"><i class="fa fa-user-o"></i><?php echo $_SESSION['r']  ?> </a></li>
+						<?php
+}else{
+						?>
+							<li><a href="login.php"><i class="fa fa-user-o"></i>Mon Compte </a></li>
+							<li><a href="profil.php"><i class="fa fa-user-o"></i><?php echo $_SESSION['r'];?> </a></li>
+<?php
+}
+							?>
 					</ul>
 				</div>
 			</div>
@@ -65,7 +86,7 @@
 						<!-- LOGO -->
 						<div class="col-md-3">
 							<div class="header-logo">
-								<a href="index.html" class="logo">
+								<a href="index.php" class="logo">
 									<img src="./img/logo.png" alt="">
 								</a>
 							</div>
@@ -177,13 +198,14 @@
 				<div id="responsive-nav">
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="#">Accueil</a></li>
-						<li><a href="#">Nouveauté </a></li>
-						<li><a href="#">Categories</a></li>
-						<li><a href="#">Promos</a></li>
-						<li><a href="#">Article</a></li>
-						<li><a href="#">Fournisseur</a></li>
-					</ul>
+							<li class="active"><a href="index.php">Accueil</a></li>
+							<li><a href="storenew.php">Nouveauté </a></li>
+							<li><a href="store.php">Categories</a></li>
+							<li><a href="storepromo.php">Promos</a></li>
+							<li><a href="reclamation.html">Reclamation</a></li>
+							<li><a href="#">Fournisseur</a></li>
+							
+						</ul>
 					<!-- /NAV -->
 				</div>
 				<!-- /responsive-nav -->
@@ -223,20 +245,8 @@
 					<div class="col-md-5 col-md-push-2">
 						<div id="product-main-img">
 							<div class="product-preview">
-								<img src="./img/product01.png" alt="">
-							</div>
-
-							<div class="product-preview">
-								<img src="./img/product03.png" alt="">
-							</div>
-
-							<div class="product-preview">
-								<img src="./img/product06.png" alt="">
-							</div>
-
-							<div class="product-preview">
-								<img src="./img/product08.png" alt="">
-							</div>
+							<?PHP  echo "<img src='../../images/".$_GET['image']."'>" ?>
+		</div>
 						</div>
 					</div>
 					<!-- /Product main img -->
@@ -245,7 +255,7 @@
 					<div class="col-md-2  col-md-pull-5">
 						<div id="product-imgs">
 							<div class="product-preview">
-								<img src="./img/product01.png" alt="">
+							<?PHP  echo "<img src='../../images/".$_GET['image']."'>" ?>
 							</div>
 
 						</div>
@@ -255,11 +265,17 @@
 					<!-- Product details -->
 					<div class="col-md-5">
 						<div class="product-details">
-							<h2 class="product-name" >Le Brassé</h2>
+							<h2 class="product-name" ><?php echo $_GET['Nom']; ?></h2>
 							<div>
+							<?php 	$_SESSION['Nom'] = $_GET['Nom'];?>
+							
 								<div class="container">
-                                   
-										<form method="post" action="auth.php" >
+							<?php
+if (!isset($_SESSION['r']))
+{
+							?>
+							
+										<form method="post" action="login.php" >
 									<div class="row">	
 									<div class="rating">
 											<input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="exellent !">5 stars</label>
@@ -267,25 +283,37 @@
 											<input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Bien !">3 stars</label>
 											<input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Normal !">2 stars</label>
 											<input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Pas Bien !">1 star</label>
-											<input type="hidden" value="LeBrasse" name="LeBrasse">
-										</div>
-								
+											<input type="hidden" value="<?php echo $_GET['Nom']; ?>" name="<?php echo $_GET['Nom']; ?>">
 									</div>
+								
 									<div class="add-to-cart">
+										
 										<button class="add-to-cart-btn">Submit</button>
-										</div>
+									</div>
 									</form>
 								</div>
-								<a class="review-link" href="#">10 Review(s) | Add your review</a>
+								<?php
+}else {
+	
+								?>
+										<div class="rating">
+										<?php 
+								$nbr=$ProduitCC->recuperstars($_SESSION['Nom']);
+foreach ($nbr as $row){
+	for ($i = 1; $i <= $row['maxoc']; $i++) {
+?>
+										
+										<input type="radio" checked/><label for="<?php echo $row['maxoc']; ?>" >1 star</label>
+										<?php
+	}}}
+										?>
+</div>
+</div>
+									<div>
+								<h3 class="product-price"><?php echo number_format($_GET['Prix'],3); ?> TND	</h3>
+								<span class="product-available">En Stock</span>
 							</div>
-							<div>
-								<h3 class="product-price">0.210 TND<del class="product-old-price">0.240</del></h3>
-								<span class="product-available">In Stock</span>
-							</div>
-							<p>Yaourt mamzouj le brassé</p>
-
-							
-
+							<p><?php echo $_GET['Descr']; ?></p>
 							<div class="add-to-cart">
 								<div class="qty-label">
 									Qty
@@ -294,27 +322,35 @@
 										<span class="qty-up">+</span>
 										<span class="qty-down">-</span>
 									</div>
+								
 								</div>
-								<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Ajouter au panier</button>
-							</div>
+								
+								<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>                 Ajouter au panier</button>
+								</div>
+								<div class="qty-label">
+									Promo_Code
+									
+										<input type="text" class="form-control">
+									
+								
+							
 
 							<ul class="product-btns">
 								<li><a href="#"><i class="fa fa-heart-o"></i> Ajouter a wishlist</a></li>
-								<li><a href="#"><i class="fa fa-exchange"></i> Comparer</a></li>
+							
 							</ul>
 
 							<ul class="product-links">
 								<li>Category:</li>
-								<li><a href="#">Yaourt</a></li>
-						
+								<form action="store1.php" method="GET">
+								<li>		<input type="hidden" name="Categorie" value="<?php echo $_GET['Categorie']; ?>">
+								<button style="border: none; background-color: transparent;"><?php echo $_GET['Categorie']; ?></button></li>
+						<form>
 							</ul>
 
 							<ul class="product-links">
 								<li>Partager:</li>
-								<li><a href="https://www.facebook.com/E-Debbou-597512770694667/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-				
-								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i></a></li>
+								<li><div class="fb-share-button" data-href="https://www.facebook.com/E-Debbou-597512770694667" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Partager</a></div></li>
 							</ul>
 
 						</div>
@@ -322,160 +358,84 @@
 					<!-- /Product details -->
 
 					<!-- Product tab -->
-					<div class="col-md-12">
-						<div id="product-tab">
+					<div class="col-md-12" style="position: relative;left: -300px;">
+						<div id="product-tab" >
 							<!-- product tab nav -->
 							<ul class="tab-nav">
 								<li class="active"><a data-toggle="tab" href="#tab1">Les offres</a></li>
 								<li><a data-toggle="tab" href="#tab2">Details</a></li>
-								<li><a data-toggle="tab" href="#tab3">Reviews (3)</a></li>
+								<?php
+								
+$nbrrev = $rateCC->afficherreviewnb( $_SESSION['nomprod']);
+foreach ($nbrrev as $row2)
+{
+								?>
+								<li><a data-toggle="tab" href="#tab3">Reviews (<?php echo $row2['COUNT(ratestars)']; ?>)</a></li>
+								<?php
+}
+								?>
 							</ul>
 							<!-- /product tab nav -->
 
 							<!-- product tab content -->
 							<div class="tab-content">
 								<!-- tab1  -->
-								<div id="tab1" class="tab-pane fade in active">
-									<div class="row">
-										<div class="col-md-12">
-											
+								<div id="tab1" class="tab-pane fade in">
+							
 											<div class="container bootstrap snippet">
-													<div class="table-responsive">
+													<div class="table-responsive" style="overflow-x:initial;">
 														<!-- PROJECT TABLE -->
 														<table class="table colored-header datatable project-list">
 															<thead>
 																<tr>
-																	<th></th>
-																	<th>Produit Ajouter</th>
-																	<th>Temps D'expédition</th>
-																	<th>Confiance</th>
+																	<th>Nom Du Produit</th>
+																	<th>Date D'Ajout</th>
+																	<th>Code_Barre</th>
 																	<th>Prix</th>
 																	<th>Fournisseur</th>
-																	<th>Contrainte</th>
+																	<th>quantity</th>
 																</tr>
 															</thead>
 															<tbody>
+																<?php
+																$listestock=$ProduitC->afficherstock($_GET['Nom']);
+foreach ($listestock as $row1)
+{
+																?>
 																<tr>
-																	<td><a href="#">Vitalait Le Brassé</a></td>
-																	<td>16/02/2019</td>
-																	<td>2-3 days</td>
+																	<td><a href="#"><?php echo $row1['Nom'] ?></a></td>
+																	<?php
+$datetable = $row1['Date'];
+$conv = substr($datetable,0,10);
+																	?>
+																	<td><?php echo $conv ?></td>
+																	<td><?php echo $row1['Code_Barre'] ?></td>
 																	<td>
-																		<div class="progress">
-																			<div class="progress-bar" data-transitiongoal="95" aria-valuenow="95" style="width: 95%;">95%</div>
-																		</div>
+																	<?php echo $row1['Prix'] ?>TND
 																	</td>
-																	<td>0.210 TND</td>
-																	<td><img src="./img/profil/avatar1.png" class="avatar img-circle"> <a href="#">PLAZA</a></td>
-																	<td><span class="label label-success">100+</span></td>
+																	<td>	<?php echo $row1['Fournisseur'] ?></td>
+																	
+																	<td>	<?php echo $row1['quantity'] ?></td>
+																	<?php
+}
+																	?>
 																</tr>
 							
 							
-																<tr>
-																	<td><a href="#">Vitalait Le Brassé</a></td>
-																	<td>01/-04/2019</td>
-																	<td>4-6 Days</td>
-																	<td>
-																		<div class="progress">
-																			<div class="progress-bar" data-transitiongoal="40" aria-valuenow="40" style="width: 40%;">40%</div>
-																		</div>
-																	</td>
-																	<td>0.185 TND</td>
-																	<td><img src="./img/profil/avatar2.png" class="avatar img-circle"> <a href="#">MA NAARAFECH</a></td>
-																	<td><span class="label label-warning">300+</span></td>
-																</tr>
-							
-							
-																<tr>
-																	<td><a href="#">Vitalait Le Brassé</a></td>
-																	<td>20/09/2014</td>
-																	<td>6-7 Days days</td>
-																	<td>
-																		<div class="progress">
-																			<div class="progress-bar" data-transitiongoal="65" aria-valuenow="65" style="width: 65%;">65%</div>
-																		</div>
-																	</td>
-																	<td>0.200 TND</td>
-																	<td><img src="./img/profil/avatar3.png"  class="avatar"> <a href="#">1</a></td>
-																	<td><span class="label label-success">-10% sur Chaque Achat +1500DT</span></td>
-																</tr>
-							
-							
-																<tr>
-																	<td><a href="#">Vitalait Le Brassé</a></td>
-																	<td>05/10/2014</td>
-																	<td>40 days</td>
-																	<td>
-																		<div class="progress">
-																			<div class="progress-bar" data-transitiongoal="77" aria-valuenow="77" style="width: 77%;">77%</div>
-																		</div>
-																	</td>
-																	<td>0.200 TND</td>
-																	<td><img src="./img/profil/avatar4.png"  class="avatar"> <a href="#">2</a></td>
-																	<td><span class="label label-success">250+</span></td>
-																</tr>
-							
-							
-							
-																<tr>
-																	<td><a href="#">Vitalait Le Brassé</a></td>
-																	<td>21/10/2019</td>
-																	<td>0-1 Days</td>
-																	<td>
-																		<div class="progress">
-																			<div class="progress-bar" data-transitiongoal="25" aria-valuenow="25" style="width: 25%;">25%</div>
-																		</div>
-																	</td>
-																	<td>0.210 TND</td>
-																	<td><img src="./img/profil/avatar5.png"  class="avatar"> <a href="#">3</a></td>
-																	<td><span class="label label-success">40+</span></td>
-																</tr>
-							
-							
-							
-																<tr>
-																	<td><a href="#">Vitalait Le Brassé</a></td>
-																	<td>05/10/2019</td>
-																	<td>N/A</td>
-																	<td>
-																		<div class="progress">
-																			<div class="progress-bar progress-bar-default" data-transitiongoal="100" aria-valuenow="100" style="width: 100%;">100%</div>
-																		</div>
-																	</td>
-																	<td>0.190 TND</td>
-																	<td><img src="./img/profil/avatar6.png" class="avatar"> <a href="#">4</a></td>
-																	<td><span class="label label-default">150+</span></td>
-																</tr>
-							
-							
-							
-																<tr>
-																	<td><a href="#">Vitalait Le Brassé </a></td>
-																	<td>15/11/2019</td>
-																	<td>2-3 days</td>
-																	<td>
-																		<div class="progress">
-																			<div class="progress-bar" data-transitiongoal="33" aria-valuenow="33" style="width: 33%;">33%</div>
-																		</div>
-																	</td>
-																	<td>0.190TND</td>
-																	<td><img src="./img/profil/avatar7.png"  class="avatar"> <a href="#">5</a></td>
-																	<td><span class="label label-warning">500+</span></td>
-																</tr>
 															</tbody>
 														</table>
 														<!-- END PROJECT TABLE -->
-													</div>
-											</div>
-										</div>
+</div>
 									</div>
 								</div>
+							
 								<!-- /tab1  -->
 
 								<!-- tab2  -->
 								<div id="tab2" class="tab-pane fade in">
 									<div class="row">
 										<div class="col-md-12">
-											<p>selaa behia</p>
+											<p><?php echo $row1['Descr'] ?></p>
 										</div>
 									</div>
 								</div>
@@ -488,82 +448,29 @@
 										<div class="col-md-3">
 											<div id="rating">
 												<div class="rating-avg">
-													<span>4.5</span>
+												<?php
+								$race = new ProduitC();
+								$raceo=$race->recuperstars($_SESSION['Nom']);
+								foreach ($raceo as $row2){
+								
+																?>
+													<span><?php echo $row2['maxoc']; ?></span>
+
 													<div class="rating-stars">
+													<?php 
+									for ($i = 1; $i <= $row2['maxoc']; $i++) {
+?>
 														<i class="fa fa-star"></i>
-														<i class="fa fa-star"></i>
-														<i class="fa fa-star"></i>
-														<i class="fa fa-star"></i>
-														<i class="fa fa-star-o"></i>
+														<?php 
+
+									}
+?>
 													</div>
+													<?php
+									}
+													?>
 												</div>
-												<ul class="rating">
-													<li>
-														<div class="rating-stars">
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-														</div>
-														<div class="rating-progress">
-															<div style="width: 80%;"></div>
-														</div>
-														<span class="sum">3</span>
-													</li>
-													<li>
-														<div class="rating-stars">
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star-o"></i>
-														</div>
-														<div class="rating-progress">
-															<div style="width: 60%;"></div>
-														</div>
-														<span class="sum">2</span>
-													</li>
-													<li>
-														<div class="rating-stars">
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star-o"></i>
-															<i class="fa fa-star-o"></i>
-														</div>
-														<div class="rating-progress">
-															<div></div>
-														</div>
-														<span class="sum">0</span>
-													</li>
-													<li>
-														<div class="rating-stars">
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star-o"></i>
-															<i class="fa fa-star-o"></i>
-															<i class="fa fa-star-o"></i>
-														</div>
-														<div class="rating-progress">
-															<div></div>
-														</div>
-														<span class="sum">0</span>
-													</li>
-													<li>
-														<div class="rating-stars">
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star-o"></i>
-															<i class="fa fa-star-o"></i>
-															<i class="fa fa-star-o"></i>
-															<i class="fa fa-star-o"></i>
-														</div>
-														<div class="rating-progress">
-															<div></div>
-														</div>
-														<span class="sum">0</span>
-													</li>
-												</ul>
+								</div>
 											</div>
 										</div>
 										<!-- /Rating -->
@@ -573,61 +480,33 @@
 											<div id="reviews">
 												<ul class="reviews">
 													<li>
+														
 														<div class="review-heading">
-															<h5 class="name">John</h5>
-															<p class="date">27 DEC 2018, 8:0 PM</p>
+
+															
 															<div class="review-rating">
+																														
+	<?php 
+	$rate11 = new rateC();
+$nbr=$rate11->affichechaquevote($_SESSION['Nom']);
+foreach ($nbr as $row){
+															?>
+															<h5 class="name"><?php echo $row['sess']; ?></h5>
+														<?php
+	for ($i = 1; $i <= $row['ratestars']; $i++) {
+?>
 																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star-o empty"></i>
+														<?php 
+
+	}
+?>
+																<i class="fa fa-star-o empty"></i> 
+																<?php
+}
+																?>
 															</div>
 														</div>
-														<div class="review-body">
-															<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-														</div>
-													</li>
-													<li>
-														<div class="review-heading">
-															<h5 class="name">John</h5>
-															<p class="date">27 DEC 2018, 8:0 PM</p>
-															<div class="review-rating">
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star-o empty"></i>
-															</div>
-														</div>
-														<div class="review-body">
-															<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-														</div>
-													</li>
-													<li>
-														<div class="review-heading">
-															<h5 class="name">John</h5>
-															<p class="date">27 DEC 2018, 8:0 PM</p>
-															<div class="review-rating">
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star-o empty"></i>
-															</div>
-														</div>
-														<div class="review-body">
-															<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-														</div>
-													</li>
-												</ul>
-												<ul class="reviews-pagination">
-													<li class="active">1</li>
-													<li><a href="#">2</a></li>
-													<li><a href="#">3</a></li>
-													<li><a href="#">4</a></li>
-													<li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-												</ul>
+													
 											</div>
 										</div>
 										<!-- /Reviews -->
@@ -680,128 +559,80 @@
 						<div class="section-title text-center">
 							<h3 class="title">Related Products</h3>
 						</div>
+						<?php
+					$Categ=$_GET['Categorie'];
+					$ProduitCC=new ProduitC();
+																$realated=$ProduitCC->recupererCategorie($Categ);
+																
+foreach ($realated as $row)
+{
+	
+																?>
 					</div>
 
 					<!-- product -->
+				
 					<div class="col-md-3 col-xs-6">
+				
 						<div class="product">
+				
 							<div class="product-img">
-								<img src="./img/product01.png" alt="">
-								<div class="product-label">
-									<span class="sale">-30%</span>
+							<?PHP  echo "<img src='../../images/".$row['image']."'>" ?>
+							<?php 
+if ($row['promovaleur']!=1)
+{
+							?>
+							<div class="product-label">
+									<span class="sale"><?php echo $row['promovaleur']*100 ?>%</span>
 								</div>
+								<?php 
+}
+								?>
 							</div>
 							<div class="product-body">
-								<p class="product-category">Yaourt</p>
-								<h3 class="product-name"><a href="#">Le Brassé</a></h3>
-								<h4 class="product-price">0.210 TND<del class="product-old-price">0.240</del></h4>
+								<p class="product-category"><?php echo $row['Categorie']; ?></p>
+								<h3 class="product-name"><a href="#"><?php echo $row['Nom']; $_SESSION['nomprod'] = $row['Nom']; ?></a></h3>
+								<?php 
+if ($row['promovaleur']!=1)
+{
+							?>
+								<h4 class="product-price"><?php echo number_format($row['Prix']-($row['Prix']*$row['promovaleur']),3); ?> TND<del class="product-old-price"><?PHP echo number_format($row['Prix'],3	); ?></del></h4>
+							<?php 
+}
+else 
+{
+							?>
+								<h4 class="product-price"><?php echo number_format($row['Prix'],3); ?> TND</h4>
+							<?php
+}
+?>
 								<div class="product-rating">
 								</div>
 								<div class="product-btns">
 									<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Ajouter àwishlist</span></button>
-									<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">Comparer</span></button>
+								
 									<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Aperçu</span></button>
 								</div>
+								
 							</div>
+							
 							<div class="add-to-cart">
 								<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>ajouter au panier</button>
+</div>
 							</div>
+							<?php
+}
+					?>
 						</div>
-					</div>
+				
+				
 					<!-- /product -->
 
-					<!-- product -->
-					<div class="col-md-3 col-xs-6">
-						<div class="product">
-							<div class="product-img">
-								<img src="./img/product02.png" alt="">
-								<div class="product-label">
-									<span class="new">NEW</span>
-								</div>
-							</div>
-							<div class="product-body">
-								<p class="product-category">Shampoing</p>
-								<h3 class="product-name"><a href="#">johnson's baby shampoing</a></h3>
-								<h4 class="product-price">4.680 TND</del></h4>
-								<div class="product-rating">
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-								</div>
-								<div class="product-btns">
-									<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Ajouter àwishlist</span></button>
-									<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">Comparer</span></button>
-									<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Aperçu</span></button>
-								</div>
-							</div>
-							<div class="add-to-cart">
-								<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>ajouter au panier</button>
-							</div>
-						</div>
-					</div>
-					<!-- /product -->
-
-					<div class="clearfix visible-sm visible-xs"></div>
-
-					<!-- product -->
-					<div class="col-md-3 col-xs-6">
-						<div class="product">
-							<div class="product-img">
-								<img src="./img/product03.png" alt="">
-							</div>
-							<div class="product-body">
-								<p class="product-category">Laitier</p>
-								<h3 class="product-name"><a href="#">Landor Sicilien</a></h3>
-								<h4 class="product-price">3.400 TND <del class="product-old-price">3.600</del></h4>
-								<div class="product-rating">
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star-o"></i>
-								</div>
-								<div class="product-btns">
-									<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Ajouter àwishlist</span></button>
-									<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">Comparer</span></button>
-									<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Aperçu</span></button>
-								</div>
-							</div>
-							<div class="add-to-cart">
-								<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>ajouter au panier</button>
-							</div>
-						</div>
-					</div>
-					<!-- /product -->
-
-					<!-- product -->
-					<div class="col-md-3 col-xs-6">
-						<div class="product">
-							<div class="product-img">
-								<img src="./img/product04.png" alt="">
-							</div>
-							<div class="product-body">
-								<p class="product-category">Liquide</p>
-								<h3 class="product-name"><a href="#">jus de fruit multivitamine</a></h3>
-								<h4 class="product-price">2.100 TND</del></h4>
-								<div class="product-rating">
-								</div>
-								<div class="product-btns">
-									<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Ajouter àwishlist</span></button>
-									<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">Comparer</span></button>
-									<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Aperçu</span></button>
-								</div>
-							</div>
-							<div class="add-to-cart">
-								<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>ajouter au panier</button>
-							</div>
-						</div>
-					</div>
-					<!-- /product -->
-
+					
 				</div>
+				
 				<!-- /row -->
+				
 			</div>
 			<!-- /container -->
 		</div>

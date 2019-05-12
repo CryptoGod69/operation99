@@ -55,7 +55,7 @@ if (isset($_POST['modifier'])){
 	$employe=new employe($_POST['cin'],$_POST['nom'],$_POST['prenom'],$_POST['nbH'],$_POST['tarifH']);
 	$employeC->modifierEmploye($employe,$_POST['cin_ini']);
 	echo $_POST['cin_ini'];
-
+	header('Location: afficherEmploye.php');
 }
 ?>
 </body>

@@ -2214,3 +2214,125 @@ tbody {
 /*=========================================================
 	14 -> OFFERS TABLE PROD
 ===========================================================*/
+
+
+/*=========================================================
+	14 -> OFFERS TABLE PROD
+===========================================================*/
+
+tbody {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  color: #555;
+  background: #ececec;
+  margin-top:20px;
+}
+
+.project-list > tbody > tr > td {
+  padding: 12px 8px;
+}
+
+.project-list > tbody > tr > td .avatar {
+  width: 22px;
+  border: 1px solid #CCC;
+}
+/*=========================================================
+	14 -> OFFERS TABLE PROD
+===========================================================*/
+
+
+/*=========================================================
+	14 -> LOGIN
+===========================================================*/
+
+
+body {
+  padding-top: 15px;
+  font-size: 12px
+}
+.main {
+  max-width: 400px;
+  margin: 0 auto;
+}
+.login-or {
+  position: relative;
+  font-size: 18px;
+  color: #aaa;
+  margin-top: 1px;
+          margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.span-or {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 2px;
+  margin-left: -25px;
+  background-color: #fff;
+  width: 50px;
+  text-align: center;
+} 
+.hr-or {
+  background-color: #cdcdcd;
+  height: 1px;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+h3 {
+  text-align: center;
+  line-height: 300%;
+}
+/*=========================================================
+	14 -> LOGIN
+===========================================================*/
+
+
+/*=========================================================
+	15 -> REGISTER
+===========================================================*/
+
+.divider-text {
+  position: relative;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.divider-text span {
+  padding: 100px;
+  font-size: 12px;
+  position: relative;   
+  z-index: 2;
+}
+.divider-text:after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  border-bottom: 1px solid #ddd;
+  top: 0%;
+  left: 25%;
+  z-index: 1;
+}
+
+.btn-facebook {
+  background-color: #405D9D;
+  color: #fff;
+  
+}
+.btn-twitter {
+  background-color: #42AEEC;
+  color: #fff;
+}
+
+
+/*=========================================================
+	15 -> REGISTER
+===========================================================*/
+button {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+}

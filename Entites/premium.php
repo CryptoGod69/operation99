@@ -1,21 +1,25 @@
 <?PHP
 
 class premium{
-
+	private $IDP;
 	private $CVCode;
     private $CodeNum;
     private $DDE;
 	
-	function __construct($CVCode,$CodeNum,$DDE){
-	
+	function __construct($IDP,$CVCode,$CodeNum,$DDE){
+		$this->IDP=$IDP;
 		$this->CVCode=$CVCode;
     $this->CodeNum=$CodeNum;
-    $this->DDE=$DDE
+    $this->DDE=$DDE;
 	
 		
 	}
 
 
+	function getIDP()
+	{
+		return $this->IDP;
+	}
 	function getCVCode()
 	{
 		return $this->CVCode;
@@ -30,6 +34,10 @@ class premium{
 		return $this->DDE;
 	}
 
+	function setIDP($IDP)
+	{
+		$this->IDP=$IDP;
+	}
 	function setCVCode($CVCode)
 	{
 		$this->CVCode=$CVCode;

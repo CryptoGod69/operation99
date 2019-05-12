@@ -1,5 +1,5 @@
 <?php 
-include '../config.php';
+include 'C:/xampp/htdocs/integration/config.php';
 class User{
 	private $login;
     private $pwd;

@@ -1,5 +1,5 @@
 <?PHP
-require_once "C:/wamp64/www/integration/config.php";
+include "C:/xampp/htdocs/integration/config.php";
 
 class NewsC {
 	

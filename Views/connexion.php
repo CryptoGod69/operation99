@@ -4,7 +4,7 @@
 </head>
 <body>
 <?php 
-include '../entities/Users.php';
+include '../Entites/Users.php';
 //$log="admin";
 //$pwd="admin";
 /*$servername="localhost";
@@ -40,7 +40,7 @@ if (!empty($_POST['login']) && !empty($_POST['pwd'])){
 		$_SESSION['w']=$t['Tel'];
 		$_SESSION['i']=$t['ID'];
 		$_SESSION['t']=$t['client'];
-		header("location:index2.php");
+		header("location:index.php");
 		
 		}
 	

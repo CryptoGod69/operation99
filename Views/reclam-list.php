@@ -1,8 +1,48 @@
 <?PHP
 include_once "../Core/ReclamR.php";
+$db=config::getConnexion();
+
+$var=(isset($_GET['tri']));
+if ($var)
+{
+    $choix=$_GET['tri'];
+}
+if ($var==false)
+{
 $Reclam1R=new ReclamR();
 $listeReclam=$Reclam1R->afficherReclams();
+//$listeReclam=$db->query('SELECT * FROM reclamation');
+}
+elseif($choix=="choix1")
+{
+    $listeReclam=$db->query('SELECT * FROM reclamation ORDER BY date_reclam DESC');
+}
+elseif($choix=="choix2")
+{
+    $listeReclam=$db->query('SELECT * FROM reclamation ORDER BY ID_client ASC');
+}
+elseif($choix=="choix3")
+{
+    $listeReclam=$db->query('SELECT * FROM reclamation ORDER BY ID_client DESC');
+    
+}
+?>
+<?php
+/*$db=config::getConnexion();
+$lignesParPage =5;
+$lignesTotalesReq=$db->query('SELECT * FROM reclamation ');
+$lignesTotales=$lignesTotalesReq->rowCount();
 
+if(isset($_GET['page']) AND !empty($_GET['page']))
+{
+    $_GET['page'] = intval($_GET['page']);
+    $pageCourante = $_GET ['page'];
+}
+else {
+    $pageCourante =1;
+}
+$depart =($pageCourante-1)*$lignesParPage;
+*/
 ?>
 <!doctype html>
 
@@ -72,45 +112,97 @@ $listeReclam=$Reclam1R->afficherReclams();
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
         <div class="left-sidebar-pro">
-        <nav id="sidebar" class="">
-            <div class="sidebar-header">
-                <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
-                <strong><img src="img/logo/logosn.png" alt="" /></strong>
-            </div>
-            <div class="left-custom-menu-adp-wrap comment-scrollbar">
-                <nav class="sidebar-nav left-sidebar-menu-pro">
-                    <ul class="metismenu" id="menu1">
+            <nav id="sidebar" class="">
+                <div class="sidebar-header">
+                    <a href="index.html"><img class="main-logo" src="../img/main/logo.png" alt="" /></a>
+                    <strong><img src="../img/logo.png" alt="" /></strong>
+                </div>
+                <div class="left-custom-menu-adp-wrap comment-scrollbar">
+                    <nav class="sidebar-nav left-sidebar-menu-pro">
+                        <ul class="metismenu" id="menu1">
                         <li class="active">
-                            <a class="has-arrow" href="index.html">
-								
-								   <span class="mini-click-non">Tableau de bord</span>
-								</a>
-                                <ul class="submenu-angle" aria-expanded="true">
-                                    <li><a title="Product List" href="product-list-ret.php"><i class="fa fa-female sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des produits</span></a></li>
-                                    <li><a title="Product Edit" href="product-edit.php"><i class="fa fa-bolt sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Ajout produit </span></a></li>
-                                    <li><a title="Product Cart" href="categorie-edit.php"><i class="fa fa-level-down sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Categories</span></a></li>
-                                    <li><a title="Product Cart" href="categorie-list.php"><i class="fa fa-level-down sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Categories Liste</span></a></li>                             
-                                    <li><a title="Product Detail" href="promocoup.php"><i class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Promo et coupon</span></a></li>
-                                    <li><a title="Product Detail" href="promo-list.php"><i class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des Coupon</span></a></li>
-                                    <li><a title="Analytics" href="analytics-da.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Statistique</span></a></li>
+                            
+                                <a class="has-arrow" href="index.html">
+                                     
+                                <span class="mini-click-non">Catalogue</span>
+                                    </a>
+                                    <ul class="submenu-angle" aria-expanded="true">
+                                        <li><a title="Product List" href="product-list.php"><i class="fa fa-female sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des produits</span></a></li>
+                                        <li><a title="Product Edit" href="product-edit.php"><i class="fa fa-bolt sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Ajout produit </span></a></li>
+                                        <li><a title="Product Cart" href="categorie-edit.php"><i class="fa fa-level-down sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Categories</span></a></li>
+                                        <li><a title="Product Cart" href="categorie-list.php"><i class="fa fa-level-down sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Categories Liste</span></a></li>                             
+                                        <li><a title="Product Detail" href="promocoup.php"><i class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Coupon</span></a></li>
+                                        <li><a title="Product Detail" href="promotion.php"><i class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Promotion</span></a></li>
+                                        <li><a title="Product Detail" href="promo-list.php"><i class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des Coupon</span></a></li>
+                                        <li><a title="Analytics" href="analytics-da.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Statistique</span></a></li>
+                                    
+                                    </ul>
+                            </li>
+                            <li>
+                                <a class="has-arrow" href="mailbox.html" aria-expanded="false"> <span class="mini-click-non">Commande</span></a>
+                                <ul class="submenu-angle" aria-expanded="false">
                                     <li><a title="Peity Charts" href="listCommande.php"><i class="fa fa-table sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste Des Commandes</span></a></li>
                                     <li><a title="Data Table" href="tableArticle.php"><i class="fa fa-th sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Contenu des Commandes</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="has-arrow" href="mailbox.html" aria-expanded="false"><span class="mini-click-non">SAV</span></a>
+                                <ul class="submenu-angle" aria-expanded="false">
                                     <li><a title="Product List" href="product-list-ret.php"><i class="fa fa-female sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des produits retournés</span></a></li>
                                     <li><a title="Product Edit" href="product-ret-edit.html"><i class="fa fa-bolt sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Ajouter produit retourné </span></a></li>
                                     <li><a title="Product Detail" href="reclam-list.php"><i class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des Réclamations</span></a></li>
-                                    <li><a title="List des client" href="List.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des Clients</span></a></li>
-                                <li><a title="Diagrammes" href="Diagrammes.html"><i class="fa fa-area-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Diagrammes</span></a></li>
-                                <li><a title="Modifier Supprimer" href="modifierutilisateurs.php"><i class="fa fa-pie-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Modifier/Supprimer</span></a></li>
-                                <li><a title="List News" href="ListNews.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des emails du Newsr</span></a></li>
                                 </ul>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </nav>
-    </div>
+                            </li>
+                            <li>
+                                <a class="has-arrow" href="mailbox.html" aria-expanded="false"> <span class="mini-click-non">Utulisateurs</span></a>
+                                <ul class="submenu-angle" aria-expanded="false">
+                                    <li><a title="List des client" href="List.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des Clients</span></a></li>
+                                    <li><a title="Diagrammes" href="Diagrammes.html"><i class="fa fa-area-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Diagrammes</span></a></li>
+                                    <li><a title="Modifier Supprimer" href="modifierutilisateurs.php"><i class="fa fa-pie-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Modifier/Supprimer</span></a></li>
+                                    <li><a title="List News" href="ListNews.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des emails du Newsr</span></a></li>
+                                    <li><a title="Liste CDF" href="listCDF.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des CDF</span></a></li>
+                                    <li><a title="List Premium" href="listpremium.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des Premium</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="has-arrow" href="mailbox.html" aria-expanded="false"><span class="mini-click-non">Fournisseur et Stock</span></a>
+                                <ul class="submenu-angle" aria-expanded="false">
+                                    <li><a title="AfficherFournisseur" href="AfficherFournisseur.php"><i class="fa fa-book" aria-hidden="true"></i> <span class="mini-sub-pro">Gerer Fournisseur</span></a></li>
+
+                                    <li><a title="AfficherProduit" href="AfficherStock.php"><i class="fa fa-book" aria-hidden="true"></i> <span class="mini-sub-pro">Gerer Stock</span></a></li>
+
+                                    <li><a title="Analytics" href="Stat.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Statistiques</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="has-arrow" href="mailbox.html" aria-expanded="false"> <span class="mini-click-non">Livraison</span></a>
+                                <ul class="submenu-angle" aria-expanded="false">
+                                    <li><a title="Show table Livraison" href="afficherLivraison.php"><i class="fa fa-male sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Gestion livraison</span></a></li>
+                                    <li><a title="Update Livraison" href="ajouterLivraison.php"><i class="fa fa-pencil" aria-hidden="true"></i> <span class="mini-sub-pro">Ajouter une livraison</span></a></li>
+                                    <li><a title="Show table Livraisonr" href="afficherCalendrier.php"><i class="fa fa-table" aria-hidden="true"></i> <span class="mini-sub-pro">Afficher calendrier</span></a></li>
+                                    <li><a title="Show table Livraison" href="confirmerLivraison.php"><i class="fa fa-check" aria-hidden="true"></i> <span class="mini-sub-pro">confirmer livraison</span></a></li>
+                                   
+                                </ul>
+                         
+                            <li>
+                                <a class="has-arrow" href="mailbox.html" aria-expanded="false"> <span class="mini-click-non">Livreur</span></a>
+                                <ul class="submenu-angle" aria-expanded="false">
+                                    <li><a title="Show table Livraison" href="afficherLivreur.php"><i class="fa fa-male sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Gestion livreur</span></a></li>
+                                    <li><a title="Update Livraison" href="ajouterLivreur.php"><i class="fa fa-pencil" aria-hidden="true"></i> <span class="mini-sub-pro">Ajouter un livreur</span></a></li>
+                                    <li><a title="Update Livraison" href="affecterLivreur.php"><i class="fa fa-pencil" aria-hidden="true"></i> <span class="mini-sub-pro">Affecter un livreur</span></a></li>
+                                    
+                                </ul>
+                            </li>
+                            
+                            
+                           
+                          
+                        </ul>
+                    </nav>
+                </div>
+            </nav>
+        </div>
     <!-- Start Welcome area -->
     <div class="all-content-wrapper">
         <div class="container-fluid">
@@ -290,6 +382,8 @@ $listeReclam=$Reclam1R->afficherReclams();
                                                         <li><a href="#"><span class="fa fa-cog author-log-ic"></span>Settings</a>
                                                         </li>
                                                         <li><a href="login.html"><span class="fa fa-lock author-log-ic"></span>Log Out</a>
+                                                        </li>
+                                                        <li><a href="indexfront.php"><span class="fa fa-home author-log-ic"></span>Espace Client</a>
                                                         </li>
                                                     </ul>
                                                 </li>
@@ -723,9 +817,12 @@ $listeReclam=$Reclam1R->afficherReclams();
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="breadcome-heading">
-                                            <form role="search" class="">
-                                                <input type="text" placeholder="Search..." class="form-control">
-                                                <a href=""><i class="fa fa-search"></i></a>
+                                        <form method="get" action="recherche-reclam.php">
+                                                <tr>
+                                                <input type="text" name="recherche" placeholder="Search..." class="form-control">
+                                             <!--   <a href="recherche-prod-ret.php"><i class="fa fa-search"></i></a> -->
+                                             <input type="submit" name="Valider" placeholder="Search..." class="form-control">
+                                              </tr>
                                             </form>
                                         </div>
                                     </div>
@@ -750,16 +847,29 @@ $listeReclam=$Reclam1R->afficherReclams();
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="product-status-wrap">
                             <h4>Liste des Réclamations</h4>
+                            <div style="text-align: right;">
+                            <label> Filtrer </label> <br>
+                            <form action="reclam-list.php" method="GET"> 
+                            <select name="tri"> 
+                            <option value="choix1"> Date Récentes</option>
+                            <option value="choix2"> Identifiant Ascendant</option>
+                            <option value="choix3"> Identifiant Descendant</option>
+                            </select>
+                            <button type="submit"> Trier </button>
+                            </form>
+                            </div>
                             
-                            <table>
+                            <table class="table table-bordered table-striped">
                                 <tr>
-                                   
-                                    
+ 
                                     <th>ID_client</th>
                                     <th>Sujet</th>
                                     <th>Texte</th>
                                     <th>Date Reclamation</th>
                                     <th>Etat</th>
+                                    <th>Supp</th>
+                                    <th>Modifier</th>
+                                    <th>Ajouter</th>
                                     
                            
                                 </tr>
@@ -776,28 +886,17 @@ $listeReclam=$Reclam1R->afficherReclams();
                                         <input class="bin btn-primary waves-effect waves-light m-r-10" type="submit" name="trash" value="trash">
                                         <input type="hidden" value="<?PHP echo $row['ID_client']; ?>" name="ID_client">
                                  </form>
-                                 <td><a href="reclam-update.php?ID_client=<?PHP echo $row['ID_client']; ?>">Modifier</a></td>
-                                    </td>
-                                </tr>
-                                 <?PHP
-                                }
-                                ?>
-                                <?PHP
-                                foreach($listeReclam as $row){
-                                 ?>
-                                 <tr>
-                                 <td><?PHP echo $row['etat']; ?></td>
-                                 <td><form method="POST" action="modiferReclam.php">
-                                        <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                                       
-                                        <input class="bin btn-primary waves-effect waves-light m-r-10" type="submit" name="trash" value="trash">
+                                 <td><form method="POST" action="modifierReclam.php">
+                                        <input class="bin btn-primary waves-effect waves-light m-r-10" type="submit" name="modif" value="modifier">
                                         <input type="hidden" value="<?PHP echo $row['ID_client']; ?>" name="ID_client">
                                  </form>
+                                    <td><a href="reponse-edit.php?ID_client=<?PHP echo $row['ID_client']; ?>">Repondre</a></td>
                                     </td>
                                 </tr>
                                  <?PHP
                                 }
                                 ?>
+                                
                             </table>
                             <div class="custom-pagination">
                                 <nav aria-label="Page navigation example">

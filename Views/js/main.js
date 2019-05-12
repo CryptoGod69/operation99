@@ -63,7 +63,7 @@
   $("#owl-demo").owlCarousel({
       autoPlay: false, 
 	  slideSpeed:2000,
-	  pagination:tru,
+	  pagination:true,
 	  navigation:true,	  
       items : 4,
 	  /* transitionStyle : "fade", */    /* [This code for animation ] */

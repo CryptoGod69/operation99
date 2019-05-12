@@ -29,7 +29,7 @@ foreach($listeProduit as $row){
   <input type="hidden" value="<?PHP echo $row['ID_client']; ?>" name="ID_client">
   </form>
   </td>
-  <td><a href="product-list-ret.html?ID_client=<?PHP echo $row['ID_client']; ?>">
+  <td><a href="product-list.html?ID_client=<?PHP echo $row['ID_client']; ?>">
   Modifier</a></td>
   </tr>
   <?PHP

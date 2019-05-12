@@ -1,5 +1,5 @@
 <?php
-require_once "C:/wamp64/www/integration/config.php";
+require_once "C:/xampp/htdocs/integration/config.php";
 class produitC
 {
 function ajouter($produit)

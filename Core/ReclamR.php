@@ -1,5 +1,5 @@
 <?PHP
-require_once "C:/wamp64/www/integration/config.php";
+require_once "C:/xampp/htdocs/integration/config.php";
 class ReclamR
  {
     function afficherReclam($Reclam){
@@ -25,13 +25,13 @@ class ReclamR
 	}
 	}
 	function ajouterReclam($Reclam){
-		$sql = "INSERT INTO `reclamation` (ID_client,sujet,texte,date_reclam,etat) VALUES (:ID_client,:sujet,:texte,:date_reclam,:etat);";
+		$sql = "INSERT INTO `reclamation` (ID_client,sujet,texte,etat) VALUES (:ID_client,:sujet,:texte,:etat);";
 		$db = config::getConnexion();
 		$req = $db->prepare($sql);
 		$req->bindValue(':ID_client',$Reclam->getID_client());
 		$req->bindValue(':sujet',$Reclam->getSujet());
 		$req->bindValue(':texte',$Reclam->getTexte());
-		$req->bindValue(':date_reclam',$Reclam->getDaterec());
+		//$req->bindValue(':date_reclam',$Reclam->getDaterec());
 		$req->bindValue(':etat',$Reclam->getEtat());
 		try{
 		$req->execute();
@@ -43,8 +43,9 @@ class ReclamR
 	}
 	
 	function afficherReclams(){
+		
 		//$sql="SElECT * From employe e inner join formationphp.employe a on e.ID_client= a.ID_client";
-		$sql="SELECT * From reclamation";
+		$sql="SELECT * From reclamation ";
 		$db = config::getConnexion();
 		try{
 		$liste=$db->query($sql);
@@ -67,8 +68,8 @@ class ReclamR
             die('Erreur: '.$e->getMessage());
         }
 	}
-	function modifierReclam($Reclam,$ID_client){
-		$sql="UPDATE reclamation SET etat=:etat WHERE ID_client=:ID_client;";
+	function modifierReclam($ID_client){
+		$sql="UPDATE reclamation SET etat=:'traitee' WHERE ID_client=:ID_client;";
 		
 		$db = config::getConnexion();
 		$req = $db->prepare($sql);
@@ -76,7 +77,7 @@ class ReclamR
 		$req->bindValue(':sujet');
 		$req->bindValue(':texte');
 		$req->bindValue(':date_reclam');
-		$req->bindValue(':etat',$etat);
+		$req->bindValue(':etat');
 		$req->execute();
 		
 	}
@@ -92,7 +93,7 @@ class ReclamR
         }
 	}
 	
-	function rechercherListeReclam($ID_client){
+	function rechercherReclam($ID_client){
 		$sql="SELECT * from reclamation where ID_client=$ID_client";
 		$db = config::getConnexion();
 		try{

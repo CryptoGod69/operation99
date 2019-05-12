@@ -1,5 +1,5 @@
 <?PHP
-require_once "C:/wamp64/www/integration/config.php";
+require_once "C:/xampp/htdocs/integration/config.php";
 class ArticleC {
 function afficherArticle ($article){
 		echo "idc: ".$article->getIDCom()."<br>";
@@ -35,6 +35,43 @@ function afficherArticle ($article){
 		
 	}
 	
+
+	function ajouterArticles($article){
+
+		$cookie_data = stripslashes($_COOKIE['shopping_cart']);
+		$cart_data = json_decode($cookie_data, true);
+		foreach($cart_data as $keys => $values)
+		{  
+		$sql="insert into articles_commande (IDCom,IDProduit,NomProduit,QtProduit,PrixProduit) 
+		values (:idc, :idp,:nomp,:qtp,:prixp)";
+		$db = config::getConnexion();
+		try{
+
+        $req=$db->prepare($sql);
+		
+        $idc=$article->getIDCom();
+        $idp=$article->getIDProduit();
+        $nomp=$article->getNomProduit();
+        $qtp=$article->getQtProduit();
+        $prixp=$article->getPrixProduit();
+		$req->bindValue(':idc',$idc);
+		$req->bindValue(':idp',$idp);
+		$req->bindValue(':nomp',$nomp);
+		$req->bindValue(':qtp',$qtp);
+		$req->bindValue(':prixp',$prixp);
+		
+            $req->execute();
+           
+		}
+	
+        catch (Exception $e){
+            echo 'Erreur: '.$e->getMessage();
+        }
+		
+	}
+}
+
+
 	function afficherArticles(){
 		//$sql="SElECT * From employe e inner join formationphp.employe a on e.cin= a.cin";
 		$sql="SElECT * From articles_commande ORDER BY IDCom ASC ";

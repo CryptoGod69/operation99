@@ -1,7 +1,7 @@
 <?PHP
 include "../Core/ReclamR.php";
 $Reclam1R=new ReclamR();
-$listeReclam=$Reclam1R->afficherReclams();
+$listeReclam=$Reclam1R->afficherReponses();
 //var_dump($listeEmployes->fetchAll());
 ?>
 <table border="1">
@@ -26,10 +26,16 @@ foreach($listeReclam as $row){
   <td><?PHP echo $row['etat']; ?></td>
   <td><form method="POST" action="supprimerProduit.php">
   <input type="submit" name="supprimer" value="supprimer">
+
+
+
+
+
   <input type="hidden" value="<?PHP echo $row['ID_client']; ?>" name="ID_client">
+
   </form>
   </td>
-  <td><a href="modifierReclam.php?ID_client=<?PHP echo $row['ID_client']; ?>">
+  <td><a href="modifierReclam.php?ID_client=<?PHP echo $row['ID_client']; ?>&&ref=<?PHP echo $row['ref_reclam']; ?>">
   Modifier</a></td>
   </tr>
   <?PHP

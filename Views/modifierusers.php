@@ -1,3 +1,7 @@
+<HTML>
+<head>
+</head>
+<body>
 <?PHP
 include "../Entites/utilisateurs.php";
 include "../Core/utilisateursC.php";
@@ -7,51 +11,57 @@ if (isset($_GET['ID'])){
 	foreach($result as $row){
 		$NomPrenom=$row['NomPrenom'];
 		$Email=$row['Email'];
-		$DDN=$row['DDN'];
 		$Tel=$row['Tel'];
+		$DDN=$row['DDN'];
 		$PWD1=$row['PWD1'];
-
-        ?>
-        <form method="POST">
-        <table>
-        <caption>Modifier Employe</caption>
-        <tr>
-        <td>NomPrenom</td>
-        <td><input type="text" name="nomprenom" value="<?PHP echo $NomPrenom ?>"></td>
-        </tr>
-        <tr>
-        <td>Email</td>
-        <td><input type="text" name="email" value="<?PHP echo $Email ?>"></td>
-        </tr>
-        <tr>
-        <td>Date de naissance</td>
-        <td><input type="date" name="ddn" value="<?PHP echo $DDN ?>"></td>
-        </tr>
-        <tr>
-        <td>Tel</td>
-        <td><input type="number" name="tel" value="<?PHP echo $Tel ?>"></td>
-        </tr>
-        <tr>
-        <td>password</td>
-        <td><input type="text" name="pwd1" value="<?PHP echo $PWD1 ?>"></td>
-        </tr>
-        <tr>
-        <td></td>
-        <td><input type="submit" name="modifier" value="modifier"></td>
-        </tr>
-        <tr>
-        <td></td>
-        <td><input type="hidden" name="ID_ini" value="<?PHP echo $_GET['ID'];?>"></td>
-        </tr>
-        </table>
-        </form>
-        <?PHP
-            }
-        }
+		$Type=$row['Type'];
+?>
+<form method="POST">
+<table>
+<caption>Modifier utilisateurs</caption>
+<tr>
+<td>CIN</td>
+<td><input type="text" name="NomPrenom" value="<?PHP echo $NomPrenom ?>"></td>
+</tr>
+<tr>
+<td>Nom</td>
+<td><input type="text" name="Email" value="<?PHP echo $Email ?>"></td>
+</tr>
+<tr>
+<td>Prenom</td>
+<td><input type="number" name="Tel" value="<?PHP echo $Tel ?>"></td>
+</tr>
+<tr>
+<td>nb heures</td>
+<td><input type="date" name="DDN" value="<?PHP echo $DDN ?>"></td>
+</tr>
+<tr>
+<td>tarif horaire</td>
+<td><input type="text" name="PWD1" value="<?PHP echo $PWD1 ?>"></td>
+</tr>
+<td>tarif horaire</td>
+<td><input type="text" name="Type" value="<?PHP echo $Type ?>"></td>
+</tr>
+<tr>
+<td></td>
+<td><input type="submit" name="modifier" value="modifier"></td>
+</tr>
+<tr>
+<td></td>
+<td><input type="hidden" name="id_ini" value="<?PHP echo $_GET['ID'];?>"></td>
+</tr>
+</table>
+</form>
+<?PHP
+	}
+}
 if (isset($_POST['modifier'])){
-	$utilisateurs=new utilisateurs($_POST['nomprenom'],$_POST['email'],$_POST['ddn'],$_POST['tel'],$_POST['pwd1']);
-	$utilisateursC->modifierutilisateurs($utilisateurs,$_POST['ID_ini']);
-	echo $_POST['ID_ini'];
+	$utilisateurs1=new utilisateurs($_POST['NomPrenom'],$_POST['Email'],$_POST['DDN'],$_POST['Tel'],$_POST['PWD1'],$_POST['Type']);
+	$utilisateursC->modifierutilisateurs($utilisateurs1,$_POST['id_ini']);
+	echo $_POST['id_ini'];
 	header('Location: modifierutilisateurs.php');
+	
 }
 ?>
+</body>
+</HTMl>

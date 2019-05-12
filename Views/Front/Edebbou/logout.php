@@ -2,14 +2,20 @@
 // On démarre la session
 session_start ();
 
+$cookie_name = 'shopping_cart';
+unset($_COOKIE[$cookie_name]);
+// empty value and expiration one hour before
+$res = setcookie($cookie_name, '', time() - 3600);
+
 // On détruit les variables de notre session
 session_unset ();
 
 // On détruit notre session
+
 session_destroy ();
 
 // On redirige le visiteur vers la page d'accueil
-header ('location: auth.html');
+header ('location: login.php');
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

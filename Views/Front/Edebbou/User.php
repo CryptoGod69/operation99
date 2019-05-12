@@ -31,7 +31,7 @@ class User{
 
 	public function Logedin($conn,$login,$pwd)
 	{
-		$req="select * from users where user_name='$login' && user_pass='$pwd'";
+		$req="select * from utilisateurs where Email='$login' && PWD1='$pwd'";
 		$rep=$conn->query($req);
 		return $rep->fetchAll();
 	}

@@ -38,12 +38,14 @@ $vmaxid=$couponC->maxid_coupon();
     <!-- meanmenu icon CSS
 		============================================ -->
     <link rel="stylesheet" href="css/meanmenu.min.css">
+    <link rel="stylesheet" href="css/alerts.css">
     <!-- main CSS
 		============================================ -->
     <link rel="stylesheet" href="css/main.css">
     <!-- morrisjs CSS
 		============================================ -->
     <link rel="stylesheet" href="css/morrisjs/morris.css">
+     <link rel="stylesheet" href="css/morrisjs/morris.css">
     <!-- mCustomScrollbar CSS
 		============================================ -->
     <link rel="stylesheet" href="css/scrollbar/jquery.mCustomScrollbar.min.css">
@@ -65,52 +67,105 @@ $vmaxid=$couponC->maxid_coupon();
 		============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     <script src="js/coupon.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
-    <!--[if lt IE 8]>
+     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
-   
         <div class="left-sidebar-pro">
-        <nav id="sidebar" class="">
-            <div class="sidebar-header">
-                <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
-                <strong><img src="img/logo/logosn.png" alt="" /></strong>
-            </div>
-            <div class="left-custom-menu-adp-wrap comment-scrollbar">
-                <nav class="sidebar-nav left-sidebar-menu-pro">
-                    <ul class="metismenu" id="menu1">
+            <nav id="sidebar" class="">
+                <div class="sidebar-header">
+                    <a href="index.html"><img class="main-logo" src="../img/main/logo.png" alt="" /></a>
+                    <strong><img src="../img/logo.png" alt="" /></strong>
+                </div>
+                <div class="left-custom-menu-adp-wrap comment-scrollbar">
+                    <nav class="sidebar-nav left-sidebar-menu-pro">
+                        <ul class="metismenu" id="menu1">
                         <li class="active">
-                            <a class="has-arrow" href="index.html">
-								
-								   <span class="mini-click-non">Tableau de bord</span>
-								</a>
-                                <ul class="submenu-angle" aria-expanded="true">
-                                    <li><a title="Product List" href="product-list-ret.php"><i class="fa fa-female sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des produits</span></a></li>
-                                    <li><a title="Product Edit" href="product-edit.php"><i class="fa fa-bolt sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Ajout produit </span></a></li>
-                                    <li><a title="Product Cart" href="categorie-edit.php"><i class="fa fa-level-down sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Categories</span></a></li>
-                                    <li><a title="Product Cart" href="categorie-list.php"><i class="fa fa-level-down sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Categories Liste</span></a></li>                             
-                                    <li><a title="Product Detail" href="promocoup.php"><i class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Promo et coupon</span></a></li>
-                                    <li><a title="Product Detail" href="promo-list.php"><i class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des Coupon</span></a></li>
-                                    <li><a title="Analytics" href="analytics-da.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Statistique</span></a></li>
+                            
+                                <a class="has-arrow" href="index.html">
+                                     
+                                <span class="mini-click-non">Catalogue</span>
+                                    </a>
+                                    <ul class="submenu-angle" aria-expanded="true">
+                                        <li><a title="Product List" href="product-list.php"><i class="fa fa-female sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des produits</span></a></li>
+                                        <li><a title="Product Edit" href="product-edit.php"><i class="fa fa-bolt sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Ajout produit </span></a></li>
+                                        <li><a title="Product Cart" href="categorie-edit.php"><i class="fa fa-level-down sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Categories</span></a></li>
+                                        <li><a title="Product Cart" href="categorie-list.php"><i class="fa fa-level-down sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Categories Liste</span></a></li>                             
+                                        <li><a title="Product Detail" href="promocoup.php"><i class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Coupon</span></a></li>
+                                        <li><a title="Product Detail" href="promotion.php"><i class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Promotion</span></a></li>
+                                        <li><a title="Product Detail" href="promo-list.php"><i class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des Coupon</span></a></li>
+                                        <li><a title="Analytics" href="analytics-da.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Statistique</span></a></li>
+                                    
+                                    </ul>
+                            </li>
+                            <li>
+                                <a class="has-arrow" href="mailbox.html" aria-expanded="false"> <span class="mini-click-non">Commande</span></a>
+                                <ul class="submenu-angle" aria-expanded="false">
                                     <li><a title="Peity Charts" href="listCommande.php"><i class="fa fa-table sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste Des Commandes</span></a></li>
                                     <li><a title="Data Table" href="tableArticle.php"><i class="fa fa-th sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Contenu des Commandes</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="has-arrow" href="mailbox.html" aria-expanded="false"><span class="mini-click-non">SAV</span></a>
+                                <ul class="submenu-angle" aria-expanded="false">
                                     <li><a title="Product List" href="product-list-ret.php"><i class="fa fa-female sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des produits retournés</span></a></li>
                                     <li><a title="Product Edit" href="product-ret-edit.html"><i class="fa fa-bolt sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Ajouter produit retourné </span></a></li>
                                     <li><a title="Product Detail" href="reclam-list.php"><i class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des Réclamations</span></a></li>
-                                    <li><a title="List des client" href="List.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des Clients</span></a></li>
-                                <li><a title="Diagrammes" href="Diagrammes.html"><i class="fa fa-area-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Diagrammes</span></a></li>
-                                <li><a title="Modifier Supprimer" href="modifierutilisateurs.php"><i class="fa fa-pie-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Modifier/Supprimer</span></a></li>
-                                <li><a title="List News" href="ListNews.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des emails du Newsr</span></a></li>
                                 </ul>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </nav>
-    </div>
+                            </li>
+                            <li>
+                                <a class="has-arrow" href="mailbox.html" aria-expanded="false"> <span class="mini-click-non">Utulisateurs</span></a>
+                                <ul class="submenu-angle" aria-expanded="false">
+                                    <li><a title="List des client" href="List.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des Clients</span></a></li>
+                                    <li><a title="Diagrammes" href="Diagrammes.html"><i class="fa fa-area-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Diagrammes</span></a></li>
+                                    <li><a title="Modifier Supprimer" href="modifierutilisateurs.php"><i class="fa fa-pie-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Modifier/Supprimer</span></a></li>
+                                    <li><a title="List News" href="ListNews.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des emails du Newsr</span></a></li>
+                                    <li><a title="Liste CDF" href="listCDF.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des CDF</span></a></li>
+                                    <li><a title="List Premium" href="listpremium.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Liste des Premium</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="has-arrow" href="mailbox.html" aria-expanded="false"><span class="mini-click-non">Fournisseur et Stock</span></a>
+                                <ul class="submenu-angle" aria-expanded="false">
+                                    <li><a title="AfficherFournisseur" href="AfficherFournisseur.php"><i class="fa fa-book" aria-hidden="true"></i> <span class="mini-sub-pro">Gerer Fournisseur</span></a></li>
+
+                                    <li><a title="AfficherProduit" href="AfficherStock.php"><i class="fa fa-book" aria-hidden="true"></i> <span class="mini-sub-pro">Gerer Stock</span></a></li>
+
+                                    <li><a title="Analytics" href="Stat.php"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Statistiques</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="has-arrow" href="mailbox.html" aria-expanded="false"> <span class="mini-click-non">Livraison</span></a>
+                                <ul class="submenu-angle" aria-expanded="false">
+                                    <li><a title="Show table Livraison" href="afficherLivraison.php"><i class="fa fa-male sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Gestion livraison</span></a></li>
+                                    <li><a title="Update Livraison" href="ajouterLivraison.php"><i class="fa fa-pencil" aria-hidden="true"></i> <span class="mini-sub-pro">Ajouter une livraison</span></a></li>
+                                    <li><a title="Show table Livraisonr" href="afficherCalendrier.php"><i class="fa fa-table" aria-hidden="true"></i> <span class="mini-sub-pro">Afficher calendrier</span></a></li>
+                                    <li><a title="Show table Livraison" href="confirmerLivraison.php"><i class="fa fa-check" aria-hidden="true"></i> <span class="mini-sub-pro">confirmer livraison</span></a></li>
+                                   
+                                </ul>
+                         
+                            <li>
+                                <a class="has-arrow" href="mailbox.html" aria-expanded="false"> <span class="mini-click-non">Livreur</span></a>
+                                <ul class="submenu-angle" aria-expanded="false">
+                                    <li><a title="Show table Livraison" href="afficherLivreur.php"><i class="fa fa-male sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Gestion livreur</span></a></li>
+                                    <li><a title="Update Livraison" href="ajouterLivreur.php"><i class="fa fa-pencil" aria-hidden="true"></i> <span class="mini-sub-pro">Ajouter un livreur</span></a></li>
+                                    <li><a title="Update Livraison" href="affecterLivreur.php"><i class="fa fa-pencil" aria-hidden="true"></i> <span class="mini-sub-pro">Affecter un livreur</span></a></li>
+                                    
+                                </ul>
+                            </li>
+                            
+                            
+                           
+                          
+                        </ul>
+                    </nav>
+                </div>
+            </nav>
+        </div>
     <!-- Start Welcome area -->
     <div class="all-content-wrapper">
         <div class="container-fluid">
@@ -879,7 +934,7 @@ $vmaxid=$couponC->maxid_coupon();
                                                         <div class="input-group mg-b-pro-edt">
                                                             
                                                                 <span class="input-group-addon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
-                                                                <input type="text" class="form-control" placeholder="Code de Promo" name="code_coupon" id="code_coupon" required>
+                                                                <input type="text" class="form-control" placeholder="Veuillez Taper Sur Générer Pour avoir un code" name="code_coupon" id="code_coupon" >
                                                             </div>
                                                             <div class="input-group mg-b-pro-edt">
                                                                    
@@ -905,7 +960,7 @@ $vmaxid=$couponC->maxid_coupon();
                                                     </div>
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
-                                                        <input type="text" class="form-control" placeholder="Valeur" name="Valeur" id="Valeur" required>
+                                                        <input type="text" class="form-control" placeholder="Valeur" name="Valeur" id="Valeur" >
                                                     </div>
                                                  
                                                 </div>
@@ -918,11 +973,11 @@ $vmaxid=$couponC->maxid_coupon();
                                                     </div>   
                                                     <div class="input-group mg-b-pro-edt">
                                                             <span class="input-group-addon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
-                                                            <input class="form-control" placeholder="Date Début" type="date" id="Date_Debutcoupon" name="Date_Debutcoupon">
+                                                            <input class="form-control" placeholder="Date Début" type="date" id="Date_Debutcoupon" name="Date_Debutcoupon" onchange="checkDate()">
                                                         </div>
                                                         <div class="input-group mg-b-pro-edt">
                                                                 <span class="input-group-addon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
-                                                                <input class="form-control" placeholder="Date Fin" type="date" id="Date_Fincoupon" name="Date_Fincoupon">
+                                                                <input class="form-control" placeholder="Date Fin" type="date" id="Date_Fincoupon" name="Date_Fincoupon" onchange="checkDate()">
                                                             </div>
                                                 </div>
 
@@ -931,9 +986,9 @@ $vmaxid=$couponC->maxid_coupon();
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                 <div class="text-center mg-b-pro-edt custom-pro-edt-ds">
-                                                    <input class="btn btn-primary waves-effect waves-light m-r-10" type="submit" name="save" value="save" >
+                                                    <input class="btn btn-primary waves-effect waves-light m-r-10" type="submit" name="save" value="save" id="submit" >
 							
-                                                    <input type="sumbit" class="btn btn-warning waves-effect waves-light" name="Annuler" value="Annuler" >
+                                                    <input type="reset" class="btn btn-warning waves-effect waves-light" name="Annuler" value="Annuler" >
 													<p style="color : red; " id = "erreur"></p>
                                                 </div>
                                             </div>
@@ -1021,7 +1076,63 @@ $vmaxid=$couponC->maxid_coupon();
 function randomValue() {
   document.getElementById('code_coupon').value = Random();
 }
+function checkDate() {
+   var selectedText = document.getElementById('Date_Fincoupon').value;
+   var selectedText1 = document.getElementById('Date_Debutcoupon').value;
+   var selectedDate = new Date(selectedText);
+   var selectedDate1 = new Date(selectedText1);
+   var now = new Date();
+   if (selectedDate < now) {
+    document.getElementById('Date_Fincoupon').value = now;
+    swal("La date du fin est inférieur a ajourdhui!" , "" , "error");
+   }
+   if (selectedDate1 < now) {
+    document.getElementById('Date_Debutcoupon').value = now;
+    swal("La date du Debut est inférieur a ajourdhui!" , "" , "error");
+   }
+
+   if (selectedDate < selectedDate1 )
+   {
+    document.getElementById('Date_Fincoupon').value = now;
+    document.getElementById('Date_Debutcoupon').value = now;
+    swal("La date du fin est inférieur a  date debut!" , "" , "error");
+   }
+ }
+ function verifa()
+{
+    
+    var selectElem = document.getElementById('Type_reduction');
+    var DateD = document.getElementById('Date_Debutcoupon').value;
+    var DateF = document.getElementById('Date_Fincoupon').value;
+	var Valeur=document.getElementById('Valeur').value;
+    var index = selectElem.selectedIndex;
+
+    var dateD1 = new Date(DateD);
+    var dateF1 = new Date(DateF);
+    dateD1.setHours(0,0,0,0);
+    dateF1.setHours(0,0,0,0);
+
+    var todayDate = new Date();
+
+if ((index==1) && (Valeur>100) || (Valeur<0))
+{
+    swal("Pourcentage Doit etre entre 0 est 100 !" , "" , "error");
+	return false;
+}
+if ((index==2) && (Valeur>1000) || (Valeur<0))
+{
+    swal("Bon Doit etre entre 0 est 1000 TND!" , "" , "error");
+	return false;
+}
+
+
+
+}
+
+ 
     </script>
+    
+    
 </body>
 
 </html>

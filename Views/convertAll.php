@@ -14,7 +14,7 @@ $pdf =new FPDF();
 $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont("Arial","B",16);
-$pdf->Cell(0,10,"Liste Des Produits",1,1,'C');
+$pdf->Cell(0,10,"Categorie",1,1,'C');
 $pdf->Cell(50,10,"ID :",1,0);
 $pdf->Cell(50,10,$id_cat,1,1);
 $pdf->Cell(50,10,"Categ :",1,0);

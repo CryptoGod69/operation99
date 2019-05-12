@@ -386,17 +386,18 @@
 		<!-- /SECTION -->
 
 		<!-- NEWSLETTER -->
-		<div id="newsletter" class="section">
+		<div id="newsletter" class="section" >
 			<!-- container -->
 			<div class="container">
 				<!-- row -->
 				<div class="row">
 					<div class="col-md-12">
-						<div class="newsletter">
-							<p>Sign Up for the <strong>NEWSLETTER</strong></p>
-							<form>
-								<input class="input" type="email" placeholder="Enter Your Email">
-								<button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
+						<div class="newsletter" >
+								
+							<p>s'abonner au <strong>NEWSLETTER</strong></p>
+							<form id="news" method="POST" action="ajoutNews.php">
+								<input class="input" type="email" placeholder="Entrer l'Email" name="Email_News" id="Email_News">
+								<button class="newsletter-btn"><i class="fa fa-envelope"></i> S'abonner</button>
 							</form>
 							<ul class="newsletter-follow">
 								<li>
